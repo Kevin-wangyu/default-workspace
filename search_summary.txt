@@ -1,0 +1,250 @@
+=== CONFIG ===
+{
+ "method": "TPE 风格贝叶斯优化 (scipy gaussian_kde) + 内层时间切分 + 样本外验收",
+ "train_period": "2024-02-01~2025-12-31",
+ "inner_train": "2024-02-01~2025-06-30",
+ "inner_val": "2025-07-01~2025-12-31",
+ "oos": "2026-01-01~2026-10-31",
+ "base_rate": {
+  "10": 0.1154,
+  "5": 0.0524
+ },
+ "min_n_day": 20,
+ "min_pool": 500,
+ "n_rows": {
+  "tr": 1779357,
+  "iv": 678647,
+  "train": 2458004,
+  "oos": 1093939
+ },
+ "label_def": "y10=1 iff max(high[T+1..T+10])/close[T]-1 >= 20%; y5 同理 5 日",
+ "date_role": "横轴/牛熊标注，不作筛选条件（用户 m00171）",
+ "excluded_fields": [
+  "hot_rank (picks 全 null / quote 缺 26.36%)",
+  "max_concept_score (缺 44.6%)"
+ ]
+}
+
+=== BASELINE ===
+{
+ "tr": {
+  "tag": "inner_train 2024-02~2025-06",
+  "10": {
+   "pool_n": 1779357,
+   "merge": 0.1254,
+   "valid_days": 337,
+   "daily75": 0.0297,
+   "hit_days": 10,
+   "daily_mean": 0.1255
+  },
+  "5": {
+   "pool_n": 1779357,
+   "merge": 0.0589,
+   "valid_days": 337,
+   "daily75": 0.0119,
+   "hit_days": 4,
+   "daily_mean": 0.059
+  }
+ },
+ "iv": {
+  "tag": "inner_val   2025-07~2025-12",
+  "10": {
+   "pool_n": 678647,
+   "merge": 0.0879,
+   "valid_days": 126,
+   "daily75": 0.0,
+   "hit_days": 0,
+   "daily_mean": 0.0879
+  },
+  "5": {
+   "pool_n": 678647,
+   "merge": 0.0352,
+   "valid_days": 126,
+   "daily75": 0.0,
+   "hit_days": 0,
+   "daily_mean": 0.0352
+  }
+ },
+ "train": {
+  "tag": "train_all   2024-02~2025-12",
+  "10": {
+   "pool_n": 2458004,
+   "merge": 0.115,
+   "valid_days": 463,
+   "daily75": 0.0216,
+   "hit_days": 10,
+   "daily_mean": 0.1152
+  },
+  "5": {
+   "pool_n": 2458004,
+   "merge": 0.0524,
+   "valid_days": 463,
+   "daily75": 0.0086,
+   "hit_days": 4,
+   "daily_mean": 0.0525
+  }
+ },
+ "oos": {
+  "tag": "oos         2026-01~2026-10",
+  "10": {
+   "pool_n": 1093939,
+   "merge": 0.086,
+   "valid_days": 199,
+   "daily75": 0.0,
+   "hit_days": 0,
+   "daily_mean": 0.0861
+  },
+  "5": {
+   "pool_n": 1093939,
+   "merge": 0.0387,
+   "valid_days": 199,
+   "daily75": 0.0,
+   "hit_days": 0,
+   "daily_mean": 0.0387
+  }
+ }
+}
+
+=== GRADES ===
+{"C_25-50%": [{"label": "20日波动率 >= 3.693 (q0.73) AND 近10日涨停次数 >= 1 (q0.97) AND 命中龙头概念数 >= 0 (q0.80) AND 主力净额/成交额 >= 0.1173 (q0.97) AND 近10日涨幅% >= 25.68 (q0.97)", "rule": [["vol20", ">=", 0.73], ["lu_cnt_10d", ">=", 0.97], ["n_leader_concepts", ">=", 0.8], ["main_net_norm", ">=", 0.97], ["ret_10d", ">=", 0.97]], "train": {"10": {"pool_n": 4851, "merge": 0.4183, "daily75": 0.0339, "daily50": 0.339, "hit_days": 2, "valid_days": 59, "total_days": 437, "min_day_n": 1, "daily_mean": 0.4183, "daily_median": 0.3846, "lift": 3.624, "coverage": 0.135}, "5": {"pool_n": 4851, "merge": 0.3636, "daily75": 0.0169, "daily50": 0.2373, "hit_days": 1, "valid_days": 59, "total_days": 437, "min_day_n": 1, "daily_mean": 0.3725, "daily_median": 0.3333, "lift": 6.94, "coverage": 0.135}, "n_cond": 5, "tag": "train_all   2024-02~2025-12"}, "iv": {"10": {"pool_n": 1186, "merge": 0.3879, "daily75": 0.0, "daily50": 0.6667, "hit_days": 0, "valid_days": 3, "total_days": 125, "min_day_n": 2, "daily_mean": 0.4413, "daily_median": 0.5238, "lift": 3.361, "coverage": 0.024}, "5": {"pool_n": 1186, "merge": 0.3314, "daily75": 0.0, "daily50": 0.6667, "hit_days": 0, "valid_days": 3, "total_days": 125, "min_day_n": 2, "daily_mean": 0.4079, "daily_median": 0.5, "lift": 6.324, "coverage": 0.024}, "n_cond": 5, "tag": "inner_val   2025-07~2025-12"}, "oos": {"10": {"pool_n": 1982, "merge": 0.3522, "daily75": 0.0, "daily50": 0.1739, "hit_days": 0, "valid_days": 23, "total_days": 194, "min_day_n": 1, "daily_mean": 0.3311, "daily_median": 0.3, "lift": 3.052, "coverage": 0.1186}, "5": {"pool_n": 1982, "merge": 0.2765, "daily75": 0.0, "daily50": 0.1304, "hit_days": 0, "valid_days": 23, "total_days": 194, "min_day_n": 1, "daily_mean": 0.2866, "daily_median": 0.2727, "lift": 5.276, "coverage": 0.1186}, "n_cond": 5, "tag": "oos         2026-01~2026-10"}, "hit75_dates": ["2024-09-27", "2025-02-10"]}, {"label": "收盘/20日最高 <= 0.7352 (q0.03) AND 收盘/MA5-1 <= 0.001556 (q0.53) AND 近20日涨停次数 >= 0 (q0.70) AND 换手率% >= 5.59 (q0.76) AND 成交额/20日均 >= 1.075 (q0.68) AND 70%筹码获利比例 <= 0 (q0.45)", "rule": [["close_hh20_ratio", "<=", 0.03], ["bias5", "<=", 0.53], ["lu_cnt_20d", ">=", 0.7], ["turnover_rate", ">=", 0.76], ["amt_ratio", ">=", 0.68], ["scrplus_70", "<=", 0.45]], "train": {"10": {"pool_n": 5197, "merge": 0.4027, "daily75": 0.2609, "daily50": 0.3043, "hit_days": 6, "valid_days": 23, "total_days": 432, "min_day_n": 1, "daily_mean": 0.4479, "daily_median": 0.2895, "lift": 3.49, "coverage": 0.0532}, "5": {"pool_n": 5197, "merge": 0.2669, "daily75": 0.1304, "daily50": 0.1304, "hit_days": 3, "valid_days": 23, "total_days": 432, "min_day_n": 1, "daily_mean": 0.2608, "daily_median": 0.1524, "lift": 5.093, "coverage": 0.0532}, "n_cond": 6, "tag": "train_all   2024-02~2025-12"}, "iv": {"10": {"pool_n": 509, "merge": 0.2043, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 0, "total_days": 116, "min_day_n": 1, "daily_mean": 0.0, "daily_median": 0.0, "lift": 1.771, "coverage": 0.0}, "5": {"pool_n": 509, "merge": 0.1081, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 0, "total_days": 116, "min_day_n": 1, "daily_mean": 0.0, "daily_median": 0.0, "lift": 2.062, "coverage": 0.0}, "n_cond": 6, "tag": "inner_val   2025-07~2025-12"}, "oos": {"10": {"pool_n": 567, "merge": 0.1552, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 2, "total_days": 75, "min_day_n": 1, "daily_mean": 0.2318, "daily_median": 0.2318, "lift": 1.345, "coverage": 0.0267}, "5": {"pool_n": 567, "merge": 0.0758, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 2, "total_days": 75, "min_day_n": 1, "daily_mean": 0.1273, "daily_median": 0.1273, "lift": 1.447, "coverage": 0.0267}, "n_cond": 6, "tag": "oos         2026-01~2026-10"}, "hit75_dates": ["2024-02-05", "2024-02-06", "2024-02-07", "2024-02-08", "2024-02-19", "2024-04-16"]}, {"label": "收盘/20日最高 <= 0.7352 (q0.03) AND 收盘/MA5-1 <= 0.003883 (q0.57) AND 近20日涨停次数 >= 0 (q0.73) AND 换手率% >= 4.81 (q0.71) AND 成交额/20日均 >= 1.075 (q0.68) AND 70%筹码获利比例 <= 0 (q0.45)", "rule": [["close_hh20_ratio", "<=", 0.03], ["bias5", "<=", 0.57], ["lu_cnt_20d", ">=", 0.73], ["turnover_rate", ">=", 0.71], ["amt_ratio", ">=", 0.68], ["scrplus_70", "<=", 0.45]], "train": {"10": {"pool_n": 5684, "merge": 0.3995, "daily75": 0.1724, "daily50": 0.2759, "hit_days": 5, "valid_days": 29, "total_days": 432, "min_day_n": 1, "daily_mean": 0.4051, "daily_median": 0.2727, "lift": 3.462, "coverage": 0.0671}, "5": {"pool_n": 5684, "merge": 0.2621, "daily75": 0.1034, "daily50": 0.1034, "hit_days": 3, "valid_days": 29, "total_days": 432, "min_day_n": 1, "daily_mean": 0.2326, "daily_median": 0.1424, "lift": 5.003, "coverage": 0.0671}, "n_cond": 6, "tag": "train_all   2024-02~2025-12"}, "iv": {"10": {"pool_n": 516, "merge": 0.2035, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 0, "total_days": 116, "min_day_n": 1, "daily_mean": 0.0, "daily_median": 0.0, "lift": 1.763, "coverage": 0.0}, "5": {"pool_n": 516, "merge": 0.1066, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 0, "total_days": 116, "min_day_n": 1, "daily_mean": 0.0, "daily_median": 0.0, "lift": 2.034, "coverage": 0.0}, "n_cond": 6, "tag": "inner_val   2025-07~2025-12"}, "oos": {"10": {"pool_n": 601, "merge": 0.1547, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 2, "total_days": 75, "min_day_n": 1, "daily_mean": 0.223, "daily_median": 0.223, "lift": 1.341, "coverage": 0.0267}, "5": {"pool_n": 601, "merge": 0.0765, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 2, "total_days": 75, "min_day_n": 1, "daily_mean": 0.1222, "daily_median": 0.1222, "lift": 1.461, "coverage": 0.0267}, "n_cond": 6, "tag": "oos         2026-01~2026-10"}, "hit75_dates": ["2024-02-05", "2024-02-06", "2024-02-07", "2024-02-08", "2024-02-19"]}, {"label": "当日涨跌幅% >= -1.7 (q0.22) AND 近20日涨停次数 >= 2 (q0.97) AND 20日波动率 >= 1.128 (q0.05) AND 90%筹码获利比例 >= 0 (q0.50) AND 收盘/MA5-1 >= 0.08103 (q0.97) AND 小单净额/成交额 <= 0 (q0.34)", "rule": [["pct_change", ">=", 0.22], ["lu_cnt_20d", ">=", 0.97], ["vol20", ">=", 0.05], ["scrplus_90", ">=", 0.5], ["bias5", ">=", 0.97], ["small_norm", "<=", 0.34]], "train": {"10": {"pool_n": 12370, "merge": 0.3846, "daily75": 0.0333, "daily50": 0.1875, "hit_days": 8, "valid_days": 240, "total_days": 460, "min_day_n": 3, "daily_mean": 0.3795, "daily_median": 0.3652, "lift": 3.333, "coverage": 0.5217}, "5": {"pool_n": 12370, "merge": 0.3089, "daily75": 0.0167, "daily50": 0.0792, "hit_days": 4, "valid_days": 240, "total_days": 460, "min_day_n": 3, "daily_mean": 0.3051, "daily_median": 0.2925, "lift": 5.895, "coverage": 0.5217}, "n_cond": 6, "tag": "train_all   2024-02~2025-12"}, "iv": {"10": {"pool_n": 2756, "merge": 0.3487, "daily75": 0.0, "daily50": 0.0694, "hit_days": 0, "valid_days": 72, "total_days": 126, "min_day_n": 7, "daily_mean": 0.3461, "daily_median": 0.3604, "lift": 3.022, "coverage": 0.5714}, "5": {"pool_n": 2756, "merge": 0.2739, "daily75": 0.0, "daily50": 0.0139, "hit_days": 0, "valid_days": 72, "total_days": 126, "min_day_n": 7, "daily_mean": 0.2749, "daily_median": 0.271, "lift": 5.228, "coverage": 0.5714}, "n_cond": 6, "tag": "inner_val   2025-07~2025-12"}, "oos": {"10": {"pool_n": 5700, "merge": 0.3014, "daily75": 0.0, "daily50": 0.0652, "hit_days": 0, "valid_days": 138, "total_days": 199, "min_day_n": 3, "daily_mean": 0.3009, "daily_median": 0.3056, "lift": 2.612, "coverage": 0.6935}, "5": {"pool_n": 5700, "merge": 0.2128, "daily75": 0.0, "daily50": 0.0145, "hit_days": 0, "valid_days": 138, "total_days": 199, "min_day_n": 3, "daily_mean": 0.209, "daily_median": 0.2067, "lift": 4.061, "coverage": 0.6935}, "n_cond": 6, "tag": "oos         2026-01~2026-10"}, "hit75_dates": ["2024-09-20", "2024-09-23", "2024-09-24", "2024-09-25", "2024-09-26", "2024-09-27", "2024-10-15", "2025-02-05"]}, {"label": "换手率% >= 3.8 (q0.62) AND 成交额/20日均 >= 1.177 (q0.74) AND 命中当日热榜概念数 >= 0 (q0.12) AND 近20日涨幅% >= 10.74 (q0.80) AND 超大单净额/成交额 >= 0.08812 (q0.97) AND 20日波动率 >= 5.338 (q0.90)", "rule": [["turnover_rate", ">=", 0.62], ["amt_ratio", ">=", 0.74], ["n_hot_concepts", ">=", 0.12], ["ret_20d", ">=", 0.8], ["huge_norm", ">=", 0.97], ["vol20", ">=", 0.9]], "train": {"10": {"pool_n": 3801, "merge": 0.3723, "daily75": 0.0278, "daily50": 0.25, "hit_days": 1, "valid_days": 36, "total_days": 437, "min_day_n": 1, "daily_mean": 0.409, "daily_median": 0.367, "lift": 3.226, "coverage": 0.0824}, "5": {"pool_n": 3801, "merge": 0.2954, "daily75": 0.0278, "daily50": 0.1389, "hit_days": 1, "valid_days": 36, "total_days": 437, "min_day_n": 1, "daily_mean": 0.3268, "daily_median": 0.3091, "lift": 5.638, "coverage": 0.0824}, "n_cond": 6, "tag": "train_all   2024-02~2025-12"}, "iv": {"10": {"pool_n": 766, "merge": 0.3773, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 0, "total_days": 125, "min_day_n": 1, "daily_mean": 0.0, "daily_median": 0.0, "lift": 3.269, "coverage": 0.0}, "5": {"pool_n": 766, "merge": 0.2742, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 0, "total_days": 125, "min_day_n": 1, "daily_mean": 0.0, "daily_median": 0.0, "lift": 5.232, "coverage": 0.0}, "n_cond": 6, "tag": "inner_val   2025-07~2025-12"}, "oos": {"10": {"pool_n": 1604, "merge": 0.298, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 4, "total_days": 198, "min_day_n": 1, "daily_mean": 0.256, "daily_median": 0.2619, "lift": 2.582, "coverage": 0.0202}, "5": {"pool_n": 1604, "merge": 0.2014, "daily75": 0.0, "daily50": 0.0, "hit_days": 0, "valid_days": 4, "total_days": 198, "min_day_n": 1, "daily_mean": 0.194, "daily_median": 0.1952, "lift": 3.843, "coverage": 0.0202}, "n_cond": 6, "tag": "oos         2026-01~2026-10"}, "hit75_dates": ["2024-09-30"]}, {"label": "20日波动率 >= 3.037 (q0.60) AND 近10日涨停次数 >= 1 (q0.96) AND 命中龙头概念数 >= 0 (q0.80) AND 主力净额/成交额 >= 0.06322 (q0.90) AND 近10日涨幅% >= 22.25 (q0.96)", "rule": [["vol20", ">=", 0.6], ["lu_cnt_10d", ">=", 0.96], ["n_leader_concepts", ">=", 0.8], ["main_net_norm", ">=", 0.9], ["ret_10d", ">=", 0.96]], "train": {"10": {"pool_n": 10522, "merge": 0.3657, "daily75": 0.019, "daily50": 0.1517, "hit_days": 4, "valid_days": 211, "total_days": 440, "min_day_n": 1, "daily_mean": 0.3616, "daily_median": 0.3415, "lift": 3.169, "coverage": 0.4795}, "5": {"pool_n": 10522, "merge": 0.2982, "daily75": 0.019, "daily50": 0.0758, "hit_days": 4, "valid_days": 211, "total_days": 440, "min_day_n": 1, "daily_mean": 0.2954, "daily_median": 0.2812, "lift": 5.691, "coverage": 0.4795}, "n_cond": 5, "tag": "train_all   2024-02~2025-12"}, "iv": {"10": {"pool_n": 2819, "merge": 0.3508, "daily75": 0.0, "daily50": 0.0946, "hit_days": 0, "valid_days": 74, "total_days": 126, "min_day_n": 1, "daily_mean": 0.3406, "daily_median": 0.328, "lift": 3.04, "coverage": 0.5873}, "5": {"pool_n": 2819, "merge": 0.2767, "daily75": 0.0, "daily50": 0.0135, "hit_days": 0, "valid_days": 74, "total_days": 126, "min_day_n": 1, "daily_mean": 0.2721, "daily_median": 0.2835, "lift": 5.28, "coverage": 0.5873}, "n_cond": 5, "tag": "inner_val   2025-07~2025-12"}, "oos": {"10": {"pool_n": 4973, "merge": 0.3073, "daily75": 0.0, "daily50": 0.1101, "hit_days": 0, "valid_days": 109, "total_days": 199, "min_day_n": 1, "daily_mean": 0.311, "daily_median": 0.3, "lift": 2.663, "coverage": 0.5477}, "5": {"pool_n": 4973, "merge": 0.2208, "daily75": 0.0, "daily50": 0.0092, "hit_days": 0, "valid_days": 109, "total_days": 199, "min_day_n": 1, "daily_mean": 0.2155, "daily_median": 0.2, "lift": 4.214, "coverage": 0.5477}, "n_cond": 5, "tag": "oos         2026-01~2026-10"}, "hit75_dates": ["2024-09-24", "2024-09-25", "2024-09-26", "2024-09-27"]}]}
+
+=== TEMPLATES (report: tr / iv / train / oos, 10d & 5d) ===
+--- T1_资金聚集_量价趋势 (best=0.2810, 22.8s) ---
+  RULE: 换手率% >= 3.8 (q0.62) AND 成交额/20日均 >= 1.177 (q0.74) AND 命中当日热榜概念数 >= 0 (q0.12) AND 近20日涨幅% >= 10.74 (q0.80) AND 超大单净额/成交额 >= 0.08812 (q0.97) AND 20日波动率 >= 5.338 (q0.90)
+  tr     10d: merge=0.3710 pool=3035 d75=0.028 d50=0.250 hitd=1 valid=36 cov=0.115 lift=3.21
+  tr      5d: merge=0.3008 pool=3035 d75=0.028 d50=0.139 hitd=1 valid=36 cov=0.115 lift=5.74
+  iv     10d: merge=0.3773 pool=766 d75=0.000 d50=0.000 hitd=0 valid=0 cov=0.000 lift=3.27
+  iv      5d: merge=0.2742 pool=766 d75=0.000 d50=0.000 hitd=0 valid=0 cov=0.000 lift=5.23
+  train  10d: merge=0.3723 pool=3801 d75=0.028 d50=0.250 hitd=1 valid=36 cov=0.082 lift=3.23
+  train   5d: merge=0.2954 pool=3801 d75=0.028 d50=0.139 hitd=1 valid=36 cov=0.082 lift=5.64
+  oos    10d: merge=0.2980 pool=1604 d75=0.000 d50=0.000 hitd=0 valid=4 cov=0.020 lift=2.58
+  oos     5d: merge=0.2014 pool=1604 d75=0.000 d50=0.000 hitd=0 valid=4 cov=0.020 lift=3.84
+  hit75_dates: ['2024-09-30']
+
+--- T2_情绪涨停_波动筹码 (best=0.2920, 29.4s) ---
+  RULE: 当日涨跌幅% >= -0.9749 (q0.32) AND 近20日涨停次数 >= 1 (q0.84) AND 20日波动率 >= 1.128 (q0.05) AND 90%筹码获利比例 >= 0 (q0.56) AND 收盘/MA5-1 >= 0.08103 (q0.97) AND 小单净额/成交额 <= -0.0737 (q0.10)
+  tr     10d: merge=0.3550 pool=9583 d75=0.039 d50=0.117 hitd=8 valid=206 cov=0.656 lift=3.08
+  tr      5d: merge=0.2895 pool=9583 d75=0.019 d50=0.039 hitd=4 valid=206 cov=0.656 lift=5.52
+  iv     10d: merge=0.3130 pool=3431 d75=0.000 d50=0.068 hitd=0 valid=103 cov=0.818 lift=2.71
+  iv      5d: merge=0.2399 pool=3431 d75=0.000 d50=0.039 hitd=0 valid=103 cov=0.818 lift=4.58
+  train  10d: merge=0.3439 pool=13014 d75=0.026 d50=0.100 hitd=8 valid=309 cov=0.702 lift=2.98
+  train   5d: merge=0.2764 pool=13014 d75=0.013 d50=0.039 hitd=4 valid=309 cov=0.702 lift=5.28
+  oos    10d: merge=0.2634 pool=6527 d75=0.000 d50=0.019 hitd=0 valid=159 cov=0.799 lift=2.28
+  oos     5d: merge=0.1921 pool=6527 d75=0.000 d50=0.006 hitd=0 valid=159 cov=0.799 lift=3.67
+  hit75_dates: ['2024-09-19', '2024-09-20', '2024-09-23', '2024-09-24', '2024-09-25', '2024-09-26', '2024-09-27', '2025-02-05']
+
+--- T3_涨跌平衡_超跌反转 (best=0.2378, 24.1s) ---
+  RULE: 收盘/20日最高 <= 0.7352 (q0.03) AND 收盘/MA5-1 <= 0.003883 (q0.57) AND 近20日涨停次数 >= 0 (q0.73) AND 换手率% >= 4.81 (q0.71) AND 成交额/20日均 >= 1.075 (q0.68) AND 70%筹码获利比例 <= 0 (q0.45)
+  tr     10d: merge=0.4191 pool=5168 d75=0.172 d50=0.276 hitd=5 valid=29 cov=0.092 lift=3.63
+  tr      5d: merge=0.2777 pool=5168 d75=0.103 d50=0.103 hitd=3 valid=29 cov=0.092 lift=5.30
+  iv     10d: merge=0.2035 pool=516 d75=0.000 d50=0.000 hitd=0 valid=0 cov=0.000 lift=1.76
+  iv      5d: merge=0.1066 pool=516 d75=0.000 d50=0.000 hitd=0 valid=0 cov=0.000 lift=2.03
+  train  10d: merge=0.3995 pool=5684 d75=0.172 d50=0.276 hitd=5 valid=29 cov=0.067 lift=3.46
+  train   5d: merge=0.2621 pool=5684 d75=0.103 d50=0.103 hitd=3 valid=29 cov=0.067 lift=5.00
+  oos    10d: merge=0.1547 pool=601 d75=0.000 d50=0.000 hitd=0 valid=2 cov=0.027 lift=1.34
+  oos     5d: merge=0.0765 pool=601 d75=0.000 d50=0.000 hitd=0 valid=2 cov=0.027 lift=1.46
+  hit75_dates: ['2024-02-05', '2024-02-06', '2024-02-07', '2024-02-08', '2024-02-19']
+
+--- T4_探索A (best=0.2992, 21.5s) ---
+  RULE: 20日波动率 >= 3.037 (q0.60) AND 近10日涨停次数 >= 1 (q0.96) AND 命中龙头概念数 >= 0 (q0.80) AND 主力净额/成交额 >= 0.06322 (q0.90) AND 近10日涨幅% >= 22.25 (q0.96)
+  tr     10d: merge=0.3712 pool=7703 d75=0.029 d50=0.182 hitd=4 valid=137 cov=0.436 lift=3.22
+  tr      5d: merge=0.3061 pool=7703 d75=0.029 d50=0.110 hitd=4 valid=137 cov=0.436 lift=5.84
+  iv     10d: merge=0.3508 pool=2819 d75=0.000 d50=0.095 hitd=0 valid=74 cov=0.587 lift=3.04
+  iv      5d: merge=0.2767 pool=2819 d75=0.000 d50=0.013 hitd=0 valid=74 cov=0.587 lift=5.28
+  train  10d: merge=0.3657 pool=10522 d75=0.019 d50=0.152 hitd=4 valid=211 cov=0.479 lift=3.17
+  train   5d: merge=0.2982 pool=10522 d75=0.019 d50=0.076 hitd=4 valid=211 cov=0.479 lift=5.69
+  oos    10d: merge=0.3073 pool=4973 d75=0.000 d50=0.110 hitd=0 valid=109 cov=0.548 lift=2.66
+  oos     5d: merge=0.2208 pool=4973 d75=0.000 d50=0.009 hitd=0 valid=109 cov=0.548 lift=4.21
+  hit75_dates: ['2024-09-24', '2024-09-25', '2024-09-26', '2024-09-27']
+
+--- T5_探索B (best=0.2426, 18.9s) ---
+  RULE: 90%筹码获利比例 <= 0 (q0.89) AND 换手率% >= 12.6 (q0.93) AND 收盘/MA20-1 >= 0.1437 (q0.95) AND 概念总数 >= 6 (q0.58) AND 成交额/20日均 >= 0.6428 (q0.25) AND 小单净额/成交额 >= -0.1283 (q0.03)
+  tr     10d: merge=0.2616 pool=20570 d75=0.024 d50=0.036 hitd=6 valid=252 cov=0.757 lift=2.27
+  tr      5d: merge=0.1775 pool=20570 d75=0.016 d50=0.020 hitd=4 valid=252 cov=0.757 lift=3.39
+  iv     10d: merge=0.2753 pool=9293 d75=0.000 d50=0.032 hitd=0 valid=126 cov=1.000 lift=2.38
+  iv      5d: merge=0.1739 pool=9293 d75=0.000 d50=0.000 hitd=0 valid=126 cov=1.000 lift=3.32
+  train  10d: merge=0.2658 pool=29863 d75=0.016 d50=0.034 hitd=6 valid=378 cov=0.824 lift=2.30
+  train   5d: merge=0.1764 pool=29863 d75=0.011 d50=0.013 hitd=4 valid=378 cov=0.824 lift=3.37
+  oos    10d: merge=0.2781 pool=6912 d75=0.000 d50=0.079 hitd=0 valid=76 cov=1.000 lift=2.41
+  oos     5d: merge=0.1701 pool=6912 d75=0.000 d50=0.013 hitd=0 valid=76 cov=1.000 lift=3.25
+  hit75_dates: ['2024-09-20', '2024-09-23', '2024-09-24', '2024-09-25', '2024-09-26', '2024-09-27']
+
+--- T6_自由组合 (best=0.2790, 20.3s) ---
+  RULE: 20日波动率 >= 5.187 (q0.89) AND 近20日涨停次数 >= 0 (q0.24) AND 90%筹码获利比例 >= 0 (q0.17) AND 换手率% >= 1.52 (q0.23) AND 成交额/20日均 >= 0.5695 (q0.17) AND 当日涨跌幅% >= 5.435 (q0.95)
+  tr     10d: merge=0.3484 pool=32028 d75=0.021 d50=0.063 hitd=6 valid=285 cov=0.851 lift=3.02
+  tr      5d: merge=0.2198 pool=32028 d75=0.014 d50=0.025 hitd=4 valid=285 cov=0.851 lift=4.20
+  iv     10d: merge=0.2911 pool=4452 d75=0.000 d50=0.056 hitd=0 valid=107 cov=0.849 lift=2.52
+  iv      5d: merge=0.1934 pool=4452 d75=0.000 d50=0.000 hitd=0 valid=107 cov=0.849 lift=3.69
+  train  10d: merge=0.3414 pool=36480 d75=0.015 d50=0.061 hitd=6 valid=392 cov=0.850 lift=2.96
+  train   5d: merge=0.2166 pool=36480 d75=0.010 d50=0.018 hitd=4 valid=392 cov=0.850 lift=4.13
+  oos    10d: merge=0.2837 pool=15261 d75=0.000 d50=0.065 hitd=0 valid=184 cov=0.925 lift=2.46
+  oos     5d: merge=0.1723 pool=15261 d75=0.000 d50=0.005 hitd=0 valid=184 cov=0.925 lift=3.29
+  hit75_dates: ['2024-09-19', '2024-09-23', '2024-09-24', '2024-09-25', '2024-09-26', '2024-09-27']
+
+--- T7_自由组合 (best=0.2514, 16.6s) ---
+  RULE: 涨幅-涨停阈值 >= -10.31 (q0.63) AND 近20日涨幅% <= 32.61 (q0.96) AND 收盘/MA5-1 >= 0.07 (q0.96) AND 小单净额/成交额 <= 0.0101 (q0.47) AND 换手率/5日均 <= 1.407 (q0.89) AND 近20日涨停次数 >= 0 (q0.44)
+  tr     10d: merge=0.3357 pool=11211 d75=0.011 d50=0.063 hitd=1 valid=95 cov=0.284 lift=2.91
+  tr      5d: merge=0.2314 pool=11211 d75=0.011 d50=0.032 hitd=1 valid=95 cov=0.284 lift=4.42
+  iv     10d: merge=0.2914 pool=2011 d75=0.030 d50=0.030 hitd=1 valid=33 cov=0.262 lift=2.52
+  iv      5d: merge=0.2113 pool=2011 d75=0.000 d50=0.030 hitd=0 valid=33 cov=0.262 lift=4.03
+  train  10d: merge=0.3290 pool=13222 d75=0.016 d50=0.055 hitd=2 valid=128 cov=0.278 lift=2.85
+  train   5d: merge=0.2283 pool=13222 d75=0.008 d50=0.031 hitd=1 valid=128 cov=0.278 lift=4.36
+  oos    10d: merge=0.2708 pool=5329 d75=0.000 d50=0.031 hitd=0 valid=96 cov=0.482 lift=2.35
+  oos     5d: merge=0.1728 pool=5329 d75=0.000 d50=0.000 hitd=0 valid=96 cov=0.482 lift=3.30
+  hit75_dates: ['2024-09-26', '2025-07-21']
+
+=== REFINED / GRADED RULES ===
+KEY refined type=list
+  len=3
+  [0] grade=None rule=
+       tr    10d merge=0.4243 pool=4688 d75=0.261 d50=0.304 hitd=6 valid=23 cov=0.073 lift=3.68 | 5d merge=0.2841 pool=4688 d75=0.130 d50=0.130 hitd=3 valid=23 cov=0.073 lift=5.42
+       iv    10d merge=0.2043 pool=509 d75=0.000 d50=0.000 hitd=0 valid=0 cov=0.000 lift=1.77 | 5d merge=0.1081 pool=509 d75=0.000 d50=0.000 hitd=0 valid=0 cov=0.000 lift=2.06
+       train 10d merge=0.4027 pool=5197 d75=0.261 d50=0.304 hitd=6 valid=23 cov=0.053 lift=3.49 | 5d merge=0.2669 pool=5197 d75=0.130 d50=0.130 hitd=3 valid=23 cov=0.053 lift=5.09
+       oos   10d merge=0.1552 pool=567 d75=0.000 d50=0.000 hitd=0 valid=2 cov=0.027 lift=1.34 | 5d merge=0.0758 pool=567 d75=0.000 d50=0.000 hitd=0 valid=2 cov=0.027 lift=1.45
+  [1] grade=None rule=
+       tr    10d merge=0.3949 pool=9614 d75=0.048 d50=0.238 hitd=8 valid=168 cov=0.503 lift=3.42 | 5d merge=0.3189 pool=9614 d75=0.024 d50=0.107 hitd=4 valid=168 cov=0.503 lift=6.09
+       iv    10d merge=0.3487 pool=2756 d75=0.000 d50=0.069 hitd=0 valid=72 cov=0.571 lift=3.02 | 5d merge=0.2739 pool=2756 d75=0.000 d50=0.014 hitd=0 valid=72 cov=0.571 lift=5.23
+       train 10d merge=0.3846 pool=12370 d75=0.033 d50=0.188 hitd=8 valid=240 cov=0.522 lift=3.33 | 5d merge=0.3089 pool=12370 d75=0.017 d50=0.079 hitd=4 valid=240 cov=0.522 lift=5.89
+       oos   10d merge=0.3014 pool=5700 d75=0.000 d50=0.065 hitd=0 valid=138 cov=0.694 lift=2.61 | 5d merge=0.2128 pool=5700 d75=0.000 d50=0.015 hitd=0 valid=138 cov=0.694 lift=4.06
+  [2] grade=None rule=
+       tr    10d merge=0.4281 pool=3665 d75=0.036 d50=0.321 hitd=2 valid=56 cov=0.179 lift=3.71 | 5d merge=0.3741 pool=3665 d75=0.018 d50=0.214 hitd=1 valid=56 cov=0.179 lift=7.14
+       iv    10d merge=0.3879 pool=1186 d75=0.000 d50=0.667 hitd=0 valid=3 cov=0.024 lift=3.36 | 5d merge=0.3314 pool=1186 d75=0.000 d50=0.667 hitd=0 valid=3 cov=0.024 lift=6.32
+       train 10d merge=0.4183 pool=4851 d75=0.034 d50=0.339 hitd=2 valid=59 cov=0.135 lift=3.62 | 5d merge=0.3636 pool=4851 d75=0.017 d50=0.237 hitd=1 valid=59 cov=0.135 lift=6.94
+       oos   10d merge=0.3522 pool=1982 d75=0.000 d50=0.174 hitd=0 valid=23 cov=0.119 lift=3.05 | 5d merge=0.2765 pool=1982 d75=0.000 d50=0.130 hitd=0 valid=23 cov=0.119 lift=5.28
+
+KEY grade_summary type=dict
+  subkeys=['C_25-50%']
+{"C_25-50%": 6}
+
+KEY monthly_base type=list
+  len=33
+  [0] grade=None rule=
+  [1] grade=None rule=
+  [2] grade=None rule=
+  [3] grade=None rule=
+  [4] grade=None rule=
+  [5] grade=None rule=
+  [6] grade=None rule=
+  [7] grade=None rule=
+  [8] grade=None rule=
+  [9] grade=None rule=
+  [10] grade=None rule=
+  [11] grade=None rule=
+  [12] grade=None rule=
+  [13] grade=None rule=
+  [14] grade=None rule=
+  [15] grade=None rule=
+  [16] grade=None rule=
+  [17] grade=None rule=
+  [18] grade=None rule=
+  [19] grade=None rule=
+  [20] grade=None rule=
+  [21] grade=None rule=
+  [22] grade=None rule=
+  [23] grade=None rule=
+  [24] grade=None rule=
+  [25] grade=None rule=
+  [26] grade=None rule=
+  [27] grade=None rule=
+  [28] grade=None rule=
+  [29] grade=None rule=

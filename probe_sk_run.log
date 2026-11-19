@@ -1,0 +1,42 @@
+== scrplus_90 keys: ['buckets', 'best_hit10', 'best_hit5', 'lift10', 'lift5', 'q1_hit10', 'q10_hit10', 'monotone_hit10']
+    best_hit10 = {'b': 2, 'n': 239505, 'lo': 0.0, 'hi': 0.0, 'hit10': 0.2836, 'hit5': 0.1356}
+    best_hit5 = {'b': 2, 'n': 239505, 'lo': 0.0, 'hi': 0.0, 'hit10': 0.2836, 'hit5': 0.1356}
+    lift10 = 2.457
+    lift5 = 2.589
+    q1_hit10 = 0.0621
+    q10_hit10 = 0.0855
+    monotone_hit10 = False
+   buckets n= 10 first= {'b': 1, 'n': 239505, 'lo': 0.0, 'hi': 0.0, 'hit10': 0.0621, 'hit5': 0.0262} last= {'b': 10, 'n': 239504, 'lo': 0.0, 'hi': 0.0, 'hit10': 0.0855, 'hit5': 0.0323}
+== vol20 keys: ['buckets', 'best_hit10', 'best_hit5', 'lift10', 'lift5', 'q1_hit10', 'q10_hit10', 'monotone_hit10']
+    best_hit10 = {'b': 10, 'n': 243869, 'lo': 5.3432, 'hi': 166.182, 'hit10': 0.2566, 'hit5': 0.139}
+    best_hit5 = {'b': 10, 'n': 243869, 'lo': 5.3432, 'hi': 166.182, 'hit10': 0.2566, 'hit5': 0.139}
+    lift10 = 2.223
+    lift5 = 2.654
+    q1_hit10 = 0.046
+    q10_hit10 = 0.2566
+    monotone_hit10 = True
+   buckets n= 10 first= {'b': 1, 'n': 243870, 'lo': 0.0003, 'hi': 1.3763, 'hit10': 0.046, 'hit5': 0.0146} last= {'b': 10, 'n': 243869, 'lo': 5.3432, 'hi': 166.182, 'hit10': 0.2566, 'hit5': 0.139}
+== turnover_rate keys: ['buckets', 'best_hit10', 'best_hit5', 'lift10', 'lift5', 'q1_hit10', 'q10_hit10', 'monotone_hit10']
+    best_hit10 = {'b': 10, 'n': 239504, 'lo': 10.34, 'hi': 83.66, 'hit10': 0.1981, 'hit5': 0.1165}
+    best_hit5 = {'b': 10, 'n': 239504, 'lo': 10.34, 'hi': 83.66, 'hit10': 0.1981, 'hit5': 0.1165}
+    lift10 = 1.717
+    lift5 = 2.224
+    q1_hit10 = 0.074
+    q10_hit10 = 0.1981
+    monotone_hit10 = True
+   buckets n= 10 first= {'b': 1, 'n': 239505, 'lo': 0.0, 'hi': 1.04, 'hit10': 0.074, 'hit5': 0.0226} last= {'b': 10, 'n': 239504, 'lo': 10.34, 'hi': 83.66, 'hit10': 0.1981, 'hit5': 0.1165}
+== lu_cnt_20d keys: ['buckets', 'best_hit10', 'best_hit5', 'lift10', 'lift5', 'q1_hit10', 'q10_hit10', 'monotone_hit10']
+    best_hit10 = {'b': 2, 'n': 244958, 'lo': 0.0, 'hi': 0.0, 'hit10': 0.2755, 'hit5': 0.1311}
+    best_hit5 = {'b': 2, 'n': 244958, 'lo': 0.0, 'hi': 0.0, 'hit10': 0.2755, 'hit5': 0.1311}
+    lift10 = 2.387
+    lift5 = 2.503
+    q1_hit10 = 0.0626
+    q10_hit10 = 0.1836
+    monotone_hit10 = False
+   buckets n= 10 first= {'b': 1, 'n': 244958, 'lo': 0.0, 'hi': 0.0, 'hit10': 0.0626, 'hit5': 0.0234} last= {'b': 10, 'n': 244957, 'lo': 1.0, 'hi': 18.0, 'hit10': 0.1836, 'hit5': 0.0975}
+== is_limit_up keys: ['buckets']
+   buckets n= 2 first= {'b': 0, 'n': 2416108, 'hit10': 0.1123, 'hit5': 0.0495} last= {'b': 1, 'n': 33467, 'hit10': 0.3399, 'hit5': 0.2591}
+
+scan_train_base: {'n': 2449575, 'hit10': 0.1154, 'hit5': 0.0524}
+
+high_days keys: ['n', 'rows'] n= 13

@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-30",
+  "mode": "live",
+  "thresholds": {
+    "lu_cnt_20d": 1.0,
+    "main_net_norm": 0.0,
+    "vol20": 3.5238,
+    "turnover_rate": 3.7,
+    "lu_gap": -3.0,
+    "close_hh20_ratio": 0.95,
+    "ret_5d": 4.8679,
+    "n_leader_concepts": 1.0
+  },
+  "n_selected": 2,
+  "picks": [
+    {
+      "code": "600261",
+      "name": "阳光照明",
+      "trade_date": "2026-10-30",
+      "lu_cnt_20d": 3.0,
+      "main_net_norm": 0.6047,
+      "vol20": 4.2647,
+      "turnover_rate": 4.7,
+      "lu_gap": 0.1462,
+      "close_hh20_ratio": 1.0,
+      "ret_5d": 18.5507,
+      "ma5": 3.58,
+      "ma20": 3.3695,
+      "ma60": 3.253,
+      "n_leader_concepts": 1,
+      "pct_change": 9.9462,
+      "amount": 137021264.0
+    },
+    {
+      "code": "603278",
+      "name": "大业股份",
+      "trade_date": "2026-10-30",
+      "lu_cnt_20d": 7.0,
+      "main_net_norm": 0.0019,
+      "vol20": 5.9053,
+      "turnover_rate": 66.3,
+      "lu_gap": -0.6277,
+      "close_hh20_ratio": 0.9924,
+      "ret_5d": 22.3058,
+      "ma5": 17.994,
+      "ma20": 12.824,
+      "ma60": 10.4607,
+      "n_leader_concepts": 1,
+      "pct_change": 9.1723,
+      "amount": 2144520576.0
+    }
+  ]
+}

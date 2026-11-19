@@ -1,0 +1,69 @@
+exported chart_preview_1.png 133 KB
+exported chart_preview_2.png 158 KB
+exported chart_preview_4.png 143 KB
+exported chart_preview_7.png 260 KB
+
+=== 项目目录零写入复核（可能被写入的落盘点 mtime）===
+  logs/cli_audit.log: NOT EXISTS
+  logs/etl.log: mtime=2026-11-12 16:11:26  SUSPICIOUS
+  data/_tops_cache/v1/bars.parquet: mtime=2026-11-12 16:11:17  SUSPICIOUS
+  data/_tops_cache/v1/meta.parquet: mtime=2026-11-12 16:11:17  SUSPICIOUS
+  data/trading_calendar.parquet: mtime=2026-11-06 15:37:57  untouched
+  data/market_amount.parquet: mtime=2026-11-12 16:10:54  SUSPICIOUS
+  data/concept_meta.parquet: mtime=2026-11-06 15:37:53  untouched
+  data/concept_picks: mtime=2026-11-12 16:11:26  SUSPICIOUS
+
+=== 工作目录产物清单 ===
+  bayes_run.log  1 KB
+  bayes_search.py  17 KB
+  build_matrix.py  14 KB
+  build_report_data.py  9 KB
+  build_report_data_run.log  3 KB
+  chart_preview_1.png  134 KB
+  chart_preview_2.png  158 KB
+  chart_preview_4.png  144 KB
+  chart_preview_7.png  261 KB
+  check_libs.py  0 KB
+  check_libs2.py  0 KB
+  check_rd_run.log  9 KB
+  check_report_data.py  2 KB
+  explore_market_baserate.py  4 KB
+  explore_market_out.json  95 KB
+  explore_phase1.py  4 KB
+  explore_phase1_out.json  16 KB
+  explore_schemas.py  2 KB
+  explore_schemas_out.json  18 KB
+  final_check.py  1 KB
+  final_check_run.log  0 KB
+  inspect_data.py  2 KB
+  inspect_run.log  6 KB
+  install.sh  17 KB
+  latest.tar.gz  63 KB
+  make_report.py  52 KB
+  make_report_run.log  0 KB
+  matrix.parquet  617183 KB
+  matrix_profile.json  3 KB
+  probe2.py  4 KB
+  probe2_out.json  5 KB
+  probe3.py  3 KB
+  probe3_out.json  2 KB
+  probe4.py  5 KB
+  probe4_out.json  1 KB
+  probe_scan_keys.py  1 KB
+  probe_sk_run.log  3 KB
+  report_data.json  456 KB
+  scan2.py  5 KB
+  scan2_out.json  61 KB
+  scan_debug.py  0 KB
+  scan_signals.py  6 KB
+  scan_signals_out.json  21 KB
+  search_results.json  318 KB
+  search_summary.txt  25 KB
+  summarize_run.log  0 KB
+  summarize_search.py  2 KB
+  threshold_check.json  0 KB
+  verify_report.py  4 KB
+  verify_report_run.log  1 KB
+  verify_thr_run.log  0 KB
+  verify_threshold.py  1 KB
+  选股条件研究报告.html  1316 KB

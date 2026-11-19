@@ -1,0 +1,5 @@
+=== 双模式一致性核验（matrix vs live）===
+2024-09-27: matrix_n=15 live_n=0 codes_identical=False only_matrix=['000793', '002285', '002667', '300033', '300059'] only_live=[]
+2025-02-10: matrix_n=3 live_n=0 codes_identical=False only_matrix=['002354', '002899', '688158'] only_live=[]
+2026-10-30: matrix_n=2 live_n=2 codes_identical=True only_matrix=[] only_live=[]
+VERIFY_RESULT: MISMATCH

@@ -1,0 +1,96 @@
+keys ['config', 'baseline', 'monthly_base', 'grade_summary', 'grades', 'templates_stability', 'recommended', 'high_days', 'stock_scan', 'scan_train_base', 'dims_meta']
+grade_summary {'C_25-50%': 6}
+baseline train 0.115 oos 0.086
+monthly n 33
+
+=== R1_资金聚集高波动龙头
+  label: 20日波动率 >= 3.693 (q0.73) AND 近10日涨停次数 >= 1 (q0.97) AND 命中龙头概念数 >= 0 (q0.80) AND 主力净额/成交额 >= 0.1173 (q0.97) AND 近10日涨幅% >= 25.68 (q0.97)
+  all_pool: {'10': {'n': 6881, 'hit': 0.3963086760645255}, '5': {'n': 6881, 'hit': 0.33614300247057116}}
+  restricted_pool: {'10': {'n': 60, 'hit': 0.9, 'n_days': 2}, '5': {'n': 35, 'hit': 0.9714285714285714, 'n_days': 1}}
+  daily n= 638 first 2024-03-13 last 2026-11-10
+  hit10_dates:
+     {'date': '2024-09-27', 'n': 35, 'hit': 0.9714, 'mkt_hit10': 0.7255502392344496, 'mkt_amount': 1455641296672.0}
+     {'date': '2025-02-10', 'n': 25, 'hit': 0.8, 'mkt_hit10': 0.11172022684310019, 'mkt_amount': 1759572235504.0}
+  hit5_dates:
+     {'date': '2024-09-27', 'n': 35, 'hit': 0.9714, 'mkt_hit5': 0.7120719341878708}
+  train/oos daily counts: 437 194
+=== R2_超跌反转放量
+  label: 收盘/20日最高 <= 0.7352 (q0.03) AND 收盘/MA5-1 <= 0.001556 (q0.53) AND 近20日涨停次数 >= 0 (q0.70) AND 换手率% >= 5.59 (q0.76) AND 成交额/20日均 >= 1.075 (q0.68) AND 70%筹码获利比例 <= 0 (q0.45)
+  all_pool: {'10': {'n': 5764, 'hit': 0.37838306731436505}, '5': {'n': 5764, 'hit': 0.2480916030534351}}
+  restricted_pool: {'10': {'n': 1272, 'hit': 0.9740566037735849, 'n_days': 6}, '5': {'n': 867, 'hit': 0.9573241061130334, 'n_days': 3}}
+  daily n= 507 first 2024-02-05 last 2026-04-29
+  hit10_dates:
+     {'date': '2024-02-05', 'n': 80, 'hit': 1.0, 'mkt_hit10': 0.7541515556403893, 'mkt_amount': 884967402656.0}
+     {'date': '2024-02-06', 'n': 217, 'hit': 0.9862, 'mkt_hit10': 0.6774809160305343, 'mkt_amount': 935923749088.0}
+     {'date': '2024-02-07', 'n': 589, 'hit': 1.0, 'mkt_hit10': 0.6454875023850412, 'mkt_amount': 1032978850688.0}
+     {'date': '2024-02-08', 'n': 247, 'hit': 0.9919, 'mkt_hit10': 0.49246614533663935, 'mkt_amount': 1024880725568.0}
+     {'date': '2024-02-19', 'n': 31, 'hit': 0.9677, 'mkt_hit10': 0.3747854281899676, 'mkt_amount': 964694755424.0}
+     {'date': '2024-04-16', 'n': 108, 'hit': 0.75, 'mkt_hit10': 0.32578664620107445, 'mkt_amount': 951792339584.0}
+  hit5_dates:
+     {'date': '2024-02-07', 'n': 589, 'hit': 0.9745, 'mkt_hit5': 0.4488939740655988}
+     {'date': '2024-02-08', 'n': 247, 'hit': 0.915, 'mkt_hit5': 0.2524308865586273}
+     {'date': '2024-02-19', 'n': 31, 'hit': 0.9677, 'mkt_hit5': 0.2122425629290618}
+  train/oos daily counts: 432 75
+=== R3_情绪涨停高覆盖
+  label: 当日涨跌幅% >= -1.7 (q0.22) AND 近20日涨停次数 >= 2 (q0.97) AND 20日波动率 >= 1.128 (q0.05) AND 90%筹码获利比例 >= 0 (q0.50) AND 收盘/MA5-1 >= 0.08103 (q0.97) AND 小单净额/成交额 <= 0 (q0.34)
+  all_pool: {'10': {'n': 18272, 'hit': 0.35442206654991243}, '5': {'n': 18272, 'hit': 0.27616024518388793}}
+  restricted_pool: {'10': {'n': 272, 'hit': 0.8860294117647058, 'n_days': 8}, '5': {'n': 176, 'hit': 0.9204545454545454, 'n_days': 4}}
+  daily n= 666 first 2024-02-06 last 2026-11-10
+  hit10_dates:
+     {'date': '2024-09-20', 'n': 22, 'hit': 0.9091, 'mkt_hit10': 0.9852490421455937, 'mkt_amount': 576795971464.0}
+     {'date': '2024-09-23', 'n': 22, 'hit': 0.8636, 'mkt_hit10': 0.9829534571921085, 'mkt_amount': 552857574288.0}
+     {'date': '2024-09-24', 'n': 27, 'hit': 0.963, 'mkt_hit10': 0.9754836238268533, 'mkt_amount': 974424479824.0}
+     {'date': '2024-09-25', 'n': 28, 'hit': 1.0, 'mkt_hit10': 0.9730091883614091, 'mkt_amount': 1161677101440.0}
+     {'date': '2024-09-26', 'n': 39, 'hit': 0.9744, 'mkt_hit10': 0.958094144661309, 'mkt_amount': 1166365204520.0}
+     {'date': '2024-09-27', 'n': 82, 'hit': 0.8659, 'mkt_hit10': 0.7255502392344496, 'mkt_amount': 1455641296672.0}
+     {'date': '2024-10-15', 'n': 32, 'hit': 0.75, 'mkt_hit10': 0.2736680720582599, 'mkt_amount': 1651527923680.0}
+     {'date': '2025-02-05', 'n': 20, 'hit': 0.75, 'mkt_hit10': 0.17982207079310997, 'mkt_amount': 1300286181768.0}
+  hit5_dates:
+     {'date': '2024-09-24', 'n': 27, 'hit': 0.963, 'mkt_hit5': 0.9732954545454545}
+     {'date': '2024-09-25', 'n': 28, 'hit': 1.0, 'mkt_hit5': 0.9709146574818216}
+     {'date': '2024-09-26', 'n': 39, 'hit': 0.9744, 'mkt_hit5': 0.9546671767406273}
+     {'date': '2024-09-27', 'n': 82, 'hit': 0.8537, 'mkt_hit5': 0.7120719341878708}
+  train/oos daily counts: 460 199
+
+=== templates_stability ===
+  T1_资金聚集_量价趋势             tr10=0.372 iv10=0.377 oos10=0.298 | tr5=0.295 oos5=0.201 d75=0.028
+  T2_情绪涨停_波动筹码             tr10=0.344 iv10=0.313 oos10=0.263 | tr5=0.276 oos5=0.192 d75=0.026
+  T3_涨跌平衡_超跌反转             tr10=0.400 iv10=0.203 oos10=0.155 | tr5=0.262 oos5=0.076 d75=0.172
+  T4_探索A                   tr10=0.366 iv10=0.351 oos10=0.307 | tr5=0.298 oos5=0.221 d75=0.019
+  T5_探索B                   tr10=0.266 iv10=0.275 oos10=0.278 | tr5=0.176 oos5=0.170 d75=0.016
+  T6_自由组合                  tr10=0.341 iv10=0.291 oos10=0.284 | tr5=0.217 oos5=0.172 d75=0.015
+  T7_自由组合                  tr10=0.329 iv10=0.291 oos10=0.271 | tr5=0.228 oos5=0.173 d75=0.016
+
+=== high_days ===
+   {'date': '2024-02-05', 'hit10': 0.754, 'hit5': 0.386, 'mkt_amount': 884967402656.0, 'mkt_amt_ratio': 1.042, 'mkt_lu': 19, 'mkt_ret_5d': -12.8}
+   {'date': '2024-02-06', 'hit10': 0.677, 'hit5': 0.28, 'mkt_amount': 935923749088.0, 'mkt_amt_ratio': 1.066, 'mkt_lu': 281, 'mkt_ret_5d': -9.55}
+   {'date': '2024-02-07', 'hit10': 0.645, 'hit5': 0.449, 'mkt_amount': 1032978850688.0, 'mkt_amt_ratio': 1.126, 'mkt_lu': 138, 'mkt_ret_5d': -10.93}
+   {'date': '2024-09-12', 'hit10': 0.853, 'hit5': 0.016, 'mkt_amount': 517324157640.0, 'mkt_amt_ratio': 0.912, 'mkt_lu': 36, 'mkt_ret_5d': -2.36}
+   {'date': '2024-09-13', 'hit10': 0.984, 'hit5': 0.024, 'mkt_amount': 528496827716.0, 'mkt_amt_ratio': 0.937, 'mkt_lu': 41, 'mkt_ret_5d': -1.71}
+   {'date': '2024-09-18', 'hit10': 0.985, 'hit5': 0.047, 'mkt_amount': 481733883040.0, 'mkt_amt_ratio': 0.862, 'mkt_lu': 26, 'mkt_ret_5d': -2.12}
+   {'date': '2024-09-19', 'hit10': 0.984, 'hit5': 0.044, 'mkt_amount': 629393392424.0, 'mkt_amt_ratio': 1.119, 'mkt_lu': 59, 'mkt_ret_5d': -0.38}
+   {'date': '2024-09-20', 'hit10': 0.985, 'hit5': 0.206, 'mkt_amount': 576795971464.0, 'mkt_amt_ratio': 1.019, 'mkt_lu': 48, 'mkt_ret_5d': -0.28}
+   {'date': '2024-09-23', 'hit10': 0.983, 'hit5': 0.842, 'mkt_amount': 552857574288.0, 'mkt_amt_ratio': 0.977, 'mkt_lu': 52, 'mkt_ret_5d': 0.16}
+   {'date': '2024-09-24', 'hit10': 0.975, 'hit5': 0.973, 'mkt_amount': 974424479824.0, 'mkt_amt_ratio': 1.655, 'mkt_lu': 96, 'mkt_ret_5d': 4.99}
+   {'date': '2024-09-25', 'hit10': 0.973, 'hit5': 0.971, 'mkt_amount': 1161677101440.0, 'mkt_amt_ratio': 1.872, 'mkt_lu': 54, 'mkt_ret_5d': 6.92}
+   {'date': '2024-09-26', 'hit10': 0.958, 'hit5': 0.955, 'mkt_amount': 1166365204520.0, 'mkt_amt_ratio': 1.786, 'mkt_lu': 164, 'mkt_ret_5d': 8.14}
+   {'date': '2024-09-27', 'hit10': 0.726, 'hit5': 0.712, 'mkt_amount': 1455641296672.0, 'mkt_amt_ratio': 2.077, 'mkt_lu': 165, 'mkt_ret_5d': 13.79}
+
+=== stock_scan keys === ['close', 'pct_change', 'turnover_rate', 'tor_ratio', 'amt_ratio', 'amt_ma20', 'main_net_norm', 'huge_norm', 'small_norm', 'scrplus_90', 'scrplus_70', 'bias5', 'bias20', 'close_hh20_ratio', 'vol20', 'ret_5d', 'ret_10d', 'ret_20d', 'lu_cnt_10d', 'lu_cnt_20d', 'n_concepts', 'n_hot_concepts', 'n_leader_concepts', 'in_strong_concept', 'lu_gap', 'is_limit_up', 'ma5_gt_ma20', 'ma20_gt_ma60']
+top by lift:
+   ('scrplus_90', 2.457, None, None)
+   ('scrplus_70', 2.391, None, None)
+   ('lu_cnt_20d', 2.387, None, None)
+   ('vol20', 2.223, None, None)
+   ('n_leader_concepts', 2.218, None, None)
+   ('lu_cnt_10d', 2.165, None, None)
+   ('bias5', 1.951, None, None)
+   ('pct_change', 1.947, None, None)
+   ('n_hot_concepts', 1.91, None, None)
+   ('bias20', 1.905, None, None)
+   ('ret_20d', 1.879, None, None)
+   ('ret_5d', 1.838, None, None)
+   ('ret_10d', 1.793, None, None)
+   ('turnover_rate', 1.717, None, None)
+
+sample stock_scan scrplus_90: {"buckets": [{"b": 1, "n": 239505, "lo": 0.0, "hi": 0.0, "hit10": 0.0621, "hit5": 0.0262}, {"b": 2, "n": 239505, "lo": 0.0, "hi": 0.0, "hit10": 0.2836, "hit5": 0.1356}, {"b": 3, "n": 239504, "lo": 0.0, "hi": 0.0, "hit10": 0.0752, "hit5": 0.0316}, {"b": 4, "n": 239504, "lo": 0.0, "hi": 0.0, "hit10": 0.1035, "hit5": 0.0422}, {"b": 5, "n": 239504, "lo": 0.0, "hi": 0.0, "hit10": 0.0921, "hit5": 0.0421}, {"b": 6, "n": 239504, "lo": 0.0, "hi": 0.0, "hit10": 0.0693, "hit5": 0.0289}, {"b": 7, "n": 239504, "lo": 0.0, "hi": 0.0, "hit10": 0.0773, "hit5": 0.0316}, {"b": 8, "n": 239504, "lo": 0.0, "hi": 0.

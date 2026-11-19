@@ -1,0 +1,271 @@
+{
+  "quote_daily_pct_diff": {
+    "n": 1,
+    "cols": [
+      "n",
+      "mean_abs_diff",
+      "max_abs_diff",
+      "n_diff_gt05"
+    ],
+    "rows": [
+      {
+        "n": 3585683,
+        "mean_abs_diff": Infinity,
+        "max_abs_diff": Infinity,
+        "n_diff_gt05": 2917877
+      }
+    ]
+  },
+  "daily_pct_range": {
+    "n": 1,
+    "cols": [
+      "d0",
+      "d1",
+      "nd",
+      "n"
+    ],
+    "rows": [
+      {
+        "d0": "2024-02-02",
+        "d1": "2026-11-10",
+        "nd": 668,
+        "n": 3585683
+      }
+    ]
+  },
+  "quote_range": {
+    "n": 1,
+    "cols": [
+      "d0",
+      "d1",
+      "nd",
+      "n"
+    ],
+    "rows": [
+      {
+        "d0": "2024-02-01",
+        "d1": "2026-11-10",
+        "nd": 669,
+        "n": 3590923
+      }
+    ]
+  },
+  "tops_list_types": {
+    "n": 3,
+    "cols": [
+      "list_type",
+      "n",
+      "nd",
+      "r0",
+      "r1",
+      "n_strong"
+    ],
+    "rows": [
+      {
+        "list_type": "top_amount",
+        "n": 6680,
+        "nd": 668,
+        "r0": 1,
+        "r1": 10,
+        "n_strong": 3648.0
+      },
+      {
+        "list_type": "top_limit_up",
+        "n": 6680,
+        "nd": 668,
+        "r0": 1,
+        "r1": 10,
+        "n_strong": 6680.0
+      },
+      {
+        "list_type": "top_pct",
+        "n": 6680,
+        "nd": 668,
+        "r0": 1,
+        "r1": 10,
+        "n_strong": 6680.0
+      }
+    ]
+  },
+  "tops_meta_rowtypes": {
+    "n": 2,
+    "cols": [
+      "row_type",
+      "n",
+      "nd"
+    ],
+    "rows": [
+      {
+        "row_type": "market",
+        "n": 668,
+        "nd": 668
+      },
+      {
+        "row_type": "score",
+        "n": 17837,
+        "nd": 668
+      }
+    ]
+  },
+  "market_amount_range": {
+    "n": 1,
+    "cols": [
+      "d0",
+      "d1",
+      "n",
+      "mn",
+      "mx",
+      "av"
+    ],
+    "rows": [
+      {
+        "d0": "2024-02-02",
+        "d1": "2026-11-10",
+        "n": 667,
+        "mn": 479877058136.0,
+        "mx": 3986895414336.0,
+        "av": 1747829941299.7961
+      }
+    ]
+  },
+  "quote_nulls": {
+    "n": 1,
+    "cols": [
+      "n",
+      "null_close",
+      "null_high",
+      "null_amount",
+      "null_tor",
+      "null_pct",
+      "null_hot",
+      "null_s90",
+      "null_s70",
+      "null_huge",
+      "null_big",
+      "null_med",
+      "null_small",
+      "null_ind"
+    ],
+    "rows": [
+      {
+        "n": 3590923,
+        "null_close": 0,
+        "null_high": 0,
+        "null_amount": 0,
+        "null_tor": 56257,
+        "null_pct": 56257,
+        "null_hot": 946680,
+        "null_s90": 56257,
+        "null_s70": 56257,
+        "null_huge": 67163,
+        "null_big": 66822,
+        "null_med": 61744,
+        "null_small": 56257,
+        "null_ind": 56257
+      }
+    ]
+  },
+  "concept_date_nulls": {
+    "n": 1,
+    "cols": [
+      "n",
+      "null_or_empty",
+      "max_n_concepts",
+      "avg_n_concepts"
+    ],
+    "rows": [
+      {
+        "n": 3445022,
+        "null_or_empty": 0,
+        "max_n_concepts": 49,
+        "avg_n_concepts": 7.138630464478892
+      }
+    ]
+  },
+  "calendar_files": [
+    "data\\trading_calendar.parquet"
+  ],
+  "calendar_range": {
+    "n": 1,
+    "cols": [
+      "d0",
+      "d1",
+      "n"
+    ],
+    "rows": [
+      {
+        "d0": "1990-12-19 00:00:00",
+        "d1": "2026-12-31 00:00:00",
+        "n": 8797
+      }
+    ]
+  },
+  "picks_fwd_sample": {
+    "n": 12,
+    "cols": [
+      "trade_date",
+      "code",
+      "close",
+      "fwd_max_5d",
+      "fwd_max_10d"
+    ],
+    "rows": [
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "603068",
+        "close": 23.3,
+        "fwd_max_5d": 16.652360515021456,
+        "fwd_max_10d": 16.652360515021456
+      },
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "603501",
+        "close": 106.28,
+        "fwd_max_5d": 15.807301467820857,
+        "fwd_max_10d": 15.807301467820857
+      },
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "603005",
+        "close": 21.72,
+        "fwd_max_5d": 17.265193370165743,
+        "fwd_max_10d": 17.265193370165743
+      },
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "002180",
+        "close": 30.33,
+        "fwd_max_5d": 9.990108803165176,
+        "fwd_max_10d": 9.990108803165176
+      },
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "300353",
+        "close": 11.2,
+        "fwd_max_5d": 19.999999999999996,
+        "fwd_max_10d": 19.999999999999996
+      },
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "688508",
+        "close": 40.14,
+        "fwd_max_5d": 28.325859491778772,
+        "fwd_max_10d": 28.325859491778772
+      },
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "688385",
+        "close": 35.22,
+        "fwd_max_5d": 44.122657580919935,
+        "fwd_max_10d": 48.1260647359455
+      },
+      {
+        "trade_date": "2024-09-30 00:00:00",
+        "code": "300053",
+        "close": 12.26,
+        "fwd_max_5d": 25.040783034257743,
+        "fwd_max_10d": 32.21859706362154
+      }
+    ]
+  }
+}

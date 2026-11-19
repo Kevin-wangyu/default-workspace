@@ -1,0 +1,36 @@
+=== 概念特征分布（train+oos，非null行）===
+      n  nn_strong_today  has_strong_today  nn_hist  has_hist1  has_hist2  mn_hist  mx_hist  av_hist  nn_offlist  has_offlist  mn_off  mx_off  nn_hot20  has_hot20  mx_hot20
+3551943          3551943         1934577.0  3551943  1630853.0   816614.0        0       16 0.934849     3551943      16260.0       0       4   3551943  1648841.0        16
+
+=== n_concept_strong_hist 取值频次(top15) ===
+ v       n
+ 0 1921090
+ 1  814239
+ 2  390544
+ 3  203667
+ 4  107565
+ 5   57401
+ 6   29481
+ 7   14741
+ 8    7123
+ 9    3253
+10    1513
+11     748
+12     355
+13     150
+14      60
+
+=== 交叉：hist>=1 且 today=0 (退出榜候选) ===
+ hist1_today0  hist1_today1  hot20_today0  hot20ge2_today0
+       4783.0     1626070.0        4017.0            264.0
+
+=== 强榜面板：每日强概念数分布 ===
+Traceback (most recent call last):
+  File "D:\Users\KFish\Documents\deepseek-harness\default-workspace\diag_concept_features.py", line 45, in <module>
+    print(con.execute(f"""
+          ^^^^^^^^^^^^^^^^
+_duckdb.BinderException: Binder Error: Referenced column "concept_name" not found in FROM clause!
+Candidate bindings: "top_stock_name", "code", "pct_change", "turnover_rate", "amount_pct"
+
+LINE 3: FROM (SELECT trade_date AS d, count(DISTINCT concept_name) AS n_strong
+                                                     ^

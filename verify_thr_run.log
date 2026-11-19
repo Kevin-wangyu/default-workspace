@@ -1,0 +1,3 @@
+ eq20_10  eq20_5  y10_eq20  y5_eq20  n_y10   n_y5  min_y10  min_y5  lab10_n  lab5_n
+       0       0         0        0 376732 171718     20.0    20.0  3522506 3556526
+WROTE threshold_check.json

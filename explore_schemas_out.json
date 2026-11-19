@@ -1,0 +1,671 @@
+{
+  "quote": {
+    "files": 669,
+    "last_file": "data\\quote\\trade_date=2026-11-10\\part.parquet",
+    "n_rows": 5571,
+    "cols": [
+      "code",
+      "name",
+      "pct_change",
+      "industry",
+      "turnover_rate",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "amount",
+      "scrplus_90",
+      "scrplus_70",
+      "hot_rank",
+      "huge_order_net",
+      "big_order_net",
+      "medium_order_net",
+      "small_order_net"
+    ],
+    "dtypes": {
+      "code": "str",
+      "name": "str",
+      "pct_change": "float64",
+      "industry": "str",
+      "turnover_rate": "float64",
+      "open": "float64",
+      "high": "float64",
+      "low": "float64",
+      "close": "float64",
+      "volume": "int64",
+      "amount": "float64",
+      "scrplus_90": "float64",
+      "scrplus_70": "float64",
+      "hot_rank": "int64",
+      "huge_order_net": "float64",
+      "big_order_net": "float64",
+      "medium_order_net": "float64",
+      "small_order_net": "float64"
+    },
+    "sample": [
+      {
+        "code": "600519",
+        "name": "贵州茅台",
+        "pct_change": -0.41,
+        "industry": "酿酒",
+        "turnover_rate": 0.43,
+        "open": 1438.23,
+        "high": 1444.5,
+        "low": 1431.26,
+        "close": 1439.0,
+        "volume": 23037,
+        "amount": 3316078848.0,
+        "scrplus_90": 17.51,
+        "scrplus_70": 11.13,
+        "hot_rank": 1603030,
+        "huge_order_net": -164742784.0,
+        "big_order_net": 175884832.0,
+        "medium_order_net": -11009408.0,
+        "small_order_net": -66321.56
+      },
+      {
+        "code": "688256",
+        "name": "寒武纪",
+        "pct_change": -1.55,
+        "industry": "半导体",
+        "turnover_rate": 2.99,
+        "open": 872.0,
+        "high": 885.0,
+        "low": 834.11,
+        "close": 838.0,
+        "volume": 91746,
+        "amount": 7817771520.0,
+        "scrplus_90": 38.95,
+        "scrplus_70": 25.69,
+        "hot_rank": 1378881,
+        "huge_order_net": -246572800.0,
+        "big_order_net": -23297024.0,
+        "medium_order_net": 277531136.0,
+        "small_order_net": -7817772.0
+      }
+    ]
+  },
+  "quote_compact": {
+    "files": 34,
+    "last_file": "data_compact\\quote\\2026-11.parquet",
+    "n_rows": 38980,
+    "cols": [
+      "code",
+      "name",
+      "pct_change",
+      "industry",
+      "turnover_rate",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "amount",
+      "scrplus_90",
+      "scrplus_70",
+      "hot_rank",
+      "huge_order_net",
+      "big_order_net",
+      "medium_order_net",
+      "small_order_net",
+      "trade_date"
+    ],
+    "dtypes": {
+      "code": "str",
+      "name": "str",
+      "pct_change": "float64",
+      "industry": "str",
+      "turnover_rate": "float64",
+      "open": "float64",
+      "high": "float64",
+      "low": "float64",
+      "close": "float64",
+      "volume": "float64",
+      "amount": "float64",
+      "scrplus_90": "float64",
+      "scrplus_70": "float64",
+      "hot_rank": "float64",
+      "huge_order_net": "float64",
+      "big_order_net": "float64",
+      "medium_order_net": "float64",
+      "small_order_net": "float64",
+      "trade_date": "str"
+    },
+    "sample": [
+      {
+        "code": "000001",
+        "name": "平安银行",
+        "pct_change": -1.2,
+        "industry": "全国性银行",
+        "turnover_rate": 1.95,
+        "open": 11.6,
+        "high": 11.74,
+        "low": 11.47,
+        "close": 11.54,
+        "volume": 1594361.0,
+        "amount": 1850311296.0,
+        "scrplus_90": 12.69,
+        "scrplus_70": 9.72,
+        "hot_rank": 877402.0,
+        "huge_order_net": -37006240.0,
+        "big_order_net": 69978768.0,
+        "medium_order_net": -29752992.0,
+        "small_order_net": -3256512.0,
+        "trade_date": "2026-11-02"
+      },
+      {
+        "code": "000002",
+        "name": "万 科Ａ",
+        "pct_change": 0.0,
+        "industry": "房地产开发",
+        "turnover_rate": 2.94,
+        "open": 3.17,
+        "high": 3.21,
+        "low": 3.12,
+        "close": 3.2,
+        "volume": 1903534.0,
+        "amount": 602294912.0,
+        "scrplus_90": 15.43,
+        "scrplus_70": 11.02,
+        "hot_rank": 1095564.0,
+        "huge_order_net": -82622824.0,
+        "big_order_net": 24176120.0,
+        "medium_order_net": 13587776.0,
+        "small_order_net": 44858944.0,
+        "trade_date": "2026-11-02"
+      }
+    ]
+  },
+  "concept_date": {
+    "files": 668,
+    "last_file": "data\\concept_date\\trade_date=2026-11-10\\part.parquet",
+    "n_rows": 5572,
+    "cols": [
+      "code",
+      "concepts"
+    ],
+    "dtypes": {
+      "code": "str",
+      "concepts": "str"
+    },
+    "sample": [
+      {
+        "code": "600519",
+        "concepts": "通达信88;白酒概念;乡村振兴"
+      },
+      {
+        "code": "688256",
+        "concepts": "通达信88;人脑工程;先进封装;阿里概念;芯片;数据中心;东数西算;操作系统;边缘计算;汽车芯片;算力租赁;人工智能"
+      }
+    ]
+  },
+  "concept_date_compact": {
+    "files": 34,
+    "last_file": "data_compact\\concept_date\\2026-11.parquet",
+    "n_rows": 38754,
+    "cols": [
+      "code",
+      "concepts",
+      "trade_date"
+    ],
+    "dtypes": {
+      "code": "str",
+      "concepts": "str",
+      "trade_date": "str"
+    },
+    "sample": [
+      {
+        "code": "000001",
+        "concepts": "跨境支付CIPS",
+        "trade_date": "2026-11-02"
+      },
+      {
+        "code": "000002",
+        "concepts": "含H股;装配式建筑;物业管理概念;体育概念;养老概念;粤港澳;机器人概念",
+        "trade_date": "2026-11-02"
+      }
+    ]
+  },
+  "market_amount": {
+    "files": 1,
+    "last_file": "data\\market_amount.parquet",
+    "n_rows": 667,
+    "cols": [
+      "trade_date",
+      "total_amount"
+    ],
+    "dtypes": {
+      "trade_date": "str",
+      "total_amount": "float64"
+    },
+    "sample": [
+      {
+        "trade_date": "2024-02-02",
+        "total_amount": 814111720064.0
+      },
+      {
+        "trade_date": "2024-02-05",
+        "total_amount": 884967402656.0
+      }
+    ]
+  },
+  "concept_meta": {
+    "files": 1,
+    "last_file": "data\\concept_meta.parquet",
+    "n_rows": 47043,
+    "cols": [
+      "code",
+      "topic_name",
+      "selected_date",
+      "gld",
+      "ztnr"
+    ],
+    "dtypes": {
+      "code": "str",
+      "topic_name": "str",
+      "selected_date": "str",
+      "gld": "float64",
+      "ztnr": "str"
+    },
+    "sample": [
+      {
+        "code": "000001",
+        "topic_name": "跨境支付CIPS",
+        "selected_date": "20220228",
+        "gld": 3.0,
+        "ztnr": "公司是首批CIPS金融市场基础设施建设参与者"
+      },
+      {
+        "code": "000002",
+        "topic_name": "体育概念",
+        "selected_date": "20220420",
+        "gld": 3.0,
+        "ztnr": "公司运营管理吉林万科松花湖、桥山北大壶以及北京石京龙三个滑雪项目"
+      }
+    ]
+  },
+  "tops_bars": {
+    "files": 1,
+    "last_file": "data\\_tops_cache\\v1\\bars.parquet",
+    "n_rows": 20040,
+    "cols": [
+      "trade_date",
+      "list_type",
+      "rank",
+      "code",
+      "name",
+      "amount",
+      "turnover_rate",
+      "total_market_cap",
+      "pct_change",
+      "amount_pct",
+      "cap_pct",
+      "norm_amount_ratio",
+      "limit_up_count",
+      "top_stock_code",
+      "top_stock_name",
+      "top_stock_pct",
+      "is_strong"
+    ],
+    "dtypes": {
+      "trade_date": "str",
+      "list_type": "str",
+      "rank": "int64",
+      "code": "str",
+      "name": "str",
+      "amount": "float64",
+      "turnover_rate": "float64",
+      "total_market_cap": "float64",
+      "pct_change": "float64",
+      "amount_pct": "float64",
+      "cap_pct": "float64",
+      "norm_amount_ratio": "float64",
+      "limit_up_count": "int64",
+      "top_stock_code": "str",
+      "top_stock_name": "str",
+      "top_stock_pct": "float64",
+      "is_strong": "bool"
+    },
+    "sample": [
+      {
+        "trade_date": "2024-02-01",
+        "list_type": "top_amount",
+        "rank": 1,
+        "code": "880948",
+        "name": "人工智能",
+        "amount": 87682695168.0,
+        "turnover_rate": 0.01,
+        "total_market_cap": 636267125538816.0,
+        "pct_change": -0.9,
+        "amount_pct": null,
+        "cap_pct": null,
+        "norm_amount_ratio": null,
+        "limit_up_count": 0,
+        "top_stock_code": null,
+        "top_stock_name": null,
+        "top_stock_pct": null,
+        "is_strong": true
+      },
+      {
+        "trade_date": "2024-02-01",
+        "list_type": "top_amount",
+        "rank": 2,
+        "code": "880952",
+        "name": "芯片",
+        "amount": 81933434880.0,
+        "turnover_rate": 0.01,
+        "total_market_cap": 545537988231168.0,
+        "pct_change": -0.3,
+        "amount_pct": null,
+        "cap_pct": null,
+        "norm_amount_ratio": null,
+        "limit_up_count": 0,
+        "top_stock_code": null,
+        "top_stock_name": null,
+        "top_stock_pct": null,
+        "is_strong": true
+      }
+    ]
+  },
+  "tops_meta": {
+    "files": 1,
+    "last_file": "data\\_tops_cache\\v1\\meta.parquet",
+    "n_rows": 18505,
+    "cols": [
+      "trade_date",
+      "row_type",
+      "concept_name",
+      "score",
+      "ratio_part",
+      "limitup_part",
+      "pct_part",
+      "market_total"
+    ],
+    "dtypes": {
+      "trade_date": "str",
+      "row_type": "str",
+      "concept_name": "str",
+      "score": "float64",
+      "ratio_part": "float64",
+      "limitup_part": "float64",
+      "pct_part": "float64",
+      "market_total": "float64"
+    },
+    "sample": [
+      {
+        "trade_date": "2024-02-01",
+        "row_type": "market",
+        "concept_name": null,
+        "score": null,
+        "ratio_part": null,
+        "limitup_part": null,
+        "pct_part": null,
+        "market_total": 0.0
+      },
+      {
+        "trade_date": "2024-02-01",
+        "row_type": "score",
+        "concept_name": "机器人概念",
+        "score": 0.2153,
+        "ratio_part": 0.05,
+        "limitup_part": 0.1,
+        "pct_part": 0.0,
+        "market_total": null
+      }
+    ]
+  },
+  "concept_picks": {
+    "files": 668,
+    "last_file": "data\\concept_picks\\trade_date=2026-11-10\\part.parquet",
+    "n_rows": 40,
+    "cols": [
+      "code",
+      "name",
+      "match_count",
+      "matched_concepts",
+      "matched_concepts_detail",
+      "importance_index",
+      "close",
+      "pct_change",
+      "turnover_rate",
+      "hot_rank",
+      "amount",
+      "huge_order_net",
+      "big_order_net",
+      "medium_order_net",
+      "small_order_net",
+      "huge_order_net_norm",
+      "big_order_net_norm",
+      "medium_order_net_norm",
+      "small_order_net_norm",
+      "fwd_5d",
+      "fwd_10d",
+      "fwd_20d",
+      "fwd_30d",
+      "fwd_max_5d",
+      "fwd_max_10d",
+      "fwd_max_20d",
+      "fwd_max_30d",
+      "importance_pct",
+      "rank_in_picks",
+      "total_in_picks"
+    ],
+    "dtypes": {
+      "code": "str",
+      "name": "str",
+      "match_count": "int64",
+      "matched_concepts": "str",
+      "matched_concepts_detail": "str",
+      "importance_index": "float64",
+      "close": "float64",
+      "pct_change": "float64",
+      "turnover_rate": "float64",
+      "hot_rank": "float64",
+      "amount": "float64",
+      "huge_order_net": "float64",
+      "big_order_net": "float64",
+      "medium_order_net": "float64",
+      "small_order_net": "float64",
+      "huge_order_net_norm": "float64",
+      "big_order_net_norm": "float64",
+      "medium_order_net_norm": "float64",
+      "small_order_net_norm": "float64",
+      "fwd_5d": "object",
+      "fwd_10d": "object",
+      "fwd_20d": "object",
+      "fwd_30d": "object",
+      "fwd_max_5d": "object",
+      "fwd_max_10d": "object",
+      "fwd_max_20d": "object",
+      "fwd_max_30d": "object",
+      "importance_pct": "float64",
+      "rank_in_picks": "int64",
+      "total_in_picks": "int64"
+    },
+    "sample": [
+      {
+        "code": "002431",
+        "name": "ST棕榈",
+        "match_count": 1,
+        "matched_concepts": "虚拟现实",
+        "matched_concepts_detail": "[{\"name\": \"虚拟现实\", \"gld\": 4.0}]",
+        "importance_index": 0.84,
+        "close": 1.22,
+        "pct_change": 4.273504273504278,
+        "turnover_rate": 2.89,
+        "hot_rank": 189750.0,
+        "amount": 37717280.0,
+        "huge_order_net": -2327156.5,
+        "big_order_net": 1882092.5,
+        "medium_order_net": 1750836.0,
+        "small_order_net": -1306526.5,
+        "huge_order_net_norm": -0.17831302482575626,
+        "big_order_net_norm": 0.14421101746997664,
+        "medium_order_net_norm": 0.13415378945671586,
+        "small_order_net_norm": -0.1001095939314818,
+        "fwd_5d": null,
+        "fwd_10d": null,
+        "fwd_20d": null,
+        "fwd_30d": null,
+        "fwd_max_5d": null,
+        "fwd_max_10d": null,
+        "fwd_max_20d": null,
+        "fwd_max_30d": null,
+        "importance_pct": 1.0,
+        "rank_in_picks": 1,
+        "total_in_picks": 40
+      },
+      {
+        "code": "002036",
+        "name": "联创电子",
+        "match_count": 11,
+        "matched_concepts": "无人机;虚拟现实;汽车电子;混合现实;AI眼镜;智能穿戴;超清视频;新能源车;一带一路;智能家居;芯片",
+        "matched_concepts_detail": "[{\"name\": \"无人机\", \"gld\": 3.0}, {\"name\": \"虚拟现实\", \"gld\": 4.0}, {\"name\": \"汽车电子\", \"gld\": 3.0}, {\"name\": \"混合现实\", \"gld\": 3.0}, {\"name\": \"AI眼镜\", \"gld\": 3.0}, {\"name\": \"智能穿戴\", \"gld\": 3.0}, {\"name\": \"超清视频\", \"gld\": 3.0}, {\"name\": \"新能源车\", \"gld\": 3.0}, {\"name\": \"一带一路\", \"gld\": 3.0}, {\"name\": \"智能家居\", \"gld\": 3.0}, {\"name\": \"芯片\", \"gld\": 3.0}]",
+        "importance_index": 0.68,
+        "close": 5.68,
+        "pct_change": 10.077519379844952,
+        "turnover_rate": 5.49,
+        "hot_rank": 872821.0,
+        "amount": 291560448.0,
+        "huge_order_net": 88628544.0,
+        "big_order_net": 19522886.0,
+        "medium_order_net": -10006352.0,
+        "small_order_net": -98145072.0,
+        "huge_order_net_norm": 1.6688501814896375,
+        "big_order_net_norm": 0.36761036990860985,
+        "medium_order_net_norm": -0.18841675150670645,
+        "small_order_net_norm": -1.8480436869132537,
+        "fwd_5d": null,
+        "fwd_10d": null,
+        "fwd_20d": null,
+        "fwd_30d": null,
+        "fwd_max_5d": null,
+        "fwd_max_10d": null,
+        "fwd_max_20d": null,
+        "fwd_max_30d": null,
+        "importance_pct": 0.81,
+        "rank_in_picks": 2,
+        "total_in_picks": 40
+      }
+    ]
+  },
+  "daily_pct": {
+    "files": 34,
+    "last_file": "data_compact\\daily_pct\\2026-11.parquet",
+    "n_rows": 38980,
+    "cols": [
+      "code",
+      "pct_change",
+      "trade_date"
+    ],
+    "dtypes": {
+      "code": "str",
+      "pct_change": "float64",
+      "trade_date": "str"
+    },
+    "sample": [
+      {
+        "code": "000001",
+        "pct_change": -0.8591065292096343,
+        "trade_date": "2026-11-02"
+      },
+      {
+        "code": "000002",
+        "pct_change": 0.31347962382445865,
+        "trade_date": "2026-11-02"
+      }
+    ]
+  },
+  "industry_flow": {
+    "files": 34,
+    "last_file": "data_compact\\industry_flow\\2026-11.parquet",
+    "n_rows": 896,
+    "cols": [
+      "code",
+      "name",
+      "open",
+      "high",
+      "low",
+      "close",
+      "pct_change",
+      "volume",
+      "amount",
+      "huge_order_net",
+      "big_order_net",
+      "medium_order_net",
+      "small_order_net",
+      "total_market_cap",
+      "turnover_rate",
+      "max_up_count",
+      "up_count",
+      "down_count",
+      "trade_date"
+    ],
+    "dtypes": {
+      "code": "str",
+      "name": "str",
+      "open": "float64",
+      "high": "float64",
+      "low": "float64",
+      "close": "float64",
+      "pct_change": "float64",
+      "volume": "int64",
+      "amount": "int64",
+      "huge_order_net": "float64",
+      "big_order_net": "float64",
+      "medium_order_net": "int64",
+      "small_order_net": "int64",
+      "total_market_cap": "int64",
+      "turnover_rate": "float64",
+      "max_up_count": "float64",
+      "up_count": "float64",
+      "down_count": "float64",
+      "trade_date": "str"
+    },
+    "sample": [
+      {
+        "code": "881002",
+        "name": "煤炭开采",
+        "open": 2649.66,
+        "high": 2676.62,
+        "low": 2609.85,
+        "close": 2639.73,
+        "pct_change": -1.14,
+        "volume": 9462699,
+        "amount": 10762390528,
+        "huge_order_net": -284127104.0,
+        "big_order_net": -224933888.0,
+        "medium_order_net": -32933120,
+        "small_order_net": 542209024,
+        "total_market_cap": 81529652903936,
+        "turnover_rate": 3.06,
+        "max_up_count": 0.0,
+        "up_count": 10.0,
+        "down_count": 14.0,
+        "trade_date": "2026-11-02"
+      },
+      {
+        "code": "881005",
+        "name": "焦炭加工",
+        "open": 409.43,
+        "high": 414.91,
+        "low": 406.23,
+        "close": 412.54,
+        "pct_change": 1.11,
+        "volume": 2913737,
+        "amount": 1047560512,
+        "huge_order_net": 9721364.0,
+        "big_order_net": -15901976.0,
+        "medium_order_net": -32704816,
+        "small_order_net": 38885440,
+        "total_market_cap": 3096029429760,
+        "turnover_rate": 3.88,
+        "max_up_count": 0.0,
+        "up_count": 6.0,
+        "down_count": 1.0,
+        "trade_date": "2026-11-02"
+      }
+    ]
+  }
+}

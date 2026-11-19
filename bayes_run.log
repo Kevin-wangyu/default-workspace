@@ -1,0 +1,21 @@
+loaded tr: 1,779,357 rows
+loaded iv: 678,647 rows
+loaded train: 2,458,004 rows
+loaded oos: 1,093,939 rows
+T1_资金聚集_量价趋势: best=0.281 train10=0.3723 oos10=0.298 daily75=0.0278 pool=3801 (22.8s)
+T2_情绪涨停_波动筹码: best=0.292 train10=0.3439 oos10=0.2634 daily75=0.0259 pool=13014 (29.4s)
+T3_涨跌平衡_超跌反转: best=0.2378 train10=0.3995 oos10=0.1547 daily75=0.1724 pool=5684 (24.1s)
+T4_探索A: best=0.2992 train10=0.3657 oos10=0.3073 daily75=0.019 pool=10522 (21.5s)
+T5_探索B: best=0.2426 train10=0.2658 oos10=0.2781 daily75=0.0159 pool=29863 (18.9s)
+T6_自由组合: best=0.279 train10=0.3414 oos10=0.2837 daily75=0.0153 pool=36480 (20.3s)
+T7_自由组合: best=0.2514 train10=0.329 oos10=0.2708 daily75=0.0156 pool=13222 (16.6s)
+refine: 0.4027 oos=0.1552 daily75=0.2609 pool=5197
+refine: 0.3846 oos=0.3014 daily75=0.0333 pool=12370
+refine: 0.4183 oos=0.3522 daily75=0.0339 pool=4851
+baseline tr: hit10=0.1254 hit5=0.0589 days>=75%=10/337
+baseline iv: hit10=0.0879 hit5=0.0352 days>=75%=0/126
+baseline train: hit10=0.115 hit5=0.0524 days>=75%=10/463
+baseline oos: hit10=0.086 hit5=0.0387 days>=75%=0/199
+grades {'C_25-50%': 6}
+TOTAL 362.6s -> D:\Users\KFish\Documents\deepseek-harness\default-workspace\search_results.json
+DONE

@@ -1,0 +1,876 @@
+{
+  "A_day_n": 659,
+  "A_day_range": [
+    "2024-02-01",
+    "2026-10-27"
+  ],
+  "A_day_scan": {
+    "mkt_amount": {
+      "n": 657,
+      "pearson": -0.0966,
+      "spearman": 0.2143,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 479877058136.0,
+          "hi": 997411796376.0,
+          "n": 132,
+          "hit10": 0.1313
+        },
+        {
+          "q": "q2",
+          "lo": 997411796376.0,
+          "hi": 1515990096294.4001,
+          "n": 131,
+          "hit10": 0.1087
+        },
+        {
+          "q": "q3",
+          "lo": 1515990096294.4001,
+          "hi": 1905386024220.8,
+          "n": 131,
+          "hit10": 0.1043
+        },
+        {
+          "q": "q4",
+          "lo": 1905386024220.8,
+          "hi": 2448356700480.0,
+          "n": 131,
+          "hit10": 0.0972
+        },
+        {
+          "q": "q5",
+          "lo": 2448356700480.0,
+          "hi": 3986895414336.0,
+          "n": 132,
+          "hit10": 0.096
+        }
+      ]
+    },
+    "mkt_amt_ratio": {
+      "n": 657,
+      "pearson": 0.2099,
+      "spearman": 0.2523,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.6556,
+          "hi": 0.8634,
+          "n": 132,
+          "hit10": 0.0885
+        },
+        {
+          "q": "q2",
+          "lo": 0.8634,
+          "hi": 0.9386,
+          "n": 131,
+          "hit10": 0.0984
+        },
+        {
+          "q": "q3",
+          "lo": 0.9386,
+          "hi": 1.0145,
+          "n": 131,
+          "hit10": 0.0844
+        },
+        {
+          "q": "q4",
+          "lo": 1.0145,
+          "hi": 1.1297,
+          "n": 131,
+          "hit10": 0.1289
+        },
+        {
+          "q": "q5",
+          "lo": 1.1297,
+          "hi": 3.7408,
+          "n": 132,
+          "hit10": 0.1373
+        }
+      ]
+    },
+    "mkt_amt_ma20": {
+      "n": 658,
+      "pearson": -0.1642,
+      "spearman": 0.1276,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 559169583591.2,
+          "hi": 976823113730.7582,
+          "n": 132,
+          "hit10": 0.158
+        },
+        {
+          "q": "q2",
+          "lo": 976823113730.7582,
+          "hi": 1491256020187.2002,
+          "n": 131,
+          "hit10": 0.102
+        },
+        {
+          "q": "q3",
+          "lo": 1491256020187.2002,
+          "hi": 1933635134559.8398,
+          "n": 132,
+          "hit10": 0.0877
+        },
+        {
+          "q": "q4",
+          "lo": 1933635134559.8398,
+          "hi": 2408784388062.518,
+          "n": 131,
+          "hit10": 0.0986
+        },
+        {
+          "q": "q5",
+          "lo": 2408784388062.518,
+          "hi": 3263286522448.8,
+          "n": 132,
+          "hit10": 0.0908
+        }
+      ]
+    },
+    "mkt_lu": {
+      "n": 659,
+      "pearson": 0.1513,
+      "spearman": 0.2915,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.0,
+          "hi": 43.0,
+          "n": 129,
+          "hit10": 0.1019
+        },
+        {
+          "q": "q2",
+          "lo": 43.0,
+          "hi": 56.0,
+          "n": 132,
+          "hit10": 0.1022
+        },
+        {
+          "q": "q3",
+          "lo": 56.0,
+          "hi": 68.0,
+          "n": 130,
+          "hit10": 0.0947
+        },
+        {
+          "q": "q4",
+          "lo": 68.0,
+          "hi": 89.0,
+          "n": 133,
+          "hit10": 0.0876
+        },
+        {
+          "q": "q5",
+          "lo": 89.0,
+          "hi": 1246.0,
+          "n": 135,
+          "hit10": 0.1497
+        }
+      ]
+    },
+    "mkt_lu_ma5": {
+      "n": 659,
+      "pearson": 0.1306,
+      "spearman": 0.3888,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.0,
+          "hi": 50.92,
+          "n": 132,
+          "hit10": 0.112
+        },
+        {
+          "q": "q2",
+          "lo": 50.92,
+          "hi": 60.6,
+          "n": 131,
+          "hit10": 0.0899
+        },
+        {
+          "q": "q3",
+          "lo": 60.6,
+          "hi": 68.36,
+          "n": 132,
+          "hit10": 0.0873
+        },
+        {
+          "q": "q4",
+          "lo": 68.36,
+          "hi": 83.0,
+          "n": 131,
+          "hit10": 0.105
+        },
+        {
+          "q": "q5",
+          "lo": 83.0,
+          "hi": 517.8,
+          "n": 133,
+          "hit10": 0.1425
+        }
+      ]
+    },
+    "mkt_up_ratio": {
+      "n": 659,
+      "pearson": 0.0672,
+      "spearman": 0.061,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.0,
+          "hi": 0.2455,
+          "n": 132,
+          "hit10": 0.1048
+        },
+        {
+          "q": "q2",
+          "lo": 0.2455,
+          "hi": 0.3988,
+          "n": 132,
+          "hit10": 0.1095
+        },
+        {
+          "q": "q3",
+          "lo": 0.3988,
+          "hi": 0.5576,
+          "n": 131,
+          "hit10": 0.0968
+        },
+        {
+          "q": "q4",
+          "lo": 0.5576,
+          "hi": 0.7257,
+          "n": 132,
+          "hit10": 0.0947
+        },
+        {
+          "q": "q5",
+          "lo": 0.7257,
+          "hi": 0.9983,
+          "n": 132,
+          "hit10": 0.1314
+        }
+      ]
+    },
+    "mkt_pct_mean": {
+      "n": 658,
+      "pearson": 0.0485,
+      "spearman": 0.0802,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": -12.3573,
+          "hi": -1.0693,
+          "n": 132,
+          "hit10": 0.1139
+        },
+        {
+          "q": "q2",
+          "lo": -1.0693,
+          "hi": -0.1624,
+          "n": 131,
+          "hit10": 0.1008
+        },
+        {
+          "q": "q3",
+          "lo": -0.1624,
+          "hi": 0.5676,
+          "n": 132,
+          "hit10": 0.0947
+        },
+        {
+          "q": "q4",
+          "lo": 0.5676,
+          "hi": 1.2746,
+          "n": 131,
+          "hit10": 0.0905
+        },
+        {
+          "q": "q5",
+          "lo": 1.2746,
+          "hi": 11.8399,
+          "n": 132,
+          "hit10": 0.1371
+        }
+      ]
+    },
+    "mkt_pct_ma5": {
+      "n": 658,
+      "pearson": -0.0415,
+      "spearman": 0.1308,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": -6.3986,
+          "hi": -0.4808,
+          "n": 132,
+          "hit10": 0.1037
+        },
+        {
+          "q": "q2",
+          "lo": -0.4808,
+          "hi": -0.0774,
+          "n": 131,
+          "hit10": 0.1116
+        },
+        {
+          "q": "q3",
+          "lo": -0.0774,
+          "hi": 0.264,
+          "n": 132,
+          "hit10": 0.1025
+        },
+        {
+          "q": "q4",
+          "lo": 0.264,
+          "hi": 0.6273,
+          "n": 131,
+          "hit10": 0.0849
+        },
+        {
+          "q": "q5",
+          "lo": 0.6273,
+          "hi": 6.1973,
+          "n": 132,
+          "hit10": 0.1344
+        }
+      ]
+    },
+    "mkt_ret_5d": {
+      "n": 658,
+      "pearson": 0.0198,
+      "spearman": 0.1313,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": -12.7972,
+          "hi": -2.4039,
+          "n": 132,
+          "hit10": 0.1037
+        },
+        {
+          "q": "q2",
+          "lo": -2.4039,
+          "hi": -0.3872,
+          "n": 131,
+          "hit10": 0.1116
+        },
+        {
+          "q": "q3",
+          "lo": -0.3872,
+          "hi": 1.32,
+          "n": 132,
+          "hit10": 0.1025
+        },
+        {
+          "q": "q4",
+          "lo": 1.32,
+          "hi": 3.1363,
+          "n": 131,
+          "hit10": 0.0849
+        },
+        {
+          "q": "q5",
+          "lo": 3.1363,
+          "hi": 30.9867,
+          "n": 132,
+          "hit10": 0.1344
+        }
+      ]
+    },
+    "mkt_ret_10d": {
+      "n": 658,
+      "pearson": 0.0276,
+      "spearman": 0.1945,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": -15.3277,
+          "hi": -3.3697,
+          "n": 132,
+          "hit10": 0.1149
+        },
+        {
+          "q": "q2",
+          "lo": -3.3697,
+          "hi": -0.2332,
+          "n": 131,
+          "hit10": 0.1075
+        },
+        {
+          "q": "q3",
+          "lo": -0.2332,
+          "hi": 2.1276,
+          "n": 132,
+          "hit10": 0.0804
+        },
+        {
+          "q": "q4",
+          "lo": 2.1276,
+          "hi": 4.7944,
+          "n": 131,
+          "hit10": 0.1029
+        },
+        {
+          "q": "q5",
+          "lo": 4.7944,
+          "hi": 35.9783,
+          "n": 132,
+          "hit10": 0.1316
+        }
+      ]
+    },
+    "mkt_ret_20d": {
+      "n": 658,
+      "pearson": 0.0343,
+      "spearman": 0.1314,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": -16.9003,
+          "hi": -4.39,
+          "n": 132,
+          "hit10": 0.1263
+        },
+        {
+          "q": "q2",
+          "lo": -4.39,
+          "hi": 0.0363,
+          "n": 131,
+          "hit10": 0.0963
+        },
+        {
+          "q": "q3",
+          "lo": 0.0363,
+          "hi": 3.6519,
+          "n": 132,
+          "hit10": 0.0871
+        },
+        {
+          "q": "q4",
+          "lo": 3.6519,
+          "hi": 7.7169,
+          "n": 131,
+          "hit10": 0.1032
+        },
+        {
+          "q": "q5",
+          "lo": 7.7169,
+          "hi": 35.1912,
+          "n": 132,
+          "hit10": 0.1242
+        }
+      ]
+    },
+    "eff_hit10_lag": {
+      "n": 648,
+      "pearson": 0.087,
+      "spearman": 0.1063,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.0397,
+          "hi": 0.0643,
+          "n": 130,
+          "hit10": 0.145
+        },
+        {
+          "q": "q2",
+          "lo": 0.0643,
+          "hi": 0.0786,
+          "n": 129,
+          "hit10": 0.0862
+        },
+        {
+          "q": "q3",
+          "lo": 0.0786,
+          "hi": 0.0977,
+          "n": 130,
+          "hit10": 0.0977
+        },
+        {
+          "q": "q4",
+          "lo": 0.0977,
+          "hi": 0.1231,
+          "n": 129,
+          "hit10": 0.0752
+        },
+        {
+          "q": "q5",
+          "lo": 0.1231,
+          "hi": 0.5783,
+          "n": 130,
+          "hit10": 0.1094
+        }
+      ]
+    },
+    "eff_hit10_lag_s": {
+      "n": 648,
+      "pearson": 0.115,
+      "spearman": 0.1548,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.0316,
+          "hi": 0.0588,
+          "n": 130,
+          "hit10": 0.1476
+        },
+        {
+          "q": "q2",
+          "lo": 0.0588,
+          "hi": 0.0752,
+          "n": 129,
+          "hit10": 0.0853
+        },
+        {
+          "q": "q3",
+          "lo": 0.0752,
+          "hi": 0.0937,
+          "n": 130,
+          "hit10": 0.0869
+        },
+        {
+          "q": "q4",
+          "lo": 0.0937,
+          "hi": 0.1272,
+          "n": 129,
+          "hit10": 0.0854
+        },
+        {
+          "q": "q5",
+          "lo": 0.1272,
+          "hi": 0.9406,
+          "n": 130,
+          "hit10": 0.1083
+        }
+      ]
+    },
+    "eff_hit5_lag": {
+      "n": 648,
+      "pearson": 0.0784,
+      "spearman": 0.1036,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.017,
+          "hi": 0.0283,
+          "n": 130,
+          "hit10": 0.1503
+        },
+        {
+          "q": "q2",
+          "lo": 0.0283,
+          "hi": 0.0335,
+          "n": 129,
+          "hit10": 0.0807
+        },
+        {
+          "q": "q3",
+          "lo": 0.0335,
+          "hi": 0.0405,
+          "n": 130,
+          "hit10": 0.0914
+        },
+        {
+          "q": "q4",
+          "lo": 0.0405,
+          "hi": 0.0523,
+          "n": 129,
+          "hit10": 0.087
+        },
+        {
+          "q": "q5",
+          "lo": 0.0523,
+          "hi": 0.3065,
+          "n": 130,
+          "hit10": 0.1041
+        }
+      ]
+    },
+    "mkt_hit5": {
+      "n": 659,
+      "pearson": 0.7545,
+      "spearman": 0.8518,
+      "buckets": [
+        {
+          "q": "q1",
+          "lo": 0.0088,
+          "hi": 0.0224,
+          "n": 132,
+          "hit10": 0.0523
+        },
+        {
+          "q": "q2",
+          "lo": 0.0224,
+          "hi": 0.0294,
+          "n": 132,
+          "hit10": 0.0719
+        },
+        {
+          "q": "q3",
+          "lo": 0.0294,
+          "hi": 0.0372,
+          "n": 131,
+          "hit10": 0.0821
+        },
+        {
+          "q": "q4",
+          "lo": 0.0372,
+          "hi": 0.0512,
+          "n": 132,
+          "hit10": 0.1139
+        },
+        {
+          "q": "q5",
+          "lo": 0.0512,
+          "hi": 0.9733,
+          "n": 132,
+          "hit10": 0.2169
+        }
+      ]
+    }
+  },
+  "A_high_days": {
+    "n": 13,
+    "dates": [
+      "2024-02-05",
+      "2024-02-06",
+      "2024-02-07",
+      "2024-09-12",
+      "2024-09-13",
+      "2024-09-18",
+      "2024-09-19",
+      "2024-09-20",
+      "2024-09-23",
+      "2024-09-24",
+      "2024-09-25",
+      "2024-09-26",
+      "2024-09-27"
+    ],
+    "hit10": [
+      0.754,
+      0.677,
+      0.645,
+      0.853,
+      0.984,
+      0.985,
+      0.984,
+      0.985,
+      0.983,
+      0.975,
+      0.973,
+      0.958,
+      0.726
+    ]
+  },
+  "A_high_vs_rest": {
+    "mkt_amount": {
+      "high_mean": 838352299343.0769,
+      "rest_mean": 1766495804250.3105,
+      "high_pctl_in_all": 0.1382
+    },
+    "mkt_amt_ratio": {
+      "high_mean": 1.2653,
+      "rest_mean": 1.0095,
+      "high_pctl_in_all": 0.9332
+    },
+    "mkt_amt_ma20": {
+      "high_mean": 660970037959.1897,
+      "rest_mean": 1760822638482.3484,
+      "high_pctl_in_all": 0.0543
+    },
+    "mkt_lu": {
+      "high_mean": 90.6923,
+      "rest_mean": 72.3483,
+      "high_pctl_in_all": 0.808
+    },
+    "mkt_lu_ma5": {
+      "high_mean": 56.2679,
+      "rest_mean": 72.9166,
+      "high_pctl_in_all": 0.2972
+    },
+    "mkt_up_ratio": {
+      "high_mean": 0.5717,
+      "rest_mean": 0.4818,
+      "high_pctl_in_all": 0.6176
+    },
+    "mkt_pct_mean": {
+      "high_mean": 0.5449,
+      "rest_mean": 0.086,
+      "high_pctl_in_all": 0.5938
+    },
+    "mkt_pct_ma5": {
+      "high_mean": -0.5296,
+      "rest_mean": 0.097,
+      "high_pctl_in_all": 0.1829
+    },
+    "mkt_ret_5d": {
+      "high_mean": -0.4715,
+      "rest_mean": 0.513,
+      "high_pctl_in_all": 0.3938
+    },
+    "mkt_ret_10d": {
+      "high_mean": -1.345,
+      "rest_mean": 1.047,
+      "high_pctl_in_all": 0.3163
+    },
+    "mkt_ret_20d": {
+      "high_mean": -1.2881,
+      "rest_mean": 2.166,
+      "high_pctl_in_all": 0.3349
+    },
+    "eff_hit10_lag": {
+      "high_mean": 0.0416,
+      "rest_mean": 0.1142,
+      "high_pctl_in_all": 0.0016
+    },
+    "eff_hit10_lag_s": {
+      "high_mean": 0.0426,
+      "rest_mean": 0.1116,
+      "high_pctl_in_all": 0.0533
+    },
+    "eff_hit5_lag": {
+      "high_mean": 0.0198,
+      "rest_mean": 0.0518,
+      "high_pctl_in_all": 0.0063
+    }
+  },
+  "B_stock_scan": {
+    "close": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "pct_change": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "turnover_rate": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "tor_ratio": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "amt_ratio": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "amt_ma20": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "main_net_norm": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "huge_norm": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "small_norm": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "scrplus_90": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "scrplus_70": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "bias5": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "bias20": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "close_hh20_ratio": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "vol20": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "ret_5d": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "ret_10d": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "ret_20d": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "lu_cnt_10d": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "lu_cnt_20d": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "n_concepts": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "n_hot_concepts": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "n_leader_concepts": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "in_strong_concept": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "lu_gap": {
+      "error": "BinderException: Binder Error: GROUP BY clause cannot contain window functions!\n\nLINE 6: SELECT ntile(10) OVER (ORDER BY v) AS b, count(*) AS n,\n               ^"
+    },
+    "is_limit_up": {
+      "buckets": [
+        {
+          "b": 0,
+          "n": 2416108,
+          "hit10": 0.1123,
+          "hit5": 0.0495
+        },
+        {
+          "b": 1,
+          "n": 33467,
+          "hit10": 0.3399,
+          "hit5": 0.2591
+        }
+      ]
+    },
+    "ma5_gt_ma20": {
+      "buckets": [
+        {
+          "b": 0,
+          "n": 1171288,
+          "hit10": 0.1048,
+          "hit5": 0.0426
+        },
+        {
+          "b": 1,
+          "n": 1278287,
+          "hit10": 0.1251,
+          "hit5": 0.0613
+        }
+      ]
+    },
+    "ma20_gt_ma60": {
+      "buckets": [
+        {
+          "b": 0,
+          "n": 1134503,
+          "hit10": 0.1143,
+          "hit5": 0.0504
+        },
+        {
+          "b": 1,
+          "n": 1315072,
+          "hit10": 0.1164,
+          "hit5": 0.0541
+        }
+      ]
+    }
+  },
+  "B_train_base": [
+    {
+      "n": 2449575,
+      "hit10": 0.1154,
+      "hit5": 0.0524
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+=== MATRIX SCHEMA ===
+      column_name  column_type
+       trade_date      VARCHAR
+               di       BIGINT
+             code      VARCHAR
+             name      VARCHAR
+         industry      VARCHAR
+            board      VARCHAR
+             open       DOUBLE
+             high       DOUBLE
+              low       DOUBLE
+            close       DOUBLE
+           volume       DOUBLE
+           amount       DOUBLE
+    turnover_rate       DOUBLE
+       pct_change       DOUBLE
+           lu_thr DECIMAL(3,1)
+   huge_order_net       DOUBLE
+    big_order_net       DOUBLE
+ medium_order_net       DOUBLE
+  small_order_net       DOUBLE
+         main_net       DOUBLE
+    main_net_norm       DOUBLE
+        huge_norm       DOUBLE
+       small_norm       DOUBLE
+       scrplus_90       DOUBLE
+       scrplus_70       DOUBLE
+       n_concepts       BIGINT
+   n_hot_concepts       BIGINT
+max_concept_score       DOUBLE
+n_leader_concepts       BIGINT
+in_strong_concept      INTEGER
+              ma5       DOUBLE
+             ma10       DOUBLE
+             ma20       DOUBLE
+             ma60       DOUBLE
+            bias5       DOUBLE
+           bias20       DOUBLE
+      ma5_gt_ma20      INTEGER
+     ma20_gt_ma60      INTEGER
+ close_hh20_ratio       DOUBLE
+            vol20       DOUBLE
+           ret_5d       DOUBLE
+          ret_10d       DOUBLE
+          ret_20d       DOUBLE
+       lu_cnt_10d       DOUBLE
+       lu_cnt_20d       DOUBLE
+          tor_ma5       DOUBLE
+        tor_ratio       DOUBLE
+         amt_ma20       DOUBLE
+        amt_ratio       DOUBLE
+        main_net5       DOUBLE
+      is_limit_up      INTEGER
+           lu_gap       DOUBLE
+       mkt_amount       DOUBLE
+  mkt_amount_calc       DOUBLE
+            mkt_n       BIGINT
+     mkt_up_ratio       DOUBLE
+           mkt_lu       BIGINT
+     mkt_pct_mean       DOUBLE
+      mkt_amt_ma5       DOUBLE
+     mkt_amt_ma20       DOUBLE
+    mkt_amt_ratio       DOUBLE
+       mkt_lu_ma5       DOUBLE
+      mkt_pct_ma5       DOUBLE
+       mkt_ret_5d       DOUBLE
+      mkt_ret_10d       DOUBLE
+      mkt_ret_20d       DOUBLE
+         mkt_hit5       DOUBLE
+        mkt_hit10       DOUBLE
+    eff_hit10_lag       DOUBLE
+  eff_hit10_lag_s       DOUBLE
+     eff_hit5_lag       DOUBLE
+       fwd_max_5d       DOUBLE
+      fwd_max_10d       DOUBLE
+           fwd_n5       BIGINT
+          fwd_n10       BIGINT
+               y5      INTEGER
+              y10      INTEGER
+            split      VARCHAR
+NCOLS 78
+rows 3590923 di range 1 669
+R1_资金聚集高波动龙头: all10=0.3963 restricted10=0.9 n_days10=2 | restricted5=0.9714285714285714 n_days5=1
+R2_超跌反转放量: all10=0.3784 restricted10=0.9740566037735849 n_days10=6 | restricted5=0.9573241061130334 n_days5=3
+R3_情绪涨停高覆盖: all10=0.3544 restricted10=0.8860294117647058 n_days10=8 | restricted5=0.9204545454545454 n_days5=4
+high_days rows sample: {"date": "2024-02-05", "hit10": 0.754, "hit5": 0.386, "mkt_amount": 884967402656.0, "mkt_amt_ratio": 1.042, "mkt_lu": 19, "mkt_ret_5d": -12.8}
+WROTE report_data.json

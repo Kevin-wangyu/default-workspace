@@ -1,0 +1,6 @@
+FIRST_R1 {"label": "20日波动率 >= 3.693 (q0.73) AND 近10日涨停次数 >= 1 (q0.97) AND 命中龙头概念数 >= 0 (q0.80) AND 主力净额/成交额 >= 0.1173 (q0.97) AND 近10日涨幅% >= 25.68 (q0.97)", "rule": [["vol20", ">=", 0.73], ["lu_cnt_10d", ">=", 0.97], ["n_leader_concepts", ">=", 0.8], ["main_net_norm", ">=", 0.97], ["ret_10d", ">=", 0.97]], "theory": "主力+波动+涨停+龙头+动量", "merge_train": 0.4183, "pool_train": 4851, "hit_days_train": 2, "daily75_train": 0.0339, "merge_oos": 0.3522, "pool_oos": 1982}
+CHART c8 391400
+CHART c9 155908
+CHART c10 82820
+CHART c11 58984
+DONE

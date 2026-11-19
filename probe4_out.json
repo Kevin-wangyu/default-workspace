@@ -1,0 +1,57 @@
+{
+  "range_window": {
+    "ok": true,
+    "rows": [
+      {
+        "trade_date": "2024-09-30",
+        "code": "000001",
+        "close": 11.01,
+        "mx5": 12.23,
+        "c5": 5,
+        "mx10": 12.23,
+        "c10": 10,
+        "fwd_max_5d": 11.080835603996375,
+        "fwd_max_10d": 11.080835603996375
+      },
+      {
+        "trade_date": "2024-09-30",
+        "code": "600519",
+        "close": 1644.46,
+        "mx5": 1806.46,
+        "c5": 5,
+        "mx10": 1806.46,
+        "c10": 10,
+        "fwd_max_5d": 9.851258163774123,
+        "fwd_max_10d": 9.851258163774123
+      }
+    ]
+  },
+  "label_consistency": {
+    "ok": true,
+    "rows": [
+      {
+        "n": 40,
+        "mean_abs_diff": 0.0,
+        "max_abs_diff": 0.0
+      }
+    ]
+  },
+  "pool_match": {
+    "ok": true,
+    "rows": [
+      {
+        "pool_n": 2286
+      }
+    ]
+  },
+  "fonts": {
+    "available": [
+      "Microsoft YaHei",
+      "SimHei",
+      "SimSun",
+      "KaiTi",
+      "FangSong"
+    ],
+    "total": 352
+  }
+}

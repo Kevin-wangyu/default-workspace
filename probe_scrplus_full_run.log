@@ -1,0 +1,5 @@
+SCRPLUS FULL DONE
+by_split [{"split": "oos", "n": 1093939, "nn": 1092407, "nd90": 6520, "nd70": 5123, "mn": 0.0, "mx": 82.17, "n_pos90": 673125, "n_pos70": 673125}, {"split": "tail", "n": 38980, "nn": 38978, "nd90": 4341, "nd70": 3386, "mn": 3.23, "mx": 65.23, "n_pos90": 38978, "n_pos70": 38978}, {"split": "train", "n": 2458004, "nn": 2403281, "nd90": 1, "nd70": 1, "mn": 0.0, "mx": 0.0, "n_pos90": 0, "n_pos70": 0}]
+r3_filter [{"n": 2458004, "n_ge0": 2403281, "n_gt0": 0, "n_null": 54723}]
+quote_cols ['code', 'name', 'pct_change', 'industry', 'turnover_rate', 'open', 'high', 'low', 'close', 'volume', 'amount', 'scrplus_90', 'scrplus_70', 'hot_rank', 'huge_order_net', 'big_order_net', 'medium_order_net', 'small_order_net', 'trade_date']
+raw_quote sample [{"ym": "2024-02", "n": 78663, "nn": 78573, "nd": 1, "mn": 0.0, "mx": 0.0, "n_pos": 0}, {"ym": "2024-03", "n": 110234, "nn": 110108, "nd": 1, "mn": 0.0, "mx": 0.0, "n_pos": 0}, {"ym": "2024-04", "n": 105137, "nn": 105017, "nd": 1, "mn": 0.0, "mx": 0.0, "n_pos": 0}, {"ym": "2024-05", "n": 105230, "nn": 105110, "nd": 1, "mn": 0.0, "mx": 0.0, "n_pos": 0}]

@@ -1,0 +1,14 @@
+FONT Microsoft YaHei: OK
+FONT SimHei: OK
+FONT SimSun: OK
+
+=== 每张图像素质检 ===
+chart_c1_combo.png       893x590 nonwhite=0.329 colors= 869 dark=0.1617 edge_nw=0.028 -> OK
+chart_c2_robust.png      1195x609 nonwhite=0.254 colors=1115 dark=0.1200 edge_nw=0.050 -> OK
+chart_c3_concept.png     1195x611 nonwhite=0.058 colors=1152 dark=0.0207 edge_nw=0.032 -> OK
+chart_c4_lag.png         1047x765 nonwhite=0.056 colors=1204 dark=0.0188 edge_nw=0.069 -> OK
+chart_c5_scrplus.png     993x588 nonwhite=0.509 colors= 790 dark=0.2566 edge_nw=0.036 -> OK
+chart_c6_overfit.png     1011x588 nonwhite=0.065 colors=1137 dark=0.0210 edge_nw=0.037 -> OK
+chart_c7_layers.png      1094x586 nonwhite=0.419 colors= 704 dark=0.0160 edge_nw=0.034 -> OK
+
+PIXEL_AUDIT: ALL OK

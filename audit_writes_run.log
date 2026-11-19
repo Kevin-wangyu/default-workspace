@@ -1,0 +1,198 @@
+=== A. 图像像素级质量抽检（7张内嵌图）===
+  chart1: 1259x719 nonwhite=0.326 colors=31 dark=0.0299 bands=31 -> OK
+  chart2: 1485x937 nonwhite=0.120 colors=27 dark=0.0308 bands=19 -> OK
+  chart3: 1464x624 nonwhite=0.491 colors=32 dark=0.0322 bands=9 -> OK
+  chart4: 1408x593 nonwhite=0.111 colors=47 dark=0.0354 bands=13 -> OK
+  chart5: 1279x594 nonwhite=0.419 colors=42 dark=0.1444 bands=10 -> OK
+  chart6: 1395x667 nonwhite=0.374 colors=31 dark=0.1464 bands=9 -> OK
+  chart7: 1860x630 nonwhite=0.260 colors=49 dark=0.0226 bands=15 -> OK
+
+=== B. 我方脚本写操作全文审计 ===
+  audit_writes.py: keywords=['to_parquet', 'to_csv', '.write_text', '.write_bytes', 'open(', 'subprocess', 'os.system', 'rebuild', '_append_tops_cache', 'setup_logging', 'mkdir('] proj_path_ref=True
+  bayes_search.py: keywords=['.write_text'] proj_path_ref=False
+  build_matrix.py: keywords=['.write_text', 'mkdir('] proj_path_ref=True
+  build_report_data.py: keywords=['.write_text'] proj_path_ref=False
+  check_libs.py: keywords=[] proj_path_ref=False
+  check_libs2.py: keywords=[] proj_path_ref=False
+  check_report_data.py: keywords=[] proj_path_ref=False
+  explore_market_baserate.py: keywords=['.write_text'] proj_path_ref=True
+  explore_phase1.py: keywords=['.write_text', '_append_tops_cache'] proj_path_ref=True
+  explore_schemas.py: keywords=['.write_text'] proj_path_ref=True
+  final_check.py: keywords=['.write_bytes'] proj_path_ref=True
+  inspect_data.py: keywords=[] proj_path_ref=False
+  make_report.py: keywords=['.write_text', 'rebuild', '_append_tops_cache'] proj_path_ref=True
+  probe2.py: keywords=['.write_text'] proj_path_ref=True
+  probe3.py: keywords=['.write_text'] proj_path_ref=True
+  probe4.py: keywords=['.write_text'] proj_path_ref=True
+  probe_scan_keys.py: keywords=[] proj_path_ref=False
+  scan2.py: keywords=['.write_text'] proj_path_ref=False
+  scan_debug.py: keywords=['open('] proj_path_ref=False
+  scan_signals.py: keywords=['.write_text'] proj_path_ref=False
+  summarize_search.py: keywords=['open('] proj_path_ref=False
+  verify_report.py: keywords=['open('] proj_path_ref=True
+  verify_threshold.py: keywords=['.write_text'] proj_path_ref=False
+  --- to_parquet 落点逐行 ---
+   audit_writes.py:38  hits = [kw for kw in ["to_parquet", "to_csv", ".write_text", ".write_bytes",
+   audit_writes.py:45  if "to_parquet" in s:
+   audit_writes.py:47  if "to_parquet" in line:
+   audit_writes.py:49  print("  --- to_parquet 落点逐行 ---")
+
+=== C. 项目侧可疑文件精确取证 ===
+  logs/etl.log  2026-11-12 16:11:26  2175833 B
+     --- tail 12 ---
+      2026-11-12 16:10:59 [INFO] scripts.archive_month: [quote] 2026-10 完成 → 2026-10.parquet
+      2026-11-12 16:11:00 [INFO] scripts.archive_month: [quote] 2026-11 完成 → 2026-11.parquet
+      2026-11-12 16:11:00 [INFO] scripts.archive_month: [industry_flow] 2026-10 完成 → 2026-10.parquet
+      2026-11-12 16:11:01 [INFO] scripts.archive_month: [industry_flow] 2026-11 完成 → 2026-11.parquet
+      2026-11-12 16:11:02 [INFO] scripts.archive_month: [concept_flow] 2026-10 完成 → 2026-10.parquet
+      2026-11-12 16:11:02 [INFO] scripts.archive_month: [concept_flow] 2026-11 完成 → 2026-11.parquet
+      2026-11-12 16:11:03 [INFO] scripts.archive_month: [concept_date] 2026-10 完成 → 2026-10.parquet
+      2026-11-12 16:11:04 [INFO] scripts.archive_month: [concept_date] 2026-11 完成 → 2026-11.parquet
+      2026-11-12 16:11:04 [INFO] scripts.archive_month: [daily_pct] 2026-10 完成 → 2026-10.parquet
+      2026-11-12 16:11:05 [INFO] scripts.archive_month: [daily_pct] 2026-11 完成 → 2026-11.parquet
+      2026-11-12 16:11:26 [INFO] core.loaders: [concept_meta] 加载 47043 条到内存
+      2026-11-12 16:11:26 [INFO] serve: [serve] 2026-11-12 picks 已生成
+  data/_tops_cache/v1/bars.parquet  2026-11-12 16:11:17  838488 B
+  data/_tops_cache/v1/meta.parquet  2026-11-12 16:11:17  170189 B
+  data/market_amount.parquet  2026-11-12 16:10:54  11164 B
+  [DIR] data/concept_picks
+     part.parquet  2026-11-12 16:11:26  25447 B
+     trade_date=2026-11-12  2026-11-12 16:11:26  0 B
+     part.parquet  2026-11-10 15:33:31  25578 B
+     trade_date=2026-11-10  2026-11-10 15:33:31  0 B
+     part.parquet  2026-11-09 17:11:12  26933 B
+
+=== D. etl.log 中 16:00–16:20 的记录 ===
+   2026-11-12 16:09:14 [INFO] trading_calendar: 交易日历读取缓存：8797 条，范围 1990-12-19 ~ 2026-12-31
+   2026-11-12 16:09:14 [INFO] startup.data_ready: [serve] 检测到今日（2026-11-12）无数据，开始拉取…
+   2026-11-12 16:09:14 [INFO] core.aspsession: [aspsession] 缓存过期 (age=175032s / 1800s)，重新获取
+   2026-11-12 16:09:14 [INFO] core.aspsession: [aspsession] TOUCH 获取成功: 18094647…
+   2026-11-12 16:09:14 [INFO] core.aspsession: [aspsession] 缓存已写入 (value=18094647…)
+   2026-11-12 16:09:15 [INFO] etl.tdx_progress: 读取进度文件 D:\Users\KFish\Desktop\Code\github-app\stockDisplay\raw_data\daily_data.json，已有 22 条记录。
+   2026-11-12 16:09:15 [INFO] etl.tdx_calendar: 正在获取 A 股交易日历...
+   2026-11-12 16:09:15 [INFO] etl.tdx_calendar: 交易日历加载完成，共 8797 个交易日。
+   2026-11-12 16:09:15 [INFO] etl.tdx_fetch: ============================================================
+   2026-11-12 16:09:15 [INFO] etl.tdx_fetch: tdx_fetch.run → 目标日期: 2026-11-12，类型数: 5
+   2026-11-12 16:09:15 [INFO] etl.tdx_fetch: ============================================================
+   2026-11-12 16:09:15 [INFO] etl.tdx_fetch: 正在导出 2026年11月12日买卖金额组成 ...
+   2026-11-12 16:09:15 [INFO] etl.tdx_fetch:   查询词：全部A股收盘价、超大单总买金额、超大单总卖金额、大单总买金额、大单总卖金额、中单总买金额、中单总卖金额、小单总买金额、小单总总卖金额
+   2026-11-12 16:09:21 [INFO] etl.tdx_client: 会话 RI 更新：6C00 → 6BFF
+   2026-11-12 16:09:21 [INFO] etl.tdx_client: 条件解析为 nlpse_id=7706992059881708776（已缓存）
+   2026-11-12 16:09:22 [INFO] etl.tdx_client: nlpse_id 已激活（等待 2 次）
+   2026-11-12 16:09:22 [INFO] etl.tdx_client: NLPQuery 服务端返回的实际日期: 2026.11.12，表头 19 列
+   2026-11-12 16:09:22 [INFO] etl.tdx_client: StoragePathName: WenDaFile\2026-11-12\R25021719184311011919XYTT0369335052_20261112_160922.xlsx
+   2026-11-12 16:09:30 [INFO] etl.tdx_client: 导出成功：877741 字节 → D:\Users\KFish\Desktop\Code\github-app\stockDisplay\raw_data\成交组成\2026年11月12日买卖金额组成.xlsx
+   2026-11-12 16:09:33 [INFO] etl.tdx_fetch: 2026年11月12日 完成，877741 字节，耗时 14.6s
+   2026-11-12 16:09:33 [INFO] etl.tdx_fetch: 正在导出 2026年11月12日A股概念数据 ...
+   2026-11-12 16:09:33 [INFO] etl.tdx_fetch:   查询词：全部A股，收盘价，所属概念，所属通达信研究行业
+   2026-11-12 16:09:38 [INFO] etl.tdx_client: 条件解析为 nlpse_id=7706994615655665633（已缓存）
+   2026-11-12 16:09:39 [INFO] etl.tdx_client: nlpse_id 已激活（等待 1 次）
+   2026-11-12 16:09:39 [INFO] etl.tdx_client: NLPQuery 服务端返回的实际日期: 2026.11.12，表头 16 列
+   2026-11-12 16:09:39 [INFO] etl.tdx_client: StoragePathName: WenDaFile\2026-11-12\R25021719184311011919XYTT6826742825_20261112_160939.xlsx
+   2026-11-12 16:09:47 [INFO] etl.tdx_client: 导出成功：799360 字节 → D:\Users\KFish\Desktop\Code\github-app\stockDisplay\raw_data\A股概念\2026年11月12日A股概念数据.xlsx
+   2026-11-12 16:09:47 [INFO] etl.tdx_fetch: 2026年11月12日 完成，799360 字节，耗时 14.4s
+   2026-11-12 16:09:47 [INFO] etl.tdx_fetch: 正在导出 2026年11月12日个股数据 ...
+   2026-11-12 16:09:47 [INFO] etl.tdx_fetch:   查询词：全部A股，开盘价，收盘价，最高价，最低价，成交量，成交额，换手率，实际换手率，筹码分布，内盘，外盘，热度，主动买入，主动卖出，超大单净额，大单净额，中单净额，小单净额
+   2026-11-12 16:09:53 [INFO] etl.tdx_client: 条件解析为 nlpse_id=7706994615655665669（已缓存）
+   2026-11-12 16:09:55 [INFO] etl.tdx_client: nlpse_id 已激活（等待 4 次）
+   2026-11-12 16:09:55 [WARNING] etl.tdx_client: 请求异常 HTTPSConnectionPool(host='wenda.tdx.com.cn', port=443): Max retries exceeded with url: /TQL?Entry=NLPSE.NLPQuery&RI=6C00 (Caused by ProxyError('Unabl
+   2026-11-12 16:09:58 [INFO] etl.tdx_client: NLPQuery 服务端返回的实际日期: 2026.11.12，表头 31 列
+   2026-11-12 16:09:58 [INFO] etl.tdx_client: StoragePathName: WenDaFile\2026-11-12\R25021719184311011919XYTT7654714672_20261112_160958.xlsx
+   2026-11-12 16:10:07 [INFO] etl.tdx_client: 导出成功：1428635 字节 → D:\Users\KFish\Desktop\Code\github-app\stockDisplay\raw_data\个股数据\2026年11月12日个股数据.xlsx
+   2026-11-12 16:10:07 [INFO] etl.tdx_fetch: 2026年11月12日 完成，1428635 字节，耗时 20.1s
+   2026-11-12 16:10:07 [INFO] etl.tdx_fetch: 正在导出 2026年11月12日行业数据 ...
+   2026-11-12 16:10:07 [INFO] etl.tdx_fetch:   查询词：通达信二级行业收盘价，涨跌幅，成交量，自由换手率，超大单净额，大单净额，中单净额，小单净额，涨停家数，上涨家数，下跌家数
+   2026-11-12 16:10:13 [INFO] etl.tdx_client: 条件解析为 nlpse_id=7706994615655665713（已缓存）
+   2026-11-12 16:10:14 [INFO] etl.tdx_client: nlpse_id 已激活（等待 1 次）
+   2026-11-12 16:10:14 [INFO] etl.tdx_client: NLPQuery 服务端返回的实际日期: 2026.11.12，表头 28 列
+   2026-11-12 16:10:14 [INFO] etl.tdx_client: StoragePathName: WenDaFile\2026-11-12\R25021719184311011919XYTT9752382167_20261112_161014.xlsx
+   2026-11-12 16:10:18 [INFO] etl.tdx_client: 导出成功：34674 字节 → D:\Users\KFish\Desktop\Code\github-app\stockDisplay\raw_data\行业数据\2026年11月12日行业数据.xlsx
+   2026-11-12 16:10:18 [INFO] etl.tdx_fetch: 2026年11月12日 完成，34674 字节，耗时 10.2s
+   2026-11-12 16:10:18 [INFO] etl.tdx_fetch: 正在导出 2026年11月12日概念指数 ...
+   2026-11-12 16:10:18 [INFO] etl.tdx_fetch:   查询词：所有概念指数收盘价，涨跌幅，成交量，自由换手率，超大单净额，大单净额，中单净额，小单净额，涨停家数，上涨家数，下跌家数
+   2026-11-12 16:10:24 [INFO] etl.tdx_client: 会话 RI 更新：6C00 → 6BFF
+   2026-11-12 16:10:24 [INFO] etl.tdx_client: 条件解析为 nlpse_id=7706992059881708997（已缓存）
+   2026-11-12 16:10:24 [INFO] etl.tdx_client: nlpse_id 已激活（等待 1 次）
+   2026-11-12 16:10:25 [INFO] etl.tdx_client: NLPQuery 服务端返回的实际日期: 2026.11.12，表头 27 列
+   2026-11-12 16:10:25 [INFO] etl.tdx_client: StoragePathName: WenDaFile\2026-11-12\R25021719184311011919XYTT3656633518_20261112_161025.xlsx
+   2026-11-12 16:10:29 [INFO] etl.tdx_client: 导出成功：66065 字节 → D:\Users\KFish\Desktop\Code\github-app\stockDisplay\raw_data\概念数据\2026年11月12日概念指数.xlsx
+   2026-11-12 16:10:29 [INFO] etl.tdx_fetch: 2026年11月12日 完成，66065 字节，耗时 11.1s
+   2026-11-12 16:10:29 [INFO] daily_update: ================================================================
+   2026-11-12 16:10:29 [INFO] daily_update: 增量更新开始 | types=['stock', 'industry', 'concept', 'stock_concept', 'amo', 'map'] date=None force=False file=None
+   2026-11-12 16:10:29 [INFO] daily_update: ================================================================
+   2026-11-12 16:10:29 [INFO] daily_update: [stock] 扫描到 668 个 xlsx 文件
+   2026-11-12 16:10:29 [INFO] etl.field_mapping: [stock] 开始处理 2026年11月12日个股数据.xlsx (trade_date=2026-11-12)
+   2026-11-12 16:10:34 [INFO] etl.field_mapping: [stock] 2026-11-12 写入 5572 行
+   2026-11-12 16:10:34 [INFO] daily_update: [stock] 完成: 处理 1 | 跳过 667 | 失败 0
+   2026-11-12 16:10:34 [INFO] daily_update: [industry] 扫描到 666 个 xlsx 文件
+   2026-11-12 16:10:35 [INFO] etl.field_mapping: [industry] 开始处理 2026年11月12日行业数据.xlsx (trade_date=2026-11-12)
+   2026-11-12 16:10:35 [INFO] etl.field_mapping: [industry] 2026-11-12 写入 128 行
+   2026-11-12 16:10:35 [INFO] daily_update: [industry] 完成: 处理 1 | 跳过 665 | 失败 0
+   2026-11-12 16:10:35 [INFO] daily_update: [concept] 扫描到 667 个 xlsx 文件
+   2026-11-12 16:10:35 [INFO] etl.field_mapping: [concept] 开始处理 2026年11月12日概念指数.xlsx (trade_date=2026-11-12)
+   2026-11-12 16:10:35 [INFO] etl.field_mapping: [concept] 2026-11-12 写入 269 行
+   2026-11-12 16:10:35 [INFO] daily_update: [concept] 完成: 处理 1 | 跳过 666 | 失败 0
+   2026-11-12 16:10:35 [INFO] daily_update: [stock_concept] 扫描到 19 个 xlsx 文件
+   2026-11-12 16:10:35 [INFO] etl.field_mapping: [stock_concept] 开始处理 2026年11月12日A股概念数据.xlsx (trade_date=2026-11-12)
+   2026-11-12 16:10:38 [INFO] etl.field_mapping: [stock_concept] 2026-11-12 写入 5572 行
+   2026-11-12 16:10:38 [INFO] daily_update: [stock_concept] 完成: 处理 1 | 跳过 18 | 失败 0
+   2026-11-12 16:10:38 [INFO] daily_update: [amo] 扫描到 17 个 xlsx 文件
+   2026-11-12 16:10:38 [INFO] etl.field_mapping: [amo] 开始处理 2026年11月12日买卖金额组成.xlsx (trade_date=2026-11-12)
+   2026-11-12 16:10:42 [INFO] etl.field_mapping: [amo] 2026-11-12 写入 5572 行
+   2026-11-12 16:10:42 [INFO] daily_update: [amo] 完成: 处理 1 | 跳过 16 | 失败 0
+   2026-11-12 16:10:42 [INFO] daily_update: [map] 已存在，跳过（用 --type map --force 重建）
+   2026-11-12 16:10:42 [INFO] daily_update: ================================================================
+   2026-11-12 16:10:42 [INFO] daily_update: 运行摘要（用时 12.73 秒）
+   2026-11-12 16:10:42 [INFO] daily_update: ----------------------------------------------------------------
+   2026-11-12 16:10:42 [INFO] daily_update:   stock      处理   1 个文件 (  5572 行) | 跳过 667 | 失败   0
+   2026-11-12 16:10:42 [INFO] daily_update:     ✓ 2026年11月12日个股数据.xlsx → 2026-11-12 (5572 行)
+   2026-11-12 16:10:42 [INFO] daily_update:   industry   处理   1 个文件 (   128 行) | 跳过 665 | 失败   0
+   2026-11-12 16:10:42 [INFO] daily_update:     ✓ 2026年11月12日行业数据.xlsx → 2026-11-12 (128 行)
+   2026-11-12 16:10:42 [INFO] daily_update:   concept    处理   1 个文件 (   269 行) | 跳过 666 | 失败   0
+   2026-11-12 16:10:42 [INFO] daily_update:     ✓ 2026年11月12日概念指数.xlsx → 2026-11-12 (269 行)
+   2026-11-12 16:10:42 [INFO] daily_update:   stock_concept 处理   1 个文件 (  5572 行) | 跳过  18 | 失败   0
+   2026-11-12 16:10:42 [INFO] daily_update:     ✓ 2026年11月12日A股概念数据.xlsx → 2026-11-12 (5572 行)
+   2026-11-12 16:10:42 [INFO] daily_update:   amo        处理   1 个文件 (  5572 行) | 跳过  16 | 失败   0
+   2026-11-12 16:10:42 [INFO] daily_update:     ✓ 2026年11月12日买卖金额组成.xlsx → 2026-11-12 (5572 行)
+   2026-11-12 16:10:42 [INFO] daily_update:   map        OK | 0 行 | 过滤脏行 0 | 已存在，跳过
+   2026-11-12 16:10:42 [INFO] daily_update: ----------------------------------------------------------------
+   2026-11-12 16:10:42 [INFO] daily_update:   合计: 处理 5 个文件, 17113 行 | 跳过 2032 | 失败 0 | 用时 12.73 秒
+   2026-11-12 16:10:42 [INFO] daily_update: ================================================================
+   2026-11-12 16:10:42 [INFO] serve: [serve] 增量 ETL 完成: 处理 5 个文件, 失败 0
+   2026-11-12 16:10:45 [INFO] startup.integrity: [check] quote          范围 2024-02-01 ~ 2026-11-12 | 应有 670 天 | 已有 670 天
+   2026-11-12 16:10:45 [WARNING] startup.integrity: [check] quote          缺失 1 个交易日: 2026-11-11
+   2026-11-12 16:10:48 [INFO] startup.integrity: [check] industry_flow  范围 2024-02-02 ~ 2026-11-12 | 应有 669 天 | 已有 668 天
+   2026-11-12 16:10:48 [WARNING] startup.integrity: [check] industry_flow  缺失 1 个交易日: 2026-11-11
+   2026-11-12 16:10:50 [INFO] startup.integrity: [check] concept_flow   范围 2024-02-01 ~ 2026-11-12 | 应有 670 天 | 已有 669 天
+   2026-11-12 16:10:50 [WARNING] startup.integrity: [check] concept_flow   缺失 1 个交易日: 2026-11-11
+   2026-11-12 16:10:53 [INFO] startup.integrity: [check] stock_concepts 范围 2024-02-01 ~ 2026-11-12 | 应有 670 天 | 已有 669 天
+   2026-11-12 16:10:53 [WARNING] startup.integrity: [check] stock_concepts 缺失 1 个交易日: 2026-11-11
+   2026-11-12 16:10:53 [INFO] startup.missing_kline_check: [missing-check] 检查最近 5 天: 2026-11-05 ~ 2026-11-12
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check: [missing-check] 最近 5 天发现 8 只次整行缺失，涉及 3 天
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check:   2026-11-05: 920085
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check:   2026-11-06: 001381, 002827, 301468, 601326, 605258 等 6 只
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check:   2026-11-10: 002623
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check: [missing-check] 未开启自动补全（加 --auto-backfill-missing 启用）
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check: [missing-check] 手动补全：
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check:   python scripts\audit_quote_with_eltdx.py --yes
+   2026-11-12 16:10:53 [WARNING] startup.missing_kline_check:   或: python scripts\backfill_single_stock_day.py <code> <date>
+   2026-11-12 16:10:54 [INFO] core.rebuild: [market_amount] 新增 1 天，总计 668 天
+   2026-11-12 16:10:54 [INFO] serve: [serve] market_amount 新增 1 天
+   2026-11-12 16:10:55 [INFO] core.rebuild: [daily_pct] 写入 6 天分区（含最近 5 天重算）
+   2026-11-12 16:10:55 [INFO] serve: [serve] daily_pct 写入 6 天（recent=5）
+   2026-11-12 16:10:57 [INFO] core.rebuild: [limit_up_streak] 读 daily_pct 耗时 1.29s（194709 行）
+   2026-11-12 16:10:57 [INFO] core.rebuild: [limit_up_streak] 向量计算耗时 0.59s（2179 条 streak 记录）
+   2026-11-12 16:10:57 [INFO] core.rebuild: [limit_up_streak] 写盘 5 天耗时 0.14s | 总耗时 2.13s
+   2026-11-12 16:10:57 [INFO] serve: [serve] limit_up_streak 写入 5 天
+   2026-11-12 16:10:59 [INFO] scripts.archive_month: [quote] 2026-10 完成 → 2026-10.parquet
+   2026-11-12 16:11:00 [INFO] scripts.archive_month: [quote] 2026-11 完成 → 2026-11.parquet
+   2026-11-12 16:11:00 [INFO] scripts.archive_month: [industry_flow] 2026-10 完成 → 2026-10.parquet
+   2026-11-12 16:11:01 [INFO] scripts.archive_month: [industry_flow] 2026-11 完成 → 2026-11.parquet
+   2026-11-12 16:11:02 [INFO] scripts.archive_month: [concept_flow] 2026-10 完成 → 2026-10.parquet
+   2026-11-12 16:11:02 [INFO] scripts.archive_month: [concept_flow] 2026-11 完成 → 2026-11.parquet
+   2026-11-12 16:11:03 [INFO] scripts.archive_month: [concept_date] 2026-10 完成 → 2026-10.parquet
+   2026-11-12 16:11:04 [INFO] scripts.archive_month: [concept_date] 2026-11 完成 → 2026-11.parquet
+   2026-11-12 16:11:04 [INFO] scripts.archive_month: [daily_pct] 2026-10 完成 → 2026-10.parquet
+   2026-11-12 16:11:05 [INFO] scripts.archive_month: [daily_pct] 2026-11 完成 → 2026-11.parquet
+   2026-11-12 16:11:26 [INFO] core.loaders: [concept_meta] 加载 47043 条到内存
+   2026-11-12 16:11:26 [INFO] serve: [serve] 2026-11-12 picks 已生成

@@ -1,0 +1,53 @@
+{
+  "path": "D:/Users/KFish/Documents/deepseek-harness/default-workspace/research_matrix.parquet",
+  "n_rows": 3590923,
+  "n_cols": 87,
+  "build_seconds": 25.2,
+  "new_cols": [
+    "n_strong_today",
+    "n_concept_strong_hist",
+    "n_mainline_not_onlist",
+    "max_strong_hist10",
+    "n_concept_hot20",
+    "y7",
+    "y12",
+    "fwd_max_7d",
+    "fwd_max_12d"
+  ],
+  "by_split": [
+    {
+      "split": "oos",
+      "n": 1093939,
+      "hit5": 0.0387,
+      "hit7": 0.059,
+      "hit10": 0.0876,
+      "hit12": 0.106
+    },
+    {
+      "split": "tail",
+      "n": 38980,
+      "hit5": 0.0594,
+      "hit7": NaN,
+      "hit10": NaN,
+      "hit12": NaN
+    },
+    {
+      "split": "train",
+      "n": 2458004,
+      "hit5": 0.0525,
+      "hit7": 0.0784,
+      "hit10": 0.1154,
+      "hit12": 0.1392
+    }
+  ],
+  "concept_feat_cover": [
+    {
+      "nn_strong_today": 3590923,
+      "nn_mainline": 3590923,
+      "mx_strong_today": 19,
+      "mx_mainline": 4,
+      "n_has_strong": 1960618,
+      "n_has_mainline": 16260
+    }
+  ]
+}

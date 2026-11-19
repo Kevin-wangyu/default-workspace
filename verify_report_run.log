@@ -1,0 +1,49 @@
+=== 1. 结构 ===
+  doctype: OK
+  html_close: OK
+  charset: OK
+  sections: OK
+  tables_balanced: OK
+  div_balanced: OK
+  no_unescaped_placeholder: OK
+  size KB: 1317  sections: 12  tables: 14  imgs: 7
+=== 2. 内嵌图片解码 ===
+  n imgs: 7
+  img1: OK (1259, 719)
+  img2: OK (1485, 937)
+  img3: OK (1464, 624)
+  img4: OK (1408, 593)
+  img5: OK (1279, 594)
+  img6: OK (1395, 667)
+  img7: OK (1860, 630)
+=== 3. 关键数字一致性 ===
+  '41.83%' present=True value_ok=True
+  '35.22%' present=True value_ok=True
+  '40.27%' present=True value_ok=True
+  '38.46%' present=True value_ok=True
+  '11.5%' present=True value_ok=True
+  '0 条' present=True value_ok=True
+  '659' present=True value_ok=True
+  '10 天' present=True value_ok=True
+  grade_summary in html: {'C_25-50%': 6}
+  A档/B档为空表述: True
+=== 4. 编码 / 中文 ===
+  Chinese chars: 6812
+  replacement char U+FFFD: 0
+  literal \u escapes: 0
+=== 5. 合规（投研项目零写入）===
+  workspace/build_matrix.py: OK
+  workspace/scan2.py: OK
+  workspace/bayes_search.py: OK
+  workspace/build_report_data.py: OK
+  workspace/verify_threshold.py: OK
+  workspace/make_report.py: OK
+  workspace/report_data.json: OK
+  workspace/search_results.json: OK
+  workspace/matrix.parquet: OK
+  workspace/threshold_check.json: OK
+  leaked into project dir: NONE
+  cli.py invoked in this session: NO (all scripts import duckdb directly)
+
+=== VERDICT ===
+ALL CHECKS PASSED

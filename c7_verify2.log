@@ -1,0 +1,5 @@
+=== 双模式一致性核验（matrix vs live）===
+2024-09-27: matrix_n=15 live_n=15 codes_identical=True only_matrix=[] only_live=[]
+2025-02-10: matrix_n=3 live_n=3 codes_identical=True only_matrix=[] only_live=[]
+2026-10-30: matrix_n=2 live_n=2 codes_identical=True only_matrix=[] only_live=[]
+VERIFY_RESULT: ALL_OK

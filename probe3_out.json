@@ -1,0 +1,84 @@
+{
+  "scipy": "1.18.1",
+  "daily_pct_health": {
+    "n": 1,
+    "rows": [
+      {
+        "n": 3585683,
+        "n_inf": 1,
+        "n_nan": 0,
+        "mn": -100.0,
+        "mx": Infinity,
+        "av": Infinity
+      }
+    ]
+  },
+  "quote_pct_health": {
+    "n": 1,
+    "rows": [
+      {
+        "n": 3590923,
+        "n_inf": 0,
+        "n_nan": 0,
+        "mn": -34.71,
+        "mx": 653.16,
+        "av": 0.20200322746194962
+      }
+    ]
+  },
+  "daily_pct_formula_check": {
+    "n": 1,
+    "rows": [
+      {
+        "n": 3585181,
+        "mean_abs_diff": 4.048548250023546e-15,
+        "max_abs_diff": 2.842170943040401e-14,
+        "n_gt001": 0
+      }
+    ]
+  },
+  "pct_upper_tail": {
+    "n": 3,
+    "rows": [
+      {
+        "board": "bj 29.8",
+        "n": 177892,
+        "mx": 37.455830388692576,
+        "n_gt97": 4619
+      },
+      {
+        "board": "cy/kc 19.8",
+        "n": 1305336,
+        "mx": Infinity,
+        "n_gt97": 25590
+      },
+      {
+        "board": "main 9.8",
+        "n": 2102455,
+        "mx": 177.74038461538458,
+        "n_gt97": 41364
+      }
+    ]
+  },
+  "calendar_files": [
+    "data\\trading_calendar.parquet"
+  ],
+  "cal_trading_calendar.parquet": {
+    "n": 8797,
+    "cols": [
+      "trade_date"
+    ],
+    "d0": "1990-12-19 00:00:00",
+    "d1": "2026-12-31 00:00:00"
+  },
+  "tops_concept_names": {
+    "n": 1,
+    "rows": [
+      {
+        "n_names": 268,
+        "d0": "2024-02-01",
+        "d1": "2026-11-10"
+      }
+    ]
+  }
+}

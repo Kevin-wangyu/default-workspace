@@ -1,0 +1,18 @@
+=== 数据文件完整性（只读 count）===
+  quote_compact: 3618901 rows (34 files)
+  daily_pct: 3613661 rows (34 files)
+  concept_date: 3478456 rows (34 files)
+  tops_bars: 20220 rows, mtime=1795074271364366700
+  tops_meta: 18665 rows, mtime=1795074271414410600
+  concept_picks: 26960 rows (34 files)
+
+=== 前端改造标记 ===
+  concept_view1.js: OK
+  concept.css: OK
+  index.html: OK
+  boot.js: OK
+  style.css: OK
+  main.py: OK
+  c7_picks.py: OK
+
+INTEGRITY_CHECK=ALL_OK

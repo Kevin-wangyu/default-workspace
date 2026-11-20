@@ -1,0 +1,81 @@
+源目录: D:\Users\KFish\Desktop\Code\github-app\stockDisplay\data_compact
+目标目录: D:\Users\KFish\Desktop\Code\github-app\stockDisplay\data_compact_sync
+------------------------------------------------------------
+扫描到 281 个文件，开始逻辑比对...
+
+[UPDATED] market_amount.parquet
+[UPDATED] amo_components\2026-11.parquet
+[CREATED] c7_picks\2024-03.parquet
+[CREATED] c7_picks\2024-04.parquet
+[CREATED] c7_picks\2024-05.parquet
+[CREATED] c7_picks\2024-06.parquet
+[CREATED] c7_picks\2024-07.parquet
+[CREATED] c7_picks\2024-08.parquet
+[CREATED] c7_picks\2024-09.parquet
+[CREATED] c7_picks\2024-10.parquet
+[CREATED] c7_picks\2024-11.parquet
+[CREATED] c7_picks\2024-12.parquet
+[CREATED] c7_picks\2025-01.parquet
+[CREATED] c7_picks\2025-02.parquet
+--- 进度 20/281 ---
+[CREATED] c7_picks\2025-03.parquet
+[CREATED] c7_picks\2025-04.parquet
+[CREATED] c7_picks\2025-05.parquet
+[CREATED] c7_picks\2025-06.parquet
+[CREATED] c7_picks\2025-07.parquet
+[CREATED] c7_picks\2025-08.parquet
+[CREATED] c7_picks\2025-09.parquet
+[CREATED] c7_picks\2025-10.parquet
+[CREATED] c7_picks\2025-11.parquet
+[CREATED] c7_picks\2025-12.parquet
+[CREATED] c7_picks\2026-01.parquet
+[CREATED] c7_picks\2026-02.parquet
+[CREATED] c7_picks\2026-03.parquet
+[CREATED] c7_picks\2026-04.parquet
+[CREATED] c7_picks\2026-05.parquet
+[CREATED] c7_picks\2026-06.parquet
+[CREATED] c7_picks\2026-07.parquet
+[CREATED] c7_picks\2026-08.parquet
+[CREATED] c7_picks\2026-09.parquet
+[CREATED] c7_picks\2026-10.parquet
+--- 进度 40/281 ---
+[CREATED] c7_picks\2026-11.parquet
+--- 进度 60/281 ---
+[UPDATED] concept_date\2026-11.parquet
+--- 进度 80/281 ---
+--- 进度 100/281 ---
+[UPDATED] concept_flow\2026-11.parquet
+--- 进度 120/281 ---
+--- 进度 140/281 ---
+[UPDATED] concept_picks\2026-11.parquet
+--- 进度 160/281 ---
+[UPDATED] daily_pct\2026-11.parquet
+--- 进度 180/281 ---
+--- 进度 200/281 ---
+[UPDATED] industry_flow\2026-11.parquet
+--- 进度 220/281 ---
+[UPDATED] limit_up_streak\2026-03.parquet
+--- 进度 240/281 ---
+[UPDATED] limit_up_streak\2026-11.parquet
+--- 进度 260/281 ---
+[UPDATED] quote\2026-11.parquet
+[UPDATED] _tops_cache\v1\bars.parquet
+--- 进度 280/281 ---
+[UPDATED] _tops_cache\v1\meta.parquet
+--- 进度 281/281 ---
+
+============================================================
+处理完成！耗时 76.5s
+  新增 (Created):  33
+  更新 (Updated):  12
+  跳过 (Skipped):  236  （逻辑数据一致，保留旧 mtime）
+============================================================
+
+提示：
+  data_compact_sync 已更新。
+  接下来请确保 GoodSync/Alist 同步的是 data_compact_sync 目录。
+
+完成：0 个月，耗时 16.3s
+输出目录：D:\Users\KFish\Desktop\Code\github-app\stockDisplay\data_compact
+
+正在同步到 data_compact_sync...

@@ -1,0 +1,29 @@
+SNAP rows=15511 days=647 range=2024-03-13~2026-11-19
+ALL_TD len=675 last=2026-11-19
+MY_SQL rows=1363 days=100 secs=115.0
+TARGET days=39 a_rows=556 b_rows=556
+KEY only_my=0 only_snap=0 inter=556
+  trade_date             n_neq=0 OK
+  code                   n_neq=0 OK
+  name                   n_neq=0 OK
+  close                  max_abs=0.00000000 n_diff>1e-6=0 OK
+  pct_change             max_abs=0.00000000 n_diff>1e-6=0 OK
+  turnover_rate          max_abs=0.00000000 n_diff>1e-6=0 OK
+  vol20                  max_abs=0.00000000 n_diff>1e-6=0 OK
+  ret_5d                 max_abs=0.00000000 n_diff>1e-6=0 OK
+  lu_cnt_20d             max_abs=0.00000000 n_diff>1e-6=0 OK
+  main_net_norm          max_abs=0.00000000 n_diff>1e-6=0 OK
+  n_leader_concepts      max_abs=0.00000000 n_diff>1e-6=0 OK
+  lu_gap                 max_abs=0.00000000 n_diff>1e-6=0 OK
+  close_hh20_ratio       max_abs=0.00000000 n_diff>1e-6=0 OK
+  ma5                    max_abs=0.00000000 n_diff>1e-6=0 OK
+  ma20                   max_abs=0.00000000 n_diff>1e-6=0 OK
+  ma60                   max_abs=0.00000000 n_diff>1e-6=0 OK
+  source                 n_neq=0 OK
+  streak_days            max_abs=0.00000000 n_diff>1e-6=0 OK
+  matched_concepts       n_neq=0 OK
+  n_concepts             max_abs=0.00000000 n_diff>1e-6=0 OK
+  fwd_max_5d             max_abs=0.00000000 n_diff>1e-6=0 OK
+  fwd_max_10d            max_abs=0.00000000 n_diff>1e-6=0 OK
+  c7_score               max_abs=0.00000000 n_diff>1e-6=0 OK
+VERIFY_MODULE_ALL_OK=True

@@ -1,0 +1,19 @@
+
+=== 2026-10-30 n=2 stable=False cache=fresh elapsed=6.74s ===
+  603278 大业股份   score= 15.283 streak=1 is2=False vol20=5.9053 ret5=22.3058 tor=66.3
+  600261 阳光照明   score=  3.006 streak=1 is2=False vol20=4.2647 ret5=18.5507 tor=4.7
+
+=== 2024-09-27 n=15 stable=True cache=stable_lru elapsed=8.95s ===
+  300085 银之杰    score= 22.585 streak=1 is2=False vol20=9.1876 ret5=122.0959 tor=23.92
+  300399 天利科技   score= 14.166 streak=1 is2=False vol20=7.3077 ret5=37.2074 tor=44.2
+  300803 指南针    score= 12.940 streak=1 is2=False vol20=7.0245 ret5=75.4051 tor=10.4
+  301169 零点有数   score= 12.481 streak=1 is2=False vol20=4.9584 ret5=30.2022 tor=47.86
+  300377 赢时胜    score= 11.407 streak=1 is2=False vol20=5.5279 ret5=48.0127 tor=26.79
+  300339 润和软件   score= 11.275 streak=1 is2=False vol20=5.5856 ret5=40.5896 tor=31.24
+
+=== 2025-02-10 n=3 stable=True cache=stable_lru elapsed=10.17s ===
+  688158 优刻得-W  score= 22.638 streak=1 is2=False vol20=8.4061 ret5=104.5649 tor=39.7
+  002354 天娱数科   score= 10.356 streak=1 is2=False vol20=5.82 ret5=37.8425 tor=27.18
+  002899 英派斯    score=  5.027 streak=1 is2=False vol20=4.6983 ret5=19.4298 tor=14.08
+
+MODULE_TEST=ALL_OK

@@ -1,0 +1,39 @@
+EXPLAIN ANALYZE  WITH qx AS (   SELECT substr(CAST(trade_date AS VARCHAR),1,10) AS d, code, name, close, high,          amount, turnover_rate, pct_change, huge_
+││              Total Time: 22.19s              ││
+│  PROJECTION ││     CTE     │
+│  TABLE_SCAN ││  PROJECTION │                              │     CTE     │
+               │  PROJECTION │                              │  PROJECTION │                                                                           │  PROJECT
+               │  HASH_JOIN  │                              │  PROJECTION │                                                                           │   ORDER_
+               │  PROJECTION ││  HASH_JOIN  │               │  PROJECTION │                                                                           │  PROJECT
+               │  TABLE_SCAN ││   CTE_SCAN  ││  PROJECTION ││    FILTER   │                                                                           │  PROJECT
+                                             │    WINDOW   ││  HASH_JOIN  │                                                                           │  PROJECT
+                                             │  OVER (ORDER││             │                                                                           │     name
+                                             │HASH_GROUP_BY││  PROJECTION ││HASH_GROUP_BY│                                                            │  HASH_JO
+                                             │    0.01s    ││huge_order_ne││ T #2) FILTER│                                                            │   di = d
+                                             │  PROJECTION ││  PROJECTION ││  PROJECTION │                                                            │  HASH_JO
+                                             │  PROJECTION ││    WINDOW   ││  HASH_JOIN  │                                                            │HASH_GROU
+                                             │             ││  ORDER BY di││    d = d    │                                                            │ Aggregat
+                                             │             ││   LAST ROWS ││             │                                                            │(DISTINCT
+                                             │             ││  ORDER BY di││             │                                                            │         
+                                             │             ││  ORDER BY di││             │                                                            │         
+                                             │             ││  ORDER BY di││             │                                                            │         
+                                             │             ││  ORDER BY di││             │                                                    │       │         
+                                             │             ││  ORDER BY di││             │                                                    │       │         
+                                             │             ││  ORDER BY di││             │                                                    │       │         
+                                             │   CTE_SCAN  ││   CTE_SCAN  ││  PROJECTION │                                             │HASH_GROUP_BY││  PROJECT
+                                                                           │LEFT_DEL...  │                                             │  PROJECTION ││LEFT_DEL.
+                                                                           │ NOT DISTINCT│                                             │             ││ NOT DIST
+                                                                           │  TABLE_SCAN ││  HASH_JOIN  │               │HASH_GROUP_BY││  TABLE_SCAN ││  TABLE_S
+                                                                           │   concepts  ││ concepts IS │               │             ││  trade_date ││   concep
+                                                                           │  trade_date ││ NOT DISTINCT│               │             ││ concept_name││  trade_d
+                                                                           │  , '2026-10 ││             │               │             ││pact/_tops_ca││  , '2026
+                                                                                          │COLUMN_D...  ││INOUT_FU...  │                                        
+                                                                                          │             ││             │                                        
+                                                                                                         │  PROJECTION │                                        
+                                                                                                         │  DELIM_SCAN │                                        
+                                                                                                         │             │                                        
+                                                                                                                                                                
+                                                                                                                                                                
+                                                                                                                                                                
+                                                                                                                                                                
+                                                                                                                                                                

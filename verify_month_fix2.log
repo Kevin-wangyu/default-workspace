@@ -1,0 +1,47 @@
+源目录: D:\Users\KFish\Desktop\Code\github-app\stockDisplay\data_compact
+目标目录: D:\Users\KFish\Desktop\Code\github-app\stockDisplay\data_compact_sync
+------------------------------------------------------------
+扫描到 281 个文件，开始逻辑比对...
+
+[UPDATED] market_amount.parquet
+[UPDATED] amo_components\2026-11.parquet
+--- 进度 20/281 ---
+--- 进度 40/281 ---
+[UPDATED] c7_picks\2026-11.parquet
+--- 进度 60/281 ---
+[UPDATED] concept_date\2026-11.parquet
+--- 进度 80/281 ---
+--- 进度 100/281 ---
+[UPDATED] concept_flow\2026-11.parquet
+--- 进度 120/281 ---
+--- 进度 140/281 ---
+--- 进度 160/281 ---
+[UPDATED] daily_pct\2026-11.parquet
+--- 进度 180/281 ---
+--- 进度 200/281 ---
+[UPDATED] industry_flow\2026-11.parquet
+--- 进度 220/281 ---
+--- 进度 240/281 ---
+[UPDATED] limit_up_streak\2026-11.parquet
+--- 进度 260/281 ---
+[UPDATED] quote\2026-11.parquet
+--- 进度 280/281 ---
+--- 进度 281/281 ---
+
+============================================================
+处理完成！耗时 83.1s
+  新增 (Created):  0
+  更新 (Updated):  9
+  跳过 (Skipped):  272  （逻辑数据一致，保留旧 mtime）
+============================================================
+
+提示：
+  data_compact_sync 已更新。
+  接下来请确保 GoodSync/Alist 同步的是 data_compact_sync 目录。
+自定义归档区间: 2026-11 ~ 2026-11 (共 1 个月)
+[c7_picks] 区间归档完成，共处理 0 个月
+
+完成：0 个月，耗时 0.4s
+输出目录：D:\Users\KFish\Desktop\Code\github-app\stockDisplay\data_compact
+
+正在同步到 data_compact_sync...

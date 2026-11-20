@@ -1,0 +1,2 @@
+TRAIN_REF n=2376197 vol_m=3.010096 vol_s=1.639706 ret_m=0.848288 ret_s=7.840214 tor_m=4.794629 tor_s=5.705012
+C7_POOL_TRAIN n=3036 vol_m=5.2472 ret_m=24.1659 tor_m=20.8754

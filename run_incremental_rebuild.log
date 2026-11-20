@@ -1,0 +1,5 @@
+BEFORE days=13
+REBUILD stat={'days': 13, 'rows': 98, 'source_counts': {'C6': 81, 'C7': 17}, 'date_min': '2026-03-07', 'date_max': '2026-11-19', 'seconds': 779.6} elapsed=779.6s
+AFTER days=650 (before_total=13)
+CHANGED partitions=10 ['trade_date=2026-11-05', 'trade_date=2026-11-06', 'trade_date=2026-11-09', 'trade_date=2026-11-10', 'trade_date=2026-11-11']
+INCREMENTAL_REBUILD_OK

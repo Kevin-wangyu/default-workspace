@@ -1,0 +1,57 @@
+D:\Softwares\miniconda3\envs\stock\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+2026-11-20 14:53:30 [INFO] httpx: HTTP Request: GET http://testserver/api/concept/c7_picks?trade_date=2026-11-19 "HTTP/1.1 200 OK"
+2026-11-20 14:53:30 [INFO] httpx: HTTP Request: GET http://testserver/api/concept/c7_picks?trade_date=2026-11-05 "HTTP/1.1 200 OK"
+2026-11-20 14:53:30 [INFO] httpx: HTTP Request: GET http://testserver/api/concept/c7_picks?trade_date=2026-11-02 "HTTP/1.1 200 OK"
+2026-11-20 14:53:30 [INFO] httpx: HTTP Request: GET http://testserver/api/concept/c7_picks?trade_date=2026-10-30 "HTTP/1.1 200 OK"
+2026-11-20 14:53:30 [INFO] httpx: HTTP Request: GET http://testserver/api/concept/c7_picks?trade_date=2025-01-09 "HTTP/1.1 200 OK"
+2026-11-20 14:53:30 [INFO] httpx: HTTP Request: GET http://testserver/api/concept/c7_picks?trade_date=2026-11-19 "HTTP/1.1 200 OK"
+2026-11-20 14:53:30 [INFO] httpx: HTTP Request: GET http://testserver/api/concept/c7_picks?trade_date=2026-11-02 "HTTP/1.1 200 OK"
+[OK] py_compile queries\c7_picks.py 
+[OK] py_compile core\c7_pool_cache.py 
+[OK] py_compile main.py 
+[OK] node --check frontend\js\concept_view1.js 
+[OK] node --check frontend\js\boot.js 
+[OK] HTTP200 2026-11-19 232ms
+[OK]   cache=local_parquet 2026-11-19 local_parquet
+[OK]   no future fields 2026-11-19 fwd_max=复盘列
+[OK]   sorted desc 2026-11-19 
+[OK]   source labeled 2026-11-19 {'C6'}
+[OK]   meta counts 2026-11-19 n=1 c7=0 c6=1
+    2026-11-19: n=1 C7=0 C6=1 streak2=0 strategy=C6+C7 232ms
+[OK] HTTP200 2026-11-05 11ms
+[OK]   cache=local_parquet 2026-11-05 local_parquet
+[OK]   no future fields 2026-11-05 fwd_max=复盘列
+[OK]   sorted desc 2026-11-05 
+[OK]   source labeled 2026-11-05 {'C6'}
+[OK]   meta counts 2026-11-05 n=12 c7=0 c6=12
+    2026-11-05: n=12 C7=0 C6=12 streak2=1 strategy=C6+C7 11ms
+[OK] HTTP200 2026-11-02 13ms
+[OK]   cache=local_parquet 2026-11-02 local_parquet
+[OK]   no future fields 2026-11-02 fwd_max=复盘列
+[OK]   sorted desc 2026-11-02 
+[OK]   source labeled 2026-11-02 {'C7', 'C6'}
+[OK]   meta counts 2026-11-02 n=11 c7=5 c6=6
+    2026-11-02: n=11 C7=5 C6=6 streak2=0 strategy=C6+C7 13ms
+[OK] HTTP200 2026-10-30 17ms
+[OK]   cache=local_parquet 2026-10-30 local_parquet
+[OK]   no future fields 2026-10-30 fwd_max=复盘列
+[OK]   sorted desc 2026-10-30 
+[OK]   source labeled 2026-10-30 {'C7'}
+[OK]   meta counts 2026-10-30 n=2 c7=2 c6=0
+    2026-10-30: n=2 C7=2 C6=0 streak2=0 strategy=C6+C7 17ms
+[OK] HTTP200 2025-01-09 17ms
+[OK]   cache=local_parquet 2025-01-09 local_parquet
+[OK]   no future fields 2025-01-09 fwd_max=复盘列
+[OK]   sorted desc 2025-01-09 
+[OK]   source labeled 2025-01-09 {'C6', 'C7'}
+[OK]   meta counts 2025-01-09 n=14 c7=4 c6=10
+    2025-01-09: n=14 C7=4 C6=10 streak2=4 strategy=C6+C7 17ms
+[OK] 11-19 池非空且C6补充 n=1 c7=0 c6=1
+[OK] 缓存显著快于实时 cache=17ms live=3049ms speedup=176.9x
+    SPEEDUP 2026-11-02: cache=17ms vs live=3049ms = 176.9x
+[OK] quote 行数未被改 n=3618901
+
+=== SUMMARY ===
+TOTAL=38 PASS=38 FAIL=0
+ALL CHECKS PASSED

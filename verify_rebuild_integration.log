@@ -1,0 +1,5 @@
+dry_run: {'days': 0, 'target_dates': None, 'dry_run': None}
+真实补算目标日: ['2026-11-20']
+rebuild: days=0 rows=0 source={} seconds=0.1s
+分区数 before=651 after=651 减少=False
+INTEGRATION_OK True

@@ -1,0 +1,13 @@
+schema关键列: ['trade_date', 'di', 'code', 'name', 'industry', 'board', 'open', 'high', 'low', 'close', 'volume', 'amount', 'turnover_rate', 'pct_change', 'lu_thr', 'huge_order_net', 'big_order_net', 'medium_order_net', 'small_order_net', 'main_net']
+ n_range=3431311
+ n_di10ok=3401956
+ n_lu=544259
+ n_mn=1232918
+ n_vol=962380
+ n_tor=1451746
+ n_gap=64419
+ n_hh=982139
+ n_ret=641995
+ n_bull=1051396
+ n_lead=442379
+ full-history lead: n_c6=15405 n_c7=4710

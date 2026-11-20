@@ -1,0 +1,8 @@
+=== 数据文件只读核验（行数 + 最新mtime）===
+  quote: ERROR 'WindowsPath' object is not iterable
+  daily_pct: ERROR 'WindowsPath' object is not iterable
+  concept_date: ERROR 'WindowsPath' object is not iterable
+  tops_bars: rows=20220  last_mtime=1795074271
+  tops_meta: rows=18665  last_mtime=1795074271
+
+说明：本轮三处改进只改了 queries/c7_picks.py、queries/concept.py、concept_view1.js、concept.css 四个代码文件；未触碰任何 parquet 数据文件。

@@ -1,0 +1,21 @@
+OK   concept_view1.js node --check (rc=0 )
+OK   concept.html 含 #leaderBox
+OK   concept.html 含 #leaderBtn
+OK   concept.html 含 #leaderPop
+OK   concept.html 含 #leaderCount
+OK   concept.html 含 #status
+OK   龙头按钮框+浮层容器结构在
+OK   定义 v1RenderLeaderPop
+OK   成功/异常路径均调用浮层渲染
+OK   #status 文案已移除龙头
+OK   代码里已无旧的 '龙头：' 状态文案
+OK   用 DOM API 渲染（非 innerHTML 拼字符串，防注入）
+OK   按 score 降序排序
+OK   每项含概念名 + score
+OK   score 保留4位小数
+OK   前端再排序兜底（后端已降序）
+OK   CSS hover 显示浮层
+OK   浮层 z-index 高于 toolbar(200)
+OK   浮层条目样式齐
+OK   后端 leader_concepts 数据源原样（score>=0.8 降序）
+VERIFY_LEADER_HOVER=ALL_OK

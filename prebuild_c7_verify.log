@@ -1,0 +1,23 @@
+FULL_COMPUTE seconds=666.7 rows=15511 days=647
+date_range 2024-03-13 2026-11-19
+source counts {'C6': 10778, 'C7': 4733}
+  2026-10-30: C7=2 C6补充=0 合计=2
+  2026-11-02: C7=5 C6补充=6 合计=11
+  2026-11-03: C7=1 C6补充=5 合计=6
+  2026-11-04: C7=0 C6补充=6 合计=6
+  2026-11-05: C7=0 C6补充=12 合计=12
+  2026-11-06: C7=1 C6补充=6 合计=7
+  2026-11-09: C7=2 C6补充=9 合计=11
+  2026-11-10: C7=7 C6补充=19 合计=26
+  2026-11-11: C7=0 C6补充=13 合计=13
+  2026-11-12: C7=2 C6补充=6 合计=8
+  2026-11-13: C7=5 C6补充=5 合计=10
+  2026-11-16: C7=0 C6补充=7 合计=7
+  2026-11-17: C7=0 C6补充=3 合计=3
+  2026-11-19: C7=0 C6补充=1 合计=1
+VERIFY 2026-10-30: live_n=2 preC7_n=2 inter=2 only_live=0 only_pre=0
+VERIFY 2026-11-02: live_n=5 preC7_n=5 inter=5 only_live=0 only_pre=0
+VERIFY 2026-11-03: live_n=1 preC7_n=1 inter=1 only_live=0 only_pre=0
+VERIFY 2025-01-09: live_n=4 preC7_n=4 inter=4 only_live=0 only_pre=0
+VERIFY 2025-11-10: live_n=6 preC7_n=6 inter=6 only_live=0 only_pre=0
+SAVED _prebuild_verify.parquet

@@ -1,0 +1,8 @@
+D:\Softwares\miniconda3\envs\stock\python.exe: can't open file 'D:\\Users\\KFish\\Documents\\deepseek-harness\\default-workspace\\scripts\\prepare_compact_sync.py': [Errno 2] No such file or directory
+自定义归档区间: 2026-11 ~ 2026-11 (共 1 个月)
+[c7_picks] 区间归档完成，共处理 0 个月
+
+完成：0 个月，耗时 0.3s
+输出目录：D:\Users\KFish\Desktop\Code\github-app\stockDisplay\data_compact
+
+正在同步到 data_compact_sync...

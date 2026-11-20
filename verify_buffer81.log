@@ -1,0 +1,2 @@
+buffer=81 修复前(全窗口concepts)         : 110.55s rows=1067
+buffer=81 修复后(concepts裁目标日)        :   3.14s rows=1067

@@ -1,0 +1,12 @@
+=== 新版 _compute vs 研究矩阵：C7池 code + fwd_max 对比 ===
+[2026-10-30] n=2 code一致=True 口径一致=True 耗时=1656ms fwd5非空=2 fwd10非空=2 数据推进补全=2只
+[2026-05-08] n=20 code一致=True 口径一致=True 耗时=3379ms fwd5非空=20 fwd10非空=20 数据推进补全=0只
+[2024-09-27] n=15 code一致=True 口径一致=True 耗时=3433ms fwd5非空=15 fwd10非空=15 数据推进补全=0只
+[2024-03-15] n=4 code一致=True 口径一致=True 耗时=3521ms fwd5非空=4 fwd10非空=4 数据推进补全=0只
+
+=== 端点返回新字段检查 ===
+  字段含 fwd_max_5d=True fwd_max_10d=True
+  样例 300283: fwd_max_5d=8.6 fwd_max_10d=18.97
+  future_info标记=False (仅指选股条件无前视；复盘列是展示用)
+
+VERIFY_V2=ALL_OK

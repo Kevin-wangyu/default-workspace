@@ -1,0 +1,29 @@
+=== 端点整体耗时 ===
+
+[2026-10-30]
+  get_concept_date_top10: 8143 ms
+  get_limit_up_ladder: 7488 ms
+  c7_picks FRESH(_compute): 7326 ms
+  c7_picks 稳定缓存命中(估): 9611 ms  (FRESH n=2)
+
+[2026-05-08]
+  get_concept_date_top10: 37 ms
+  get_limit_up_ladder: 1101 ms
+  c7_picks FRESH(_compute): 12006 ms
+  c7_picks 稳定缓存命中(估): 6692 ms  (FRESH n=20)
+
+[2024-09-27]
+  get_concept_date_top10: 86 ms
+  get_limit_up_ladder: 1416 ms
+  c7_picks FRESH(_compute): 12690 ms
+  c7_picks 稳定缓存命中(估): 7501 ms  (FRESH n=15)
+
+
+=== C7 _compute 内部步骤拆解（2026-10-30）===
+  A 扫quote全量建base: 37 ms
+  B 窗口特征(ma/vol/lu_cnt)全量: 2095 ms
+  C 扫concept_date全量+unnest: 238 ms
+  D 仅目标日前60交易日quote: 179 ms
+  E 仅目标日concept_date: 54 ms
+
+DIAG_DONE

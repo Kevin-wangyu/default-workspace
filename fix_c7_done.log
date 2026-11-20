@@ -1,0 +1,18 @@
+TEMPLATE= trade_date=2024-03-13 cols= 24
+NEED_FIX= 14
+   trade_date=2026-03-07 MISSING_COL
+   trade_date=2026-03-09 MISSING_COL
+   trade_date=2026-07-23 MISSING_COL
+   trade_date=2026-11-05 large_string
+   trade_date=2026-11-06 large_string
+   trade_date=2026-11-09 large_string
+   trade_date=2026-11-10 large_string
+   trade_date=2026-11-11 large_string
+   trade_date=2026-11-12 large_string
+   trade_date=2026-11-13 large_string
+   trade_date=2026-11-16 large_string
+   trade_date=2026-11-17 large_string
+   trade_date=2026-11-19 large_string
+   trade_date=2026-11-20 MISSING_COL
+FIXED= 14
+FIX_DONE

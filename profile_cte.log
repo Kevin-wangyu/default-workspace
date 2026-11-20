@@ -1,0 +1,11 @@
+到 CTE st        :   0.26s  count=172590
+到 CTE lead      :   0.16s  count=170311
+到 CTE feat      :   0.37s  count=172590
+到 CTE flag      :   0.40s  count=172590
+到 CTE st7       :   0.58s  count=22
+到 CTE concepts  :   0.21s  count=170311
+到 CTE fwd       :   0.30s  count=172590
+到 CTE pool      : FAIL Parser Error: syntax error at or near "SELECT"
+
+LINE 117: SELECT * FROM pool ORDER BY trade_date, c7_score DESC SELECT count(*) FROM pool
+                      

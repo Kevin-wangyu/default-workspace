@@ -1,0 +1,6 @@
+OK   serve.py 调用 rebuild_c7_pool 传 force_recent_days=0
+OK   serve.py 已移除 force_recent_days=max(10,...) 旧调用
+OK   serve.py / c7_pool_rebuild.py / tops_cache.py py_compile 全通过
+   serve 实参 dry_run= {'days': 1, 'rows': 0, 'source_counts': {}, 'date_min': '2026-11-05', 'date_max': '2026-11-05', 'seconds': 0.1, 'dry_run': True, 'target_dates': ['2026-11-05']}
+OK   serve 实参下增量目标日<=5（原来10天→现在1~2天）
+VERIFY_SERVE_CALL_FIX=ALL_OK

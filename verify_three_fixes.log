@@ -1,0 +1,11 @@
+OK   月合并文件存在
+OK   月文件 matched_concepts=list<string> (实际 list<element: string>)
+   11月行数=121 日期数=13 来源={'C7': 23, 'C6': 98}
+OK   月文件有数据
+   fwd待补全日= ['2026-11-05']
+   dry_run= {'days': 1, 'rows': 0, 'source_counts': {}, 'date_min': '2026-11-05', 'date_max': '2026-11-05', 'seconds': 0.0, 'dry_run': True, 'target_dates': ['2026-11-05']} 耗时=0.05s
+OK   增量目标日<=5（之前的近10天无脑重算已消除）
+OK   tops_cache.py py_compile 通过
+INFO:core.tops_cache:[verify] logger.info 无 flush 参数测试 OK
+OK   logger.info 不带 flush 调用正常
+VERIFY_THREE_FIXES=ALL_OK

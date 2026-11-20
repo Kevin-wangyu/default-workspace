@@ -1,0 +1,5 @@
+TOTAL_PARTITIONS= 651
+TYPE_DIST= {'list<element: string>': 651}
+VARCHAR_COUNT= 0 first= []
+LIST_COUNT= 651 first= ['2024-03-13', '2024-03-14', '2024-03-15', '2024-03-18', '2024-03-19']
+VARCHAR_DATES_ALL= []

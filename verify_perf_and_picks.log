@@ -1,0 +1,16 @@
+[PASS] py_compile serve.py 
+[PASS] py_compile startup/archive.py 
+[PASS] py_compile core/c7_pool_rebuild.py 
+[PASS] serve 无 _build_intersection_picks 调用 
+[PASS] serve 无 picks 生成日志 
+[PASS] serve 保留 c7_pool 更新 
+[PASS] archive 跳过 concept_picks 
+[PASS] _pool_sql 支持 target_dates_sql 
+  耗时: 基线 16.70s / 修复 1.19s (加速 14.0x)
+[PASS] 提速≥3x 14.0x
+[PASS] 目标日行数一致 3 vs 3
+[PASS] 24字段口径零差异 []
+[PASS] c7_picks 分区≥647 651
+[PASS] concept_picks 历史分区保留(>0) 675
+
+TOTAL 13/13 ALL PASSED

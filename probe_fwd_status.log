@@ -1,0 +1,16 @@
+N_TRADE_DAYS= 676 LAST= ['2026-11-17', '2026-11-19', '2026-11-20']
+2026-10-30 n=2 f10_nonnull=2/2 f5_nonnull=2/2 dist_from_end=14 mc_type=ndarray
+2026-11-02 n=11 f10_nonnull=11/11 f5_nonnull=11/11 dist_from_end=13 mc_type=ndarray
+2026-11-03 n=6 f10_nonnull=6/6 f5_nonnull=6/6 dist_from_end=12 mc_type=ndarray
+2026-11-04 n=6 f10_nonnull=6/6 f5_nonnull=6/6 dist_from_end=11 mc_type=ndarray
+2026-11-05 n=12 f10_nonnull=0/12 f5_nonnull=12/12 dist_from_end=10 mc_type=str
+2026-11-06 n=7 f10_nonnull=0/7 f5_nonnull=6/7 dist_from_end=9 mc_type=str
+2026-11-09 n=11 f10_nonnull=0/11 f5_nonnull=11/11 dist_from_end=8 mc_type=str
+2026-11-10 n=26 f10_nonnull=0/26 f5_nonnull=26/26 dist_from_end=7 mc_type=str
+2026-11-11 n=13 f10_nonnull=0/13 f5_nonnull=12/13 dist_from_end=6 mc_type=str
+2026-11-12 n=8 f10_nonnull=0/8 f5_nonnull=0/8 dist_from_end=5 mc_type=str
+2026-11-13 n=10 f10_nonnull=0/10 f5_nonnull=0/10 dist_from_end=4 mc_type=str
+2026-11-16 n=7 f10_nonnull=0/7 f5_nonnull=0/7 dist_from_end=3 mc_type=str
+2026-11-17 n=3 f10_nonnull=0/3 f5_nonnull=0/3 dist_from_end=2 mc_type=str
+2026-11-19 n=1 f10_nonnull=0/1 f5_nonnull=0/1 dist_from_end=1 mc_type=str
+2026-11-20 EMPTY cols= ['trade_date', 'code']

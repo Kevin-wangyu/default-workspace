@@ -1,0 +1,28 @@
+OK   落点存在: core/c7_pool_rebuild.py
+OK   落点存在: core/c7_pool_cache.py
+OK   落点存在: queries/c7_picks.py
+OK   落点存在: config.py
+OK   落点存在: serve.py
+OK   落点存在: scripts/archive_month.py
+OK   落点存在: scripts/check_backup.py
+OK   落点存在: scripts/prepare_compact_sync.py
+OK   落点存在: PROJECT/PROJECT v5.md
+OK   config.py 含 C7_POOL_DIR
+OK   serve.py 已接入 rebuild_c7_pool
+OK   archive_month.py KINDS 含 c7_picks
+OK   check_backup.py 含 c7_picks 覆盖
+OK   rebuild 接口+dry_run 就位
+OK   v5 文档正文 12787 字符
+OK   v5 含章节: 变更总览
+OK   v5 含章节: 项目结构
+OK   v5 含章节: serve
+OK   v5 含章节: 月合并
+OK   v5 含章节: data_compact_sync
+OK   v5 含章节: 验证证据
+OK   v5 含章节: 策略池口径
+OK   v5 含章节: 历史文档
+OK   v5 如实披露两种耗时口径
+OK   日分区 数量 15511
+OK   月合并 数量 15511
+OK   sync镜像 数量 15511
+FINAL_DELIVERY_CHECK=ALL_OK

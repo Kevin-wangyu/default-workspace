@@ -1,0 +1,4 @@
+=== serve default params: limit_days=30, force_recent_days=10 ===
+DRY stat={'days': 10, 'rows': 0, 'source_counts': {}, 'date_min': '2026-11-05', 'date_max': '2026-11-19', 'seconds': 0.1, 'dry_run': True, 'target_dates': ['2026-11-05', '2026-11-06', '2026-11-09', '2026-11-10', '2026-11-11', '2026-11-12', '2026-11-13', '2026-11-16', '2026-11-17', '2026-11-19']}
+REBUILD stat={'days': 10, 'rows': 98, 'source_counts': {'C6': 81, 'C7': 17}, 'date_min': '2026-11-05', 'date_max': '2026-11-19', 'seconds': 178.5} elapsed=178.5s
+SERVE_PARAM_REBUILD_OK

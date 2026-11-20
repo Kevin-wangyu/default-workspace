@@ -1,0 +1,12 @@
+PASS | py_compile 8 modules
+PASS | 日分区数 >=640 | n=647 trade_date=2024-03-13~trade_date=2026-11-19
+PASS | 月合并文件数 >=30 | n=33 2024-03~2026-11
+PASS | 月合并总行数 == 15511 | rows=15511
+PASS | 月合并日期覆盖 == 647 | days=647 2024-03-13~2026-11-19
+PASS | 月合并来源计数 | src={'C7': 4733, 'C6': 10778}
+PASS | sync c7_picks 月文件数 | 33/33
+PASS | sync c7_picks 逻辑数据一致 | 33 文件逐月 EXCEPT ALL 无差异
+PASS | 原始 quote 行数 == 3624360（serve后台已推进,非本任务写入） | n=3624360
+PASS | 原始 quote 最新mtime早于本任务(11-20 15:13) | mtime=2026-11-19 15:49:38
+PASS | rebuild dry_run 无写入 | target_days=13 2026-03-07~2026-11-19
+SUMMARY 11/11 ALL PASSED

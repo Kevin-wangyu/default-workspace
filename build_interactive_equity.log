@@ -1,0 +1,4 @@
+[C7单池] 逐日净值对齐: n=669 max_abs_diff=0.004987 n_diff(2位)=0
+[C6+C7双池] 逐日净值对齐: n=669 max_abs_diff=0.005000 n_diff(2位)=0
+DONE -> interactive_equity_data.json (1,534,270 bytes)
+NODES c7=669 dual=669

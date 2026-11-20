@@ -1,0 +1,37 @@
+========================================================================
+  PASS 全量扫描-扫描日期总数=1338(669x2)  [tot_days=1338]
+  PASS A类同日重复标的-修复后=0  [dup_bad=0]
+  PASS B类卖出无前日持仓且非当日回转-修复后=0  [sell_bad=0]
+  PASS B类当日回转已正确标注(可追溯)  [same_day_tagged=400]
+  PASS 页面内嵌node-data存在
+  PASS [c7]节点数一致  [669/669]
+  PASS [c7]逐日equity逐项一致
+  PASS [c7]逐日holdings逐项一致
+  PASS [c7]逐日sells逐项一致
+  PASS [c7]页面持仓code唯一
+  PASS [dual]节点数一致  [669/669]
+  PASS [dual]逐日equity逐项一致
+  PASS [dual]逐日holdings逐项一致
+  PASS [dual]逐日sells逐项一致
+  PASS [dual]页面持仓code唯一
+  PASS [c7]成交笔数=1450  [1450]
+  PASS [c7]期望=0.8184%
+  PASS [c7]胜率=40.48%
+  PASS [c7]PF=1.186
+  PASS [dual]成交笔数=5041  [5041]
+  PASS [dual]期望=1.0393%
+  PASS [dual]胜率=41.46%
+  PASS [dual]PF=1.24
+  PASS FIG配置可解析
+  PASS FIG trace hovertemplate极简(无表格标签)  [['%{x}<extra></extra>', '%{x}<extra></extra>']]
+  PASS FIG trace无customdata表格拼接
+  PASS 无旧hover_html表格拼接
+  PASS DOM建表(el helper内部createElement)
+  PASS textContent写文本(防裸标签)
+  PASS 当日回转徽标存在
+  PASS 多笔合并徽标存在
+  PASS [c7]重放净值maxdiff<=0.005  [diff=0.004987]
+  PASS [dual]重放净值maxdiff<=0.005  [diff=0.005]
+  PASS 成本不可得声明存在
+========================================================================
+HOLDING_FIX_CHECK 34/34 ALL PASSED

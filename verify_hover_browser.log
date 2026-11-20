@@ -1,0 +1,20 @@
+CDP_BROWSER Chrome/157.0.8103.51
+PAGE_READY true
+HANDLERS_BOUND true
+PROBE {"idx":27,"date":"2024-03-19","nHold":4,"nSell":1,"x":190,"y":1075}
+REAL_HOVER display=block renderCalls=1 tables=1 rows=4 new=0 sell=1
+TT_INNERTEXT_BEGIN
+2024-03-19　双池
+资产 ¥20,795　　收益率 +3.97%　　持仓 4 只
+当日持仓明细
+代码	名称	持有额	盈亏额	盈亏%	标注
+002902	铭普光磁	¥4,176	+176	+4.41%	
+603533	掌阅科技	¥4,127	+127	+3.18%	
+605218	伟时电子	¥4,000	-0	-0.01%	
+605588	冠石科技	¥3,892	-108	-2.71%	
+当日卖出
+卖 300781 因赛集团：止盈(+15%)，持有4日，盈亏 +600(+15.00%)
+
+TT_INNERTEXT_END
+RAW_TAG_IN_INNERTEXT false
+HOVER_BROWSER_OK TRUE

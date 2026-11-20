@@ -12,7 +12,9 @@
     "risk_free_rate": 0.0,
     "TP": 15.0,
     "SL": -8.0,
-    "HOLD": 7
+    "HOLD": 7,
+    "t1_first_exit_k": 2,
+    "board_mode": "normal"
   },
   "pools": {
     "C7单池": {
@@ -20,33 +22,33 @@
         "n_signals": 4688,
         "n_filled": 1450,
         "fill_rate": 30.93,
-        "avg_ret": 0.8184,
-        "win_rate": 40.48,
-        "profit_factor": 1.186
+        "avg_ret": -0.5784,
+        "win_rate": 34.62,
+        "profit_factor": 0.881
       },
       "port_base": {
-        "n_opened": 698,
-        "n_rejected_slot": 752,
-        "avg_ret_opened": 1.1833,
-        "win_rate_opened": 41.83,
-        "capital_deployed": 2792000.0,
-        "pnl_total": 33038.19
+        "n_opened": 640,
+        "n_rejected_slot": 810,
+        "avg_ret_opened": -0.2052,
+        "win_rate_opened": 35.94,
+        "capital_deployed": 2560000.0,
+        "pnl_total": -5252.06
       },
       "portfolio": {
         "initial": 20000.0,
-        "final": 53038.19,
-        "cum_return_pct": 165.191,
-        "cagr_pct": 42.141,
-        "max_drawdown_pct": 30.7177,
-        "sharpe": 1.458,
+        "final": 14747.94,
+        "cum_return_pct": -26.2603,
+        "cagr_pct": -10.4021,
+        "max_drawdown_pct": 106.4545,
+        "sharpe": -0.6401,
         "years": 2.77,
         "n_days": 669,
         "date_start": "2024-02-01",
         "date_end": "2026-11-10",
         "split_date": "2025-12-31 -> 2026-01-05",
         "cut_di": 463,
-        "equity_train_end": 39369.56,
-        "equity_full_end": 53038.19
+        "equity_train_end": 3710.15,
+        "equity_full_end": 14747.94
       },
       "unavailable": {
         "items": [
@@ -60,33 +62,33 @@
         "n_signals": 15284,
         "n_filled": 5041,
         "fill_rate": 32.98,
-        "avg_ret": 1.0393,
-        "win_rate": 41.46,
-        "profit_factor": 1.24
+        "avg_ret": -0.6623,
+        "win_rate": 34.24,
+        "profit_factor": 0.864
       },
       "port_base": {
-        "n_opened": 1029,
-        "n_rejected_slot": 4012,
-        "avg_ret_opened": 1.3796,
-        "win_rate_opened": 41.89,
-        "capital_deployed": 4116000.0,
-        "pnl_total": 56784.07
+        "n_opened": 909,
+        "n_rejected_slot": 4132,
+        "avg_ret_opened": -0.9266,
+        "win_rate_opened": 32.01,
+        "capital_deployed": 3636000.0,
+        "pnl_total": -33692.71
       },
       "portfolio": {
         "initial": 20000.0,
-        "final": 76784.07,
-        "cum_return_pct": 283.9204,
-        "cagr_pct": 62.426,
-        "max_drawdown_pct": 32.2533,
-        "sharpe": 1.8113,
+        "final": -13692.71,
+        "cum_return_pct": -168.4636,
+        "cagr_pct": null,
+        "max_drawdown_pct": 178.5655,
+        "sharpe": 0.4339,
         "years": 2.77,
         "n_days": 669,
         "date_start": "2024-02-01",
         "date_end": "2026-11-10",
         "split_date": "2025-12-31 -> 2026-01-05",
         "cut_di": 463,
-        "equity_train_end": 56479.66,
-        "equity_full_end": 76784.07
+        "equity_train_end": -16615.75,
+        "equity_full_end": -13692.71
       },
       "unavailable": {
         "items": [

@@ -1,0 +1,545 @@
+{
+  "config": {
+    "initial_capital": 20000.0,
+    "reinvest_rule": "fixed_fraction_of_equity_at_signal_close",
+    "reinvest_frac": 20.0,
+    "trigger": "per_buy_signal_day",
+    "max_position_pct": 20.0,
+    "max_concurrent_positions": 5,
+    "exit_release": "next_day",
+    "ranking": "rule1.1_score_desc",
+    "compounding": true,
+    "mark_to_market": true,
+    "risk_free_rate": 0.0,
+    "TP": 15.0,
+    "SL": -8.0,
+    "HOLD": 7,
+    "alloc_mode_note": "每笔投入额随账户净值按比例放大/缩小；上一轮固定4000不复利作为对照"
+  },
+  "pools": {
+    "c7": {
+      "name": "C7单池",
+      "n_days": 669,
+      "A": {
+        "days": 4,
+        "items": [
+          {
+            "di": 223,
+            "date": "2025-01-06",
+            "dup": {
+              "002449": 2
+            },
+            "holds": [
+              {
+                "idx": 352,
+                "code": "002449",
+                "di_buy": 221,
+                "di_exit": 224,
+                "k": 4,
+                "reason": "SL"
+              },
+              {
+                "idx": 353,
+                "code": "002449",
+                "di_buy": 223,
+                "di_exit": 224,
+                "k": 2,
+                "reason": "SL"
+              }
+            ]
+          },
+          {
+            "di": 235,
+            "date": "2025-01-22",
+            "dup": {
+              "603068": 2
+            },
+            "holds": [
+              {
+                "idx": 119,
+                "code": "603068",
+                "di_buy": 232,
+                "di_exit": 238,
+                "k": 7,
+                "reason": "TIME"
+              },
+              {
+                "idx": 120,
+                "code": "603068",
+                "di_buy": 235,
+                "di_exit": 239,
+                "k": 5,
+                "reason": "TP"
+              }
+            ]
+          },
+          {
+            "di": 236,
+            "date": "2025-01-23",
+            "dup": {
+              "603068": 2
+            },
+            "holds": [
+              {
+                "idx": 119,
+                "code": "603068",
+                "di_buy": 232,
+                "di_exit": 238,
+                "k": 7,
+                "reason": "TIME"
+              },
+              {
+                "idx": 120,
+                "code": "603068",
+                "di_buy": 235,
+                "di_exit": 239,
+                "k": 5,
+                "reason": "TP"
+              }
+            ]
+          },
+          {
+            "di": 237,
+            "date": "2025-01-24",
+            "dup": {
+              "603068": 2
+            },
+            "holds": [
+              {
+                "idx": 119,
+                "code": "603068",
+                "di_buy": 232,
+                "di_exit": 238,
+                "k": 7,
+                "reason": "TIME"
+              },
+              {
+                "idx": 120,
+                "code": "603068",
+                "di_buy": 235,
+                "di_exit": 239,
+                "k": 5,
+                "reason": "TP"
+              }
+            ]
+          }
+        ],
+        "total_items": 4
+      },
+      "B": {
+        "total": 134,
+        "B1_same_day_buy_sell": 134,
+        "B2_anomaly": 0,
+        "B2_items": [],
+        "B1_items": [
+          {
+            "di": 32,
+            "date": "2024-03-25",
+            "code": "301025",
+            "reason": "SL",
+            "k": 1,
+            "di_buy": 32,
+            "di_exit": 32
+          },
+          {
+            "di": 40,
+            "date": "2024-04-08",
+            "code": "301500",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 40,
+            "di_exit": 40
+          },
+          {
+            "di": 49,
+            "date": "2024-04-19",
+            "code": "603357",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 49,
+            "di_exit": 49
+          },
+          {
+            "di": 50,
+            "date": "2024-04-22",
+            "code": "301091",
+            "reason": "SL",
+            "k": 1,
+            "di_buy": 50,
+            "di_exit": 50
+          },
+          {
+            "di": 52,
+            "date": "2024-04-24",
+            "code": "603017",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 52,
+            "di_exit": 52
+          },
+          {
+            "di": 53,
+            "date": "2024-04-25",
+            "code": "300484",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 53,
+            "di_exit": 53
+          }
+        ]
+      },
+      "cases": {
+        "跨境通_002640_2024-09-13": [],
+        "阳普医疗_300030_2024-09-13": []
+      }
+    },
+    "dual": {
+      "name": "C6+C7双池",
+      "n_days": 669,
+      "A": {
+        "days": 12,
+        "items": [
+          {
+            "di": 85,
+            "date": "2024-06-14",
+            "dup": {
+              "000037": 2
+            },
+            "holds": [
+              {
+                "idx": 2778,
+                "code": "000037",
+                "di_buy": 81,
+                "di_exit": 87,
+                "k": 7,
+                "reason": "TIME"
+              },
+              {
+                "idx": 9360,
+                "code": "000037",
+                "di_buy": 85,
+                "di_exit": 89,
+                "k": 5,
+                "reason": "SL"
+              }
+            ]
+          },
+          {
+            "di": 86,
+            "date": "2024-06-17",
+            "dup": {
+              "000037": 2
+            },
+            "holds": [
+              {
+                "idx": 2778,
+                "code": "000037",
+                "di_buy": 81,
+                "di_exit": 87,
+                "k": 7,
+                "reason": "TIME"
+              },
+              {
+                "idx": 9360,
+                "code": "000037",
+                "di_buy": 85,
+                "di_exit": 89,
+                "k": 5,
+                "reason": "SL"
+              }
+            ]
+          },
+          {
+            "di": 96,
+            "date": "2024-07-01",
+            "dup": {
+              "603228": 2
+            },
+            "holds": [
+              {
+                "idx": 4840,
+                "code": "603228",
+                "di_buy": 92,
+                "di_exit": 98,
+                "k": 7,
+                "reason": "TIME"
+              },
+              {
+                "idx": 667,
+                "code": "603228",
+                "di_buy": 96,
+                "di_exit": 102,
+                "k": 7,
+                "reason": "TIME"
+              }
+            ]
+          },
+          {
+            "di": 97,
+            "date": "2024-07-02",
+            "dup": {
+              "603228": 2
+            },
+            "holds": [
+              {
+                "idx": 4840,
+                "code": "603228",
+                "di_buy": 92,
+                "di_exit": 98,
+                "k": 7,
+                "reason": "TIME"
+              },
+              {
+                "idx": 667,
+                "code": "603228",
+                "di_buy": 96,
+                "di_exit": 102,
+                "k": 7,
+                "reason": "TIME"
+              }
+            ]
+          },
+          {
+            "di": 150,
+            "date": "2024-09-13",
+            "dup": {
+              "002640": 2
+            },
+            "holds": [
+              {
+                "idx": 5124,
+                "code": "002640",
+                "di_buy": 148,
+                "di_exit": 151,
+                "k": 4,
+                "reason": "SL"
+              },
+              {
+                "idx": 5125,
+                "code": "002640",
+                "di_buy": 150,
+                "di_exit": 151,
+                "k": 2,
+                "reason": "SL"
+              }
+            ]
+          },
+          {
+            "di": 230,
+            "date": "2025-01-15",
+            "dup": {
+              "600601": 2
+            },
+            "holds": [
+              {
+                "idx": 9857,
+                "code": "600601",
+                "di_buy": 228,
+                "di_exit": 232,
+                "k": 5,
+                "reason": "TP"
+              },
+              {
+                "idx": 9858,
+                "code": "600601",
+                "di_buy": 230,
+                "di_exit": 232,
+                "k": 3,
+                "reason": "TP"
+              }
+            ]
+          },
+          {
+            "di": 231,
+            "date": "2025-01-16",
+            "dup": {
+              "600601": 2
+            },
+            "holds": [
+              {
+                "idx": 9857,
+                "code": "600601",
+                "di_buy": 228,
+                "di_exit": 232,
+                "k": 5,
+                "reason": "TP"
+              },
+              {
+                "idx": 9858,
+                "code": "600601",
+                "di_buy": 230,
+                "di_exit": 232,
+                "k": 3,
+                "reason": "TP"
+              }
+            ]
+          },
+          {
+            "di": 384,
+            "date": "2025-09-03",
+            "dup": {
+              "603626": 2
+            },
+            "holds": [
+              {
+                "idx": 7855,
+                "code": "603626",
+                "di_buy": 381,
+                "di_exit": 385,
+                "k": 5,
+                "reason": "SL"
+              },
+              {
+                "idx": 13711,
+                "code": "603626",
+                "di_buy": 384,
+                "di_exit": 385,
+                "k": 2,
+                "reason": "SL"
+              }
+            ]
+          }
+        ],
+        "total_items": 12
+      },
+      "B": {
+        "total": 266,
+        "B1_same_day_buy_sell": 266,
+        "B2_anomaly": 0,
+        "B2_items": [],
+        "B1_items": [
+          {
+            "di": 32,
+            "date": "2024-03-25",
+            "code": "301025",
+            "reason": "SL",
+            "k": 1,
+            "di_buy": 32,
+            "di_exit": 32
+          },
+          {
+            "di": 33,
+            "date": "2024-03-26",
+            "code": "603607",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 33,
+            "di_exit": 33
+          },
+          {
+            "di": 35,
+            "date": "2024-03-28",
+            "code": "600683",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 35,
+            "di_exit": 35
+          },
+          {
+            "di": 39,
+            "date": "2024-04-03",
+            "code": "301022",
+            "reason": "SL",
+            "k": 1,
+            "di_buy": 39,
+            "di_exit": 39
+          },
+          {
+            "di": 40,
+            "date": "2024-04-08",
+            "code": "301500",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 40,
+            "di_exit": 40
+          },
+          {
+            "di": 43,
+            "date": "2024-04-11",
+            "code": "000506",
+            "reason": "TP",
+            "k": 1,
+            "di_buy": 43,
+            "di_exit": 43
+          }
+        ]
+      },
+      "cases": {
+        "跨境通_002640_2024-09-13": [
+          {
+            "di": 147,
+            "date": "2024-09-10",
+            "di_buy": 148,
+            "di_exit": 151,
+            "k": 4,
+            "reason": "SL",
+            "fill": 2.02,
+            "ret": -8.0
+          },
+          {
+            "di": 149,
+            "date": "2024-09-12",
+            "di_buy": 150,
+            "di_exit": 151,
+            "k": 2,
+            "reason": "SL",
+            "fill": 2.0,
+            "ret": -8.0
+          },
+          {
+            "di": 165,
+            "date": "2024-10-15",
+            "di_buy": 166,
+            "di_exit": 172,
+            "k": 7,
+            "reason": "TIME",
+            "fill": 2.964,
+            "ret": 0.8771929824561431
+          },
+          {
+            "di": 202,
+            "date": "2024-12-05",
+            "di_buy": 203,
+            "di_exit": 203,
+            "k": 1,
+            "reason": "TP",
+            "fill": 6.479,
+            "ret": 15.0
+          }
+        ],
+        "阳普医疗_300030_2024-09-13": [
+          {
+            "di": 147,
+            "date": "2024-09-10",
+            "di_buy": 148,
+            "di_exit": 148,
+            "k": 1,
+            "reason": "TP",
+            "fill": 5.5385,
+            "ret": 15.0
+          },
+          {
+            "di": 149,
+            "date": "2024-09-12",
+            "di_buy": 150,
+            "di_exit": 150,
+            "k": 1,
+            "reason": "TP",
+            "fill": 5.68,
+            "ret": 15.0
+          },
+          {
+            "di": 338,
+            "date": "2025-07-01",
+            "di_buy": 339,
+            "di_exit": 342,
+            "k": 4,
+            "reason": "TP",
+            "fill": 7.827999999999999,
+            "ret": 15.0
+          }
+        ]
+      }
+    }
+  }
+}

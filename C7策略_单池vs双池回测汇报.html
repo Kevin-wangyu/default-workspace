@@ -30,7 +30,7 @@ code{background:#eef2f6;padding:1px 5px;border-radius:4px;font-size:12px}
 <header><div class="wrap">
 <h1>C7 操盘策略落地方案 · 单池 vs 双池回测汇报</h1>
 <div class="sub">严格按《C7操盘策略落地方案.html》执行 · 面向决策者的落地验证</div>
-<div class="meta">回测区间 2024-03-13 至 2026-11-01 ｜ 生成时间 2026-11-20 18:25 ｜ 数据源 research_matrix.parquet ｜ 全部数字可追溯至 backtest_out.json</div>
+<div class="meta">回测区间 2024-03-13 至 2026-11-01 ｜ 生成时间 2026-11-20 19:17 ｜ 数据源 research_matrix.parquet ｜ 全部数字可追溯至 backtest_out.json</div>
 </div></header>
 <div class="wrap">
 
@@ -292,5 +292,17 @@ code{background:#eef2f6;padding:1px 5px;border-radius:4px;font-size:12px}
 <div class="note"><b>结论口径不变、不夸大：</b>改为复利后，样本内显著、样本外证据不足的统计判定不变（双池 oos p≈0.13、单池 p≈0.50）。复利放大的是资金曲线的斜率，不改变信号的统计显著性；执行建议仍是"双池+连池≥2优先、小仓验证"。</div>
 </section>
 
-<div class="foot">逐笔数字来自 backtest_out.json（重算132/132）；组合层不复利 portfolio_out.json（23/23）；复利 portfolio_compound_out.json（29/29），均哈希复现 · 不构成投资建议</div>
+<h2>附录、交互式资产曲线复盘页</h2>
+<section>
+<p>本报告为静态数字汇报。同目录另附可交互页面 <b>复利资产曲线_交互复盘.html</b>：把两条复利账户曲线按交易日画成节点，<b>鼠标悬停任一节点</b>即显示当日收益率与当日持仓表（逐只代码/名称/持有额/盈亏额与百分比），当日新增持仓标"新"并给出买入原因、当日卖出标"卖"并给出退出原因（止盈+15%/止损-8%/持有7日到期）。</p>
+<ul>
+<li><b>数据口径同源</b>：页面节点数据由复利撮合引擎 <code>portfolio_compound.py</code> 忠实重放，逐日净值已与引擎输出逐日核对（两池 max_abs_diff&lt;0.005 元、持仓字段逐项自洽），逐笔四指标与 backtest_out.json 一致。</li>
+<li><b>持仓一致性修复</b>：同一标的多笔独立仓位在浮层按代码合并为唯一一行并标「N笔合并」（不再出现"同日重复标的"）；当日买当日卖的标的标「当日回转」并附建仓日、单列买入额与盈亏，解决"卖出日无前一日持仓"的追溯问题。全量扫描 1,338 个日期节点，修复后同日重复标的 = 0、卖出无前日持仓且非当日回转 = 0。</li>
+<li><b>浮层为商业级表格渲染</b>：悬停浮层由真 DOM 表格（<code>document.createElement</code> + <code>textContent</code>）渲染，表头/数据行对齐、数字右对齐、盈亏按 A 股习惯红涨绿跌、新增/卖出用胶囊徽标；已用 headless Chrome 真实鼠标 hover 验证浮层正常显示且不含任何未渲染的裸 HTML 标签。</li>
+<li><b>自检</b>：持仓一致性修复自检 <b>34/34 全部通过</b>，真实浏览器 hover 验证通过（2024-09-13 双池：跨境通 2 笔合并为 1 行、阳普医疗当日回转可追溯）；组合层精确交易成本仍标"不可得"（无逐笔计费明细，不用替代值填充）。</li>
+</ul>
+<div class="note">交互页用法：浏览器打开同目录 <code>复利资产曲线_交互复盘.html</code>（自包含、离线可用），在曲线上移动鼠标到目标交易日节点即可查看当日持仓；金色竖线为样本内/外分界。</div>
+</section>
+
+<div class="foot">逐笔数字来自 backtest_out.json（重算132/132）；组合层不复利 portfolio_out.json（23/23）；复利 portfolio_compound_out.json（29/29）；交互页持仓一致性自检34/34 + 真实浏览器hover验证通过，均哈希复现 · 不构成投资建议</div>
 </div></body></html>

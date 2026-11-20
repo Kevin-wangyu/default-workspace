@@ -1,0 +1,38 @@
+======================================================================
+c7 C7单池
+A类重复样例(同日同code):
+  日期 2025-01-06 重复 {'002449': 2}
+     idx 352 code 002449 di_buy 221 di_exit 224 k 4 reason SL
+     idx 353 code 002449 di_buy 223 di_exit 224 k 2 reason SL
+  日期 2025-01-22 重复 {'603068': 2}
+     idx 119 code 603068 di_buy 232 di_exit 238 k 7 reason TIME
+     idx 120 code 603068 di_buy 235 di_exit 239 k 5 reason TP
+  日期 2025-01-23 重复 {'603068': 2}
+     idx 119 code 603068 di_buy 232 di_exit 238 k 7 reason TIME
+     idx 120 code 603068 di_buy 235 di_exit 239 k 5 reason TP
+B1当日买卖样例:
+   {'di': 32, 'date': '2024-03-25', 'code': '301025', 'reason': 'SL', 'k': 1, 'di_buy': 32, 'di_exit': 32}
+   {'di': 40, 'date': '2024-04-08', 'code': '301500', 'reason': 'TP', 'k': 1, 'di_buy': 40, 'di_exit': 40}
+   {'di': 49, 'date': '2024-04-19', 'code': '603357', 'reason': 'TP', 'k': 1, 'di_buy': 49, 'di_exit': 49}
+   {'di': 50, 'date': '2024-04-22', 'code': '301091', 'reason': 'SL', 'k': 1, 'di_buy': 50, 'di_exit': 50}
+阳普医疗300030生命周期: []
+跨境通002640生命周期: []
+======================================================================
+dual C6+C7双池
+A类重复样例(同日同code):
+  日期 2024-06-14 重复 {'000037': 2}
+     idx 2778 code 000037 di_buy 81 di_exit 87 k 7 reason TIME
+     idx 9360 code 000037 di_buy 85 di_exit 89 k 5 reason SL
+  日期 2024-06-17 重复 {'000037': 2}
+     idx 2778 code 000037 di_buy 81 di_exit 87 k 7 reason TIME
+     idx 9360 code 000037 di_buy 85 di_exit 89 k 5 reason SL
+  日期 2024-07-01 重复 {'603228': 2}
+     idx 4840 code 603228 di_buy 92 di_exit 98 k 7 reason TIME
+     idx 667 code 603228 di_buy 96 di_exit 102 k 7 reason TIME
+B1当日买卖样例:
+   {'di': 32, 'date': '2024-03-25', 'code': '301025', 'reason': 'SL', 'k': 1, 'di_buy': 32, 'di_exit': 32}
+   {'di': 33, 'date': '2024-03-26', 'code': '603607', 'reason': 'TP', 'k': 1, 'di_buy': 33, 'di_exit': 33}
+   {'di': 35, 'date': '2024-03-28', 'code': '600683', 'reason': 'TP', 'k': 1, 'di_buy': 35, 'di_exit': 35}
+   {'di': 39, 'date': '2024-04-03', 'code': '301022', 'reason': 'SL', 'k': 1, 'di_buy': 39, 'di_exit': 39}
+阳普医疗300030生命周期: [{"di": 147, "date": "2024-09-10", "di_buy": 148, "di_exit": 148, "k": 1, "reason": "TP", "fill": 5.5385, "ret": 15.0}, {"di": 149, "date": "2024-09-12", "di_buy": 150, "di_exit": 150, "k": 1, "reason": "TP", "fill": 5.68, "ret": 15.0}, {"di": 338, "date": "2025-07-01", "di_buy": 339, "di_exit": 342, "k": 4, "reason": "TP", "fill": 7.827999999999999, "ret": 15.0}]
+跨境通002640生命周期: [{"di": 147, "date": "2024-09-10", "di_buy": 148, "di_exit": 151, "k": 4, "reason": "SL", "fill": 2.02, "ret": -8.0}, {"di": 149, "date": "2024-09-12", "di_buy": 150, "di_exit": 151, "k": 2, "reason": "SL", "fill": 2.0, "ret": -8.0}, {"di": 165, "date": "2024-10-15", "di_buy": 166, "di_exit": 172, "k": 7, "reason": "TIME", "fill": 2.964, "ret": 0.8771929824561431}, {"di": 202, "date": "2024-12-05", "di_buy": 203, "di_exit": 203, "k": 1, "reason": "TP", "fill": 6.479, "ret": 15.0}]

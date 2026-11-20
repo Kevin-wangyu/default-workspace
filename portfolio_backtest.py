@@ -5,12 +5,13 @@
 组合层所有输入均来自逐笔明细 CSV + research_matrix 交易日历，可唯一推导。
 """
 from __future__ import annotations
-import json, time
+import json, time, os
 from pathlib import Path
 import duckdb, numpy as np, pandas as pd
 
 WS = Path(r"D:\Users\KFish\Documents\deepseek-harness\default-workspace")
 RM = (WS/"research_matrix.parquet").as_posix()
+SUFFIX = os.environ.get("BT_SUFFIX", "")
 
 # ============ 资金与仓位三要素（显式定义，禁止隐含假设）============
 CONFIG = dict(
@@ -25,9 +26,12 @@ CONFIG = dict(
     mark_to_market=True,          # 净值含持仓浮动盈亏
     risk_free_rate=0.0,           # 夏普无风险利率=0（披露）
     TP=15.0, SL=-8.0, HOLD=7,     # 与逐笔层一致的退出常量（用于重算退出日）
+    t1_first_exit_k=2,            # T+1：买入当日(k=1)不可卖，最早 k=2(T+2)卖出
+    board_mode="main" if SUFFIX=="_main" else "normal",
 )
 INIT = CONFIG["initial_capital"]; ALLOC = CONFIG["alloc_per_trade"]
 NMAX = CONFIG["max_concurrent_positions"]; HOLD = CONFIG["HOLD"]
+T1K = CONFIG["t1_first_exit_k"]
 
 def fmt(v,n=2):
     return round(float(v),n) if v is not None and not (isinstance(v,float) and np.isnan(v)) else None
@@ -39,14 +43,13 @@ con.close()
 di2date = dict(zip(cal.di.astype(int), cal.trade_date))
 all_di = cal.di.astype(int).values
 
-POOLS = [("C7单池","backtest_detail_c7.csv"),("C6+C7双池","backtest_detail_dual.csv")]
+POOLS = [("C7单池",f"backtest_detail_c7{SUFFIX}.csv"),("C6+C7双池",f"backtest_detail_dual{SUFFIX}.csv")]
 
 def recompute_exit_di(row):
-    """完整复现原回测退出循环，重算退出日与退出原因；返回 (di_exit, k, reason_recalc)。
-    同日先判止损后判止盈（保守），第7日未触发按收盘平仓。"""
+    """复现回测退出循环：T+1 买入当日(k=1)不可卖，从 k=2 起；同日先止损后止盈，第7日收盘平仓。"""
     di = int(row["di"]); fp = float(row["fill_px"])
     tp_thr = fp*(1+CONFIG["TP"]/100); sl_thr = fp*(1+CONFIG["SL"]/100)
-    for k in range(1, HOLD+1):
+    for k in range(T1K, HOLD+1):
         if row[f"l{k}"] <= sl_thr:   # 同日先止损
             return di+k, k, "SL"
         if row[f"h{k}"] >= tp_thr:
@@ -165,14 +168,16 @@ for gname, fn in POOLS:
     out = pd.DataFrame(dict(di=eq.index, trade_date=[di2date[d] for d in eq.index],
                             equity=eq.values,
                             split=["train" if d<=cut else "oos" for d in eq.index]))
-    out.to_csv(WS/f"portfolio_equity_{'c7' if gname=='C7单池' else 'dual'}.csv",index=False,encoding="utf-8-sig")
+    out.to_csv(WS/f"portfolio_equity_{'c7' if gname=='C7单池' else 'dual'}{SUFFIX}.csv",index=False,encoding="utf-8-sig")
     print(f"=== {gname} ===", flush=True)
     print(f" 逐笔层(不变): 信号{base['n_signals']} 成交{base['n_filled']} 期望{base['avg_ret']}% "
           f"胜率{base['win_rate']}% PF{base['profit_factor']}", flush=True)
     print(f" 组合层开仓{port_base['n_opened']} 槽位拒绝{port_base['n_rejected_slot']} "
           f"开仓子集期望{port_base['avg_ret_opened']}%", flush=True)
-    print(f" 组合指标: 终值{final:.2f} 累计{cum:.4f}% 年化{cagr:.4f}% "
-          f"最大回撤{mdd:.4f}% 夏普{sharpe:.4f} years={years:.2f} sec={time.time()-t0:.1f}", flush=True)
+    cagr_s = f"{cagr:.4f}%" if cagr is not None else "不可得(终值≤0)"
+    sharpe_s = f"{sharpe:.4f}" if sharpe is not None else "不可得"
+    print(f" 组合指标: 终值{final:.2f} 累计{cum:.4f}% 年化{cagr_s} "
+          f"最大回撤{mdd:.4f}% 夏普{sharpe_s} years={years:.2f} sec={time.time()-t0:.1f}", flush=True)
 
-(WS/"portfolio_out.json").write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding="utf-8")
-print("\nDONE -> portfolio_out.json", flush=True)
+(WS/f"portfolio_out{SUFFIX}.json").write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding="utf-8")
+print(f"\nDONE -> portfolio_out{SUFFIX}.json", flush=True)

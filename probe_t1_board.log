@@ -1,0 +1,44 @@
+BOARD_DIST:
+board       n  codes
+ main 2105570   3342
+cy_kc 1307220   2032
+   bj  178133    367
+
+PREFIX_DIST:
+ p3  codes board
+300    937 cy_kc
+002    918  main
+600    747  main
+688    617 cy_kc
+603    616  main
+301    475 cy_kc
+000    411  main
+920    355    bj
+601    225  main
+001    123  main
+605    112  main
+003     42  main
+139      4  main
+282      4  main
+225      3  main
+221      3  main
+212      3  main
+272      3  main
+138      3  main
+123      3  main
+249      3  main
+299      2  main
+285      2  main
+293      2  main
+268      2  main
+258      2  main
+296      2  main
+205      2  main
+274      2  main
+281      2  main
+
+[c7] 成交 1450 笔
+  列名: ['trade_date', 'di', 'split', 'code', 'name', 'c0', 'o1', 'h1', 'l1', 'c1', 'o2', 'h2', 'l2', 'c2', 'o3', 'h3', 'l3', 'c3', 'o4', 'h4', 'l4', 'c4', 'o5', 'h5', 'l5', 'c5', 'o6', 'h6', 'l6', 'c6', 'o7', 'h7', 'l7', 'c7', 'o8', 'h8', 'l8', 'c8', 'o9', 'h9', 'l9', 'c9', 'o10', 'h10', 'l10', 'c10', 'di10', 'vol20', 'ret_5d', 'turnover_rate', 'n_leader_concepts', 'is_c6', 'is_c7', 'streak6', 'streak7', 'filled', 'fill_px', 'ret', 'reason', 'mfe7', 'mfe10', 'mae7', 'score']
+
+[dual] 成交 5041 笔
+  列名: ['trade_date', 'di', 'split', 'code', 'name', 'c0', 'o1', 'h1', 'l1', 'c1', 'o2', 'h2', 'l2', 'c2', 'o3', 'h3', 'l3', 'c3', 'o4', 'h4', 'l4', 'c4', 'o5', 'h5', 'l5', 'c5', 'o6', 'h6', 'l6', 'c6', 'o7', 'h7', 'l7', 'c7', 'o8', 'h8', 'l8', 'c8', 'o9', 'h9', 'l9', 'c9', 'o10', 'h10', 'l10', 'c10', 'di10', 'vol20', 'ret_5d', 'turnover_rate', 'n_leader_concepts', 'is_c6', 'is_c7', 'streak6', 'streak7', 'filled', 'fill_px', 'ret', 'reason', 'mfe7', 'mfe10', 'mae7', 'score']

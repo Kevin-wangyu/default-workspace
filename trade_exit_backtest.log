@@ -1,0 +1,37 @@
+=== 期望收益为正的参数（按 min(train,oos) 平均收益排序）TOP15 ===
+Empty DataFrame
+Columns: [tp, sl, hold, train_win, train_avg, oos_win, oos_avg, train_tp, oos_tp, train_profit_factor, oos_profit_factor]
+Index: []
+
+=== 全部为正的参数个数 === 0 / 45
+
+=== 止损敏感度（hold=7, 各tp） ===
+ tp=15:
+ sl  train_avg  oos_avg  train_win  oos_win  train_sl
+ -5     -0.139    0.010      26.07    26.73      72.6
+ -8     -0.461   -0.129      34.89    36.36      59.7
+-10     -0.517   -0.201      39.41    40.52      50.2
+-12     -0.607   -0.378      42.19    43.05      41.0
+-15     -0.597   -0.652      44.63    44.85      28.1
+ tp=20:
+ sl  train_avg  oos_avg  train_win  oos_win  train_sl
+ -5     -0.189   -0.035      22.89    23.72      75.4
+ -8     -0.608   -0.258      30.95    32.87      62.4
+-10     -0.712   -0.366      35.28    36.97      52.7
+-12     -0.809   -0.592      38.02    39.43      42.9
+-15     -0.775   -0.858      40.50    41.36      29.2
+ tp=25:
+ sl  train_avg  oos_avg  train_win  oos_win  train_sl
+ -5     -0.423   -0.144      20.61    22.22      77.1
+ -8     -0.835   -0.391      28.71    31.37      63.8
+-10     -0.921   -0.561      33.14    35.40      53.8
+-12     -1.052   -0.771      35.81    37.87      43.7
+-15     -1.025   -1.059      38.29    39.80      29.7
+
+=== 持有期敏感度（tp=20,sl=-10） ===
+ hold  train_avg  oos_avg  train_win  oos_win  train_time
+    5     -0.669   -0.227      35.78    40.22        36.0
+    7     -0.712   -0.366      35.28    36.97        26.3
+   10     -0.671   -0.363      33.50    34.98        17.0
+
+DONE -> exit_backtest_out.json

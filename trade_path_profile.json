@@ -1,0 +1,36 @@
+{
+  "n": 4688,
+  "train": 3027,
+  "oos": 1661,
+  "buy_compare": {
+    "train": {
+      "mfe10_study": 35.05,
+      "mfe10_t1open": 28.44,
+      "mfe10_t1close": 26.96,
+      "mfe10_t2open": 26.23,
+      "mfe7_t1open": 23.13
+    },
+    "oos": {
+      "mfe10_study": 32.99,
+      "mfe10_t1open": 27.15,
+      "mfe10_t1close": 25.59,
+      "mfe10_t2open": 25.77,
+      "mfe7_t1open": 21.37
+    }
+  },
+  "gap": {
+    "train": {
+      "mean": 2.467,
+      "med": 1.703,
+      "gt5": 26.46,
+      "ltm5": 4.1
+    },
+    "oos": {
+      "mean": 1.904,
+      "med": 1.169,
+      "gt5": 21.13,
+      "ltm5": 3.91
+    }
+  },
+  "sec": 34.0
+}

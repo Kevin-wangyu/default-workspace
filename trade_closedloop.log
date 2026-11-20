@@ -1,0 +1,15 @@
+D:\Users\KFish\Documents\deepseek-harness\default-workspace\trade_closedloop.py:46: RuntimeWarning: divide by zero encountered in divide
+  return (v-np.nanmean(ref))/np.nanstd(ref)
+D:\Users\KFish\Documents\deepseek-harness\default-workspace\trade_closedloop.py:46: RuntimeWarning: invalid value encountered in divide
+  return (v-np.nanmean(ref))/np.nanstd(ref)
+=== 闭环：回踩-5%买入，池内排序top50% ===
+ train: 无排序(n=964) MFE≥20=25.83% 期望=0.803% 胜率=40.87%
+       top50%(n=483) MFE≥20=26.09% 期望=0.85% 胜率=41.61%
+ oos: 无排序(n=486) MFE≥20=24.49% 期望=0.164% 胜率=36.42%
+       top50%(n=237) MFE≥20=25.32% 期望=0.117% 胜率=35.86%
+
+=== 切换依据：连续在池 vs 新进（回踩买入口径，双期）===
+ train: 连续在池(n=471) 期望=1.024% MFE≥20=27.8% | 新进(n=493) 期望=0.592% MFE≥20=23.9%
+ oos: 连续在池(n=336) 期望=0.655% MFE≥20=27.7% | 新进(n=150) 期望=-0.937% MFE≥20=17.3%
+
+DONE

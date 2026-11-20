@@ -1,0 +1,22 @@
+{
+  "train": {
+    "base_n": 964,
+    "top_n": 483,
+    "base_mfe20": 25.83,
+    "top_mfe20": 26.09,
+    "base_ret": 0.803,
+    "top_ret": 0.85,
+    "base_win": 40.87,
+    "top_win": 41.61
+  },
+  "oos": {
+    "base_n": 486,
+    "top_n": 237,
+    "base_mfe20": 24.49,
+    "top_mfe20": 25.32,
+    "base_ret": 0.164,
+    "top_ret": 0.117,
+    "base_win": 36.42,
+    "top_win": 35.86
+  }
+}

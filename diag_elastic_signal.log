@@ -1,0 +1,16 @@
+=== (a) 各档 n 维度 (m=20) ===
+档[强] n=185 n10hit=0.3899 n7hit=0.3351 n10>n7天数=76 n7>n10天数=0
+档[中] n=194 n10hit=0.3398 n7hit=0.2905 n10>n7天数=49 n7>n10天数=0
+档[弱] n=201 n10hit=0.3028 n7hit=0.2637 n10>n7天数=35 n7>n10天数=0
+→ 若 n10 恒优于 n7，则 n 不是可弹性调节的杠杆
+
+=== (b) 触发窗口归集：T日 vs T-1/T-2触发 (m=20,n=10) ===
+rows: 3522506
+触发窗口对命中率影响:
+ train: today=0.3684 any3=0.3011 提升=-6.73pct | n_today均=7.5 n_any3均=20.6
+ oos: today=0.2850 any3=0.2535 提升=-3.15pct | n_today均=9.4 n_any3均=25.8
+ 档[强] n=185 today=0.3899 any3=0.3277 window_gain=-6.22pct
+ 档[中] n=194 today=0.3398 any3=0.2726 window_gain=-6.73pct
+ 档[弱] n=201 today=0.3028 any3=0.2623 window_gain=-4.05pct
+
+DONE

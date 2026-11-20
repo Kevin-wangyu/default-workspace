@@ -1,0 +1,27 @@
+PASS doctype 
+PASS html_close 
+PASS charset 
+PASS sections_10 n=10
+PASS no_placeholder unresolved {var}
+PASS no_none 
+PASS imgs_4 n=4
+PASS imgs_decode 764x480,844x503,1199x415,929x569
+PASS num_170 
+PASS num_29.31 
+PASS num_274 
+PASS num_47.24 
+PASS num_180 
+PASS num_31.03 
+PASS num_4.25 
+PASS num_122 
+PASS num_21.03 
+PASS num_n10win 
+PASS num_window_down 
+PASS num_oos_ge50 
+PASS chinese_gt2500 n=2530
+PASS no_fffd 
+PASS no_forward_filter 
+PASS forward_declared 
+PASS zero_write suspicious=[]
+
+25/25 CHECKS ALL PASSED

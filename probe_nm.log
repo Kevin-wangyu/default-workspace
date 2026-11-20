@@ -1,0 +1,7 @@
+MATRIX ncol: 87
+MATRIX cols: ['trade_date', 'di', 'code', 'name', 'industry', 'board', 'open', 'high', 'low', 'close', 'volume', 'amount', 'turnover_rate', 'pct_change', 'lu_thr', 'huge_order_net', 'big_order_net', 'medium_order_net', 'small_order_net', 'main_net', 'main_net_norm', 'huge_norm', 'small_norm', 'scrplus_90', 'scrplus_70', 'n_concepts', 'n_hot_concepts', 'max_concept_score', 'n_leader_concepts', 'in_strong_concept', 'ma5', 'ma10', 'ma20', 'ma60', 'bias5', 'bias20', 'ma5_gt_ma20', 'ma20_gt_ma60', 'close_hh20_ratio', 'vol20', 'ret_5d', 'ret_10d', 'ret_20d', 'lu_cnt_10d', 'lu_cnt_20d', 'tor_ma5', 'tor_ratio', 'amt_ma20', 'amt_ratio', 'main_net5', 'is_limit_up', 'lu_gap', 'mkt_amount', 'mkt_amount_calc', 'mkt_n', 'mkt_up_ratio', 'mkt_lu', 'mkt_pct_mean', 'mkt_amt_ma5', 'mkt_amt_ma20', 'mkt_amt_ratio', 'mkt_lu_ma5', 'mkt_pct_ma5', 'mkt_ret_5d', 'mkt_ret_10d', 'mkt_ret_20d', 'mkt_hit5', 'mkt_hit10', 'eff_hit10_lag', 'eff_hit10_lag_s', 'eff_hit5_lag', 'fwd_max_5d', 'fwd_max_10d', 'fwd_n5', 'fwd_n10', 'y5', 'y10', 'split', 'n_strong_today', 'n_concept_strong_hist', 'n_mainline_not_onlist', 'max_strong_hist10', 'n_concept_hot20', 'y7', 'y12', 'fwd_max_7d', 'fwd_max_12d']
+MATRIX rows: 3590923
+SPLIT: [('oos', 1093939, 199), ('tail', 38980, 7), ('train', 2458004, 463)]
+RECOMPUTE_CHECK n=3585471 n5=3551074 diff5=228 n10=3517055 diff10=271 maxdiff_fm5=24.95162070633767 maxdiff_fm10=28.916281458654304
+C7 POOL: [('oos', 1674, 180), ('tail', 16, 5), ('train', 3036, 403)]
+DONE

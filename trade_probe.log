@@ -1,0 +1,20 @@
+=== columns ===
+['trade_date', 'di', 'code', 'name', 'industry', 'board', 'open', 'high', 'low', 'close', 'volume', 'amount', 'turnover_rate', 'pct_change', 'lu_thr', 'huge_order_net', 'big_order_net', 'medium_order_net', 'small_order_net', 'main_net', 'main_net_norm', 'huge_norm', 'small_norm', 'scrplus_90', 'scrplus_70', 'n_concepts', 'n_hot_concepts', 'max_concept_score', 'n_leader_concepts', 'in_strong_concept', 'ma5', 'ma10', 'ma20', 'ma60', 'bias5', 'bias20', 'ma5_gt_ma20', 'ma20_gt_ma60', 'close_hh20_ratio', 'vol20', 'ret_5d', 'ret_10d', 'ret_20d', 'lu_cnt_10d', 'lu_cnt_20d', 'tor_ma5', 'tor_ratio', 'amt_ma20', 'amt_ratio', 'main_net5', 'is_limit_up', 'lu_gap', 'mkt_amount', 'mkt_amount_calc', 'mkt_n', 'mkt_up_ratio', 'mkt_lu', 'mkt_pct_mean', 'mkt_amt_ma5', 'mkt_amt_ma20', 'mkt_amt_ratio', 'mkt_lu_ma5', 'mkt_pct_ma5', 'mkt_ret_5d', 'mkt_ret_10d', 'mkt_ret_20d', 'mkt_hit5', 'mkt_hit10', 'eff_hit10_lag', 'eff_hit10_lag_s', 'eff_hit5_lag', 'fwd_max_5d', 'fwd_max_10d', 'fwd_n5', 'fwd_n10', 'y5', 'y10', 'split', 'n_strong_today', 'n_concept_strong_hist', 'n_mainline_not_onlist', 'max_strong_hist10', 'n_concept_hot20', 'y7', 'y12', 'fwd_max_7d', 'fwd_max_12d']
+
+=== OHLC + volume 覆盖 ===
+{'n': 3590923, 'n_open': 3590923, 'n_high': 3590923, 'n_low': 3590923, 'n_close': 3590923, 'n_vol': 3590923, 'n_vol0': 1, 'n_flat': 6633, 'mindi': 1, 'maxdi': 669}
+
+=== 交易日/缺口口径样例（1只票5行） ===
+trade_date   code  open  high   low  close  pct_change    volume  di
+2026-03-04 000001 10.48 10.48 10.31  10.35   -1.615970 1089714.0 500
+2026-03-05 000001 10.36 10.48 10.34  10.45    0.966184  712641.0 501
+2026-03-06 000001 10.42 10.48 10.41  10.46    0.095694  476577.0 502
+2026-03-07 000001 10.43 10.46 10.38  10.40   -0.573614  835892.0 503
+2026-03-09 000001 10.43 10.46 10.38  10.40    0.000000  835892.0 504
+2026-03-10 000001 10.41 10.45 10.37  10.45    0.480769  790112.0 505
+2026-03-06 000002  4.67  4.72  4.65   4.72    0.639659  937905.0 502
+2026-03-07 000002  4.65  4.67  4.62   4.65   -1.483051  920223.0 503
+
+=== T+1 可买性：涨停(open=high=close 且 pct_change>=9.8)比例 ===
+{'n_lu': 70730, 'n_lu20': 7740, 'n_susp': 1, 'n': 3590923}
+DONE

@@ -1,0 +1,154 @@
+{
+  "rank": {
+    "vol20": {
+      "train": {
+        "q1": 16.6,
+        "q5": 35.8,
+        "spread": 19.2
+      },
+      "oos": {
+        "q1": 18.4,
+        "q5": 28.9,
+        "spread": 10.5
+      }
+    },
+    "lu_cnt_20d": {
+      "train": {
+        "q1": 21.9,
+        "q5": 40.7,
+        "spread": 18.8
+      },
+      "oos": {
+        "q1": 25.7,
+        "q5": 26.1,
+        "spread": 0.4
+      }
+    },
+    "main_net_norm": {
+      "train": {
+        "q1": 30.1,
+        "q5": 24.4,
+        "spread": -5.7
+      },
+      "oos": {
+        "q1": 34.7,
+        "q5": 11.3,
+        "spread": -23.4
+      }
+    },
+    "ret_5d": {
+      "train": {
+        "q1": 20.7,
+        "q5": 36.8,
+        "spread": 16.1
+      },
+      "oos": {
+        "q1": 18.4,
+        "q5": 32.0,
+        "spread": 13.6
+      }
+    },
+    "turnover_rate": {
+      "train": {
+        "q1": 22.8,
+        "q5": 29.5,
+        "spread": 6.7
+      },
+      "oos": {
+        "q1": 18.2,
+        "q5": 24.7,
+        "spread": 6.6
+      }
+    },
+    "n_leader_concepts": {
+      "train": {
+        "q1": 25.9,
+        "q5": 23.9,
+        "spread": -2.0
+      },
+      "oos": {
+        "q1": 24.1,
+        "q5": 28.9,
+        "spread": 4.8
+      }
+    },
+    "close_hh20_ratio": {
+      "train": {
+        "q1": 24.9,
+        "q5": 26.1,
+        "spread": 1.2
+      },
+      "oos": {
+        "q1": 29.6,
+        "q5": 23.2,
+        "spread": -6.4
+      }
+    },
+    "bias5": {
+      "train": {
+        "q1": 17.6,
+        "q5": 37.8,
+        "spread": 20.2
+      },
+      "oos": {
+        "q1": 24.5,
+        "q5": 29.9,
+        "spread": 5.4
+      }
+    },
+    "mkt_amt_ratio": {
+      "train": {
+        "q1": 23.6,
+        "q5": 26.4,
+        "spread": 2.8
+      },
+      "oos": {
+        "q1": 30.8,
+        "q5": 24.2,
+        "spread": -6.6
+      }
+    },
+    "mkt_up_ratio": {
+      "train": {
+        "q1": 31.0,
+        "q5": 22.0,
+        "spread": -9.0
+      },
+      "oos": {
+        "q1": 20.8,
+        "q5": 18.8,
+        "spread": -2.0
+      }
+    }
+  },
+  "persist": {
+    "train": {
+      "new_n": 493,
+      "new_hit": 23.94,
+      "old_n": 471,
+      "old_hit": 27.81
+    },
+    "oos": {
+      "new_n": 150,
+      "new_hit": 17.33,
+      "old_n": 336,
+      "old_hit": 27.68
+    }
+  },
+  "crash": {
+    "train": {
+      "calm_hit": 26.13,
+      "crash_n": 57,
+      "crash_hit": 21.05
+    },
+    "oos": {
+      "calm_hit": 21.52,
+      "crash_n": 91,
+      "crash_hit": 37.36
+    }
+  },
+  "t1_lu": {
+    "train": 23.42,
+    "oos": 19.87
+  }
+}

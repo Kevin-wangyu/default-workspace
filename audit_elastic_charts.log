@@ -1,0 +1,5 @@
+E1: (764, 480) nonwhite=0.339 colors=16 dark=0.0177 -> OK
+E2: (844, 503) nonwhite=0.101 colors=77 dark=0.0177 -> OK
+E3: (929, 569) nonwhite=0.162 colors=71 dark=0.0150 -> OK
+E4: (1199, 415) nonwhite=0.323 colors=16 dark=0.0230 -> OK
+ALL_OK

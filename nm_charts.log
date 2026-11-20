@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\Users\KFish\Documents\deepseek-harness\default-workspace\nm_charts.py", line 54, in <module>
+    ax.plot(NS,ys,ls+o,color=col,lw=2.2,marker='o',ms=5,
+                     ^
+NameError: name 'o' is not defined. Did you mean: 'io'?

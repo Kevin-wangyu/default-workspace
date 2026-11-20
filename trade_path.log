@@ -1,0 +1,30 @@
+前向完整样本: 3522506 c7列命中: 77126842 sec=32.3
+Python重算C7命中: 4688
+C7路径样本: 4688
+di连续校验 di1=di+1: 4688 / 4688
+
+=== 买入口径命中率 (m=20) ===
+-- train (n=3027) --
+  mfe10_study     : hit20=35.05%  median_mfe=13.23%
+  mfe10_t1open    : hit20=28.44%  median_mfe=11.08%
+  mfe10_t1close   : hit20=26.96%  median_mfe=10.05%
+  mfe10_t2open    : hit20=26.23%  median_mfe=10.94%
+  mfe7_study      : hit20=29.96%  median_mfe=11.59%
+  mfe7_t1open     : hit20=23.13%  median_mfe= 9.86%
+-- oos (n=1661) --
+  mfe10_study     : hit20=32.99%  median_mfe=13.28%
+  mfe10_t1open    : hit20=27.15%  median_mfe=10.94%
+  mfe10_t1close   : hit20=25.59%  median_mfe=10.00%
+  mfe10_t2open    : hit20=25.77%  median_mfe=10.75%
+  mfe7_study      : hit20=27.15%  median_mfe=11.59%
+  mfe7_t1open     : hit20=21.37%  median_mfe= 9.73%
+
+=== 跳空缺口 gap_t1 (T+1开盘 vs T收盘) ===
+ train: mean=2.47% median=1.70% p10=-3.03% p90=9.99% >5%占比=26.5% <-5%占比=4.1%
+ oos: mean=1.90% median=1.17% p10=-2.82% p90=8.76% >5%占比=21.1% <-5%占比=3.9%
+
+=== MFE/MAE/触顶日 (T+1开盘买入,10日) ===
+ train: MFE10均=16.7% MAE10均=-13.1% 触顶日均=4.13 触顶≤3日占比=55.2% 持有10日收益均=-1.31%
+ oos: MFE10均=15.2% MAE10均=-13.7% 触顶日均=4.42 触顶≤3日占比=51.3% 持有10日收益均=-2.12%
+
+DONE -> trade_path.parquet

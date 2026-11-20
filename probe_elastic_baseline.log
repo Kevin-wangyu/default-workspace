@@ -1,0 +1,26 @@
+top keys: ['thresholds', 'daily', 'by_split', 'by_regime', 'overall', 'monthly', 'first_report_r1', 'this_report_c7']
+daily len: 580
+sample row: {'date': '2024-03-13', 'n': 10, 'hit10': 0.3, 'hit5': 0.1, 'split': 'train', 'mkt_hit10': 0.0898, 'regime': '牛'}
+--- 选股数口径 ---
+days total: 580
+days n==0: 0
+days n>=1: 580 占比=100.00%
+n分布: min=1 med=6 max=72 mean=8.11
+--- hit10 口径 (n>=1 的有效日) ---
+valid days: 580
+days hit10==0 (n>=1): 122
+days hit10>0: 458
+days hit10>=0.25: 365 占比(/all580)=62.93%
+days hit10>=0.50: 170 占比(/all580)=29.31%
+days hit10>=0.60: 101 占比(/all580)=17.41%
+days hit10>=0.70: 67 占比(/all580)=11.55%
+days hit10>=0.75: 60 占比(/all580)=10.34%
+--- 全580日(含n=0视hit=0) ---
+days hit10f>=0.5: 170
+days hit10f>=0.75: 60
+--- 170 到底对应谁 ---
+n>=1 days = 580
+hit10>=0.5 (valid) = 170
+hit10>0.5 (valid) = 113
+days_ge75+days_50_75 from overall: 60 110
+DONE

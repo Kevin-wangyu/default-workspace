@@ -1,0 +1,7 @@
+charts: 5
+ chart_t1.png   size=(1151, 649) nonwhite=0.405 dark=0.0161 colors=  708 edge_dark=0.0000 OK
+ chart_t2.png   size=(1120, 617) nonwhite=0.059 dark=0.0167 colors=  305 edge_dark=0.0000 OK
+ chart_t3.png   size=(1191, 656) nonwhite=0.053 dark=0.0171 colors= 1154 edge_dark=0.0000 OK
+ chart_t4.png   size=(1179, 655) nonwhite=0.149 dark=0.0144 colors=  266 edge_dark=0.0000 OK
+ chart_t5.png   size=(1304, 623) nonwhite=0.306 dark=0.0202 colors=  274 edge_dark=0.0000 OK
+ALL_OK

@@ -1,0 +1,24 @@
+============================================================
+PASS 20 / FAIL 0
+  [OK] DOCTYPE
+  [OK] html闭合
+  [OK] charset
+  [OK] 章节数=8 — h2=8
+  [OK] 表格闭合 — 8/8
+  [OK] 无占位符
+  [OK] 图片数=6 — n=6
+  [OK] 图片全解码 — 6/6
+  [OK] train_n10_m20 — train n10/m20 hit=%.1f%%=35.1%
+  [OK] oos_n25_m20 — oos n25/m20 hit=45.5%
+  [OK] train_n10_m10 — train n10/m10=63.7%
+  [OK] train_n10_m50 — train n10/m50=7.1%
+  [OK] 捕获率train n10 — 0.38%
+  [OK] 放大倍数train n10 — 3.04×
+  [OK] 边际拐点n3to5 — daycap present
+  [OK] 推荐n10m20 — recommend present
+  [OK] 中文字数>2500 — cn=2726
+  [OK] 无U+FFFD
+  [OK] 前视声明
+  [OK] 项目数据未被报告脚本写 — suspicious=[]
+============================================================
+ALL CHECKS PASSED

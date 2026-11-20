@@ -1,0 +1,52 @@
+=== 理想化收益 m×hit（单次）/ 每持仓日 m×hit/n ===
+-- train (m=20 行) --
+  n= 3: hit= 20.9%  gain/trade=4.19%  gain/day=1.396%
+  n= 5: hit= 26.4%  gain/trade=5.28%  gain/day=1.056%
+  n= 7: hit= 29.9%  gain/trade=5.99%  gain/day=0.855%
+  n=10: hit= 35.0%  gain/trade=7.01%  gain/day=0.701%
+  n=12: hit= 37.3%  gain/trade=7.46%  gain/day=0.622%
+  n=15: hit= 40.2%  gain/trade=8.05%  gain/day=0.537%
+  n=20: hit= 43.7%  gain/trade=8.73%  gain/day=0.437%
+  n=25: hit= 46.3%  gain/trade=9.27%  gain/day=0.371%
+-- train (n=10 各 m) --
+  m=10: hit= 63.7%  gain/trade=6.37%  gain/day=0.637%
+  m=15: hit= 46.0%  gain/trade=6.90%  gain/day=0.690%
+  m=20: hit= 35.0%  gain/trade=7.01%  gain/day=0.701%
+  m=25: hit= 25.8%  gain/trade=6.44%  gain/day=0.644%
+  m=30: hit= 19.5%  gain/trade=5.85%  gain/day=0.585%
+  m=40: hit= 11.8%  gain/trade=4.70%  gain/day=0.470%
+  m=50: hit=  7.1%  gain/trade=3.57%  gain/day=0.357%
+-- oos (m=20 行) --
+  n= 3: hit= 14.3%  gain/trade=2.86%  gain/day=0.954%
+  n= 5: hit= 22.0%  gain/trade=4.41%  gain/day=0.881%
+  n= 7: hit= 27.1%  gain/trade=5.42%  gain/day=0.774%
+  n=10: hit= 33.0%  gain/trade=6.60%  gain/day=0.660%
+  n=12: hit= 36.2%  gain/trade=7.23%  gain/day=0.603%
+  n=15: hit= 39.0%  gain/trade=7.81%  gain/day=0.520%
+  n=20: hit= 42.7%  gain/trade=8.54%  gain/day=0.427%
+  n=25: hit= 45.5%  gain/trade=9.10%  gain/day=0.364%
+-- oos (n=10 各 m) --
+  m=10: hit= 61.5%  gain/trade=6.15%  gain/day=0.615%
+  m=15: hit= 45.3%  gain/trade=6.80%  gain/day=0.680%
+  m=20: hit= 33.0%  gain/trade=6.60%  gain/day=0.660%
+  m=25: hit= 22.8%  gain/trade=5.70%  gain/day=0.570%
+  m=30: hit= 17.3%  gain/trade=5.18%  gain/day=0.518%
+  m=40: hit=  8.4%  gain/trade=3.35%  gain/day=0.335%
+  m=50: hit=  4.2%  gain/trade=2.08%  gain/day=0.208%
+=== 各口径最优 ===
+  train_gain_trade: n=25 m=25 hit=37.1% gain/day=0.371%
+  train_gain_day: n=3 m=10 hit=50.4% gain/day=1.680%
+  train_gain_day_hit30: n=3 m=10 hit=50.4% gain/day=1.680%
+  train_gain_day_m20: n=3 m=20 hit=20.9% gain/day=1.396%
+  oos_gain_trade: n=25 m=30 hit=30.5% gain/day=0.366%
+  oos_gain_day: n=3 m=10 hit=45.1% gain/day=1.503%
+  oos_gain_day_hit30: n=3 m=10 hit=45.1% gain/day=1.503%
+  oos_gain_day_m20: n=3 m=20 hit=14.3% gain/day=0.954%
+=== 日级捕获率(m=20) ===
+  n= 5 oos: cap_pooled=0.870% cap_daymean=0.870% days_c7hit=120/199
+  n= 5 train: cap_pooled=0.621% cap_daymean=0.847% days_c7hit=292/463
+  n=10 oos: cap_pooled=0.583% cap_daymean=0.597% days_c7hit=135/196
+  n=10 train: cap_pooled=0.375% cap_daymean=0.485% days_c7hit=323/463
+  n=15 oos: cap_pooled=0.466% cap_daymean=0.489% days_c7hit=133/191
+  n=15 train: cap_pooled=0.288% cap_daymean=0.364% days_c7hit=337/463
+DONE

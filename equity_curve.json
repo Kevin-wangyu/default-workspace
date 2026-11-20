@@ -1,0 +1,39 @@
+{
+  "config": {
+    "D0": "2024-03-13",
+    "D1": "2026-11-01",
+    "base": 1.0,
+    "formula": "A_t = 1 + (1/M)*Σ_{signal_day_i<=t} ret_i/100; M=成交笔数（资金等分数）",
+    "axis": "交易日轴=两份明细trade_date并集；两条曲线按此对齐",
+    "attribution": "收益按信号日T归属（规则2.2），不按退出日",
+    "caveat": "方案无仓位/资金分配/同时持仓数定义：账户净值曲线、年化收益、最大回撤、夏普均不可得（无法由逐笔明细唯一确定每日仓位），不以替代值填充。本曲线为等权分散累积收益示意，终点=1+逐笔期望收益/100，与backtest_out.json一致。"
+  },
+  "split_boundary": {
+    "train_last": "2025-12-31",
+    "oos_first": "2026-01-05"
+  },
+  "audit": {
+    "C7单池": {
+      "n_filled": 1450,
+      "json_n_filled": 1450,
+      "n_signal_days": 437,
+      "fund_share_M": 1450,
+      "final_asset": 1.008184,
+      "cum_return_pct": 0.8184,
+      "json_avg_ret": 0.8184,
+      "check_end_equals_1_plus_avg_ret": true
+    },
+    "C6+C7双池": {
+      "n_filled": 5041,
+      "json_n_filled": 5041,
+      "n_signal_days": 610,
+      "fund_share_M": 5041,
+      "final_asset": 1.010393,
+      "cum_return_pct": 1.0393,
+      "json_avg_ret": 1.0393,
+      "check_end_equals_1_plus_avg_ret": true
+    }
+  },
+  "chart": "D:\\Users\\KFish\\Documents\\deepseek-harness\\default-workspace\\chart_equity.png",
+  "series_csv": "D:\\Users\\KFish\\Documents\\deepseek-harness\\default-workspace\\equity_series.csv"
+}

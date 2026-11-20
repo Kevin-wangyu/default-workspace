@@ -1,0 +1,4 @@
+pe1: (1430, 650) nonwhite=0.057 colors=2463 edge=0.000 -> OK
+pe2: (1430, 468) nonwhite=0.190 colors=5950 edge=0.000 -> OK
+pe3: (1300, 520) nonwhite=0.438 colors=264 edge=0.000 -> OK
+AUDIT_PORTFOLIO_CHARTS=ALL_OK

@@ -9,9 +9,18 @@ WS = Path(r"D:\Users\KFish\Documents\deepseek-harness\default-workspace")
 OUT = json.loads((WS/"backtest_out.json").read_text(encoding="utf-8"))
 CHARTS = json.loads((WS/"backtest_charts.json").read_text(encoding="utf-8"))
 G, A, CFG = OUT["groups"], OUT["aux"], OUT["config"]
+EQ = json.loads((WS/"equity_curve.json").read_text(encoding="utf-8"))
+PO = json.loads((WS/"portfolio_out.json").read_text(encoding="utf-8"))
+PCH = json.loads((WS/"portfolio_charts.json").read_text(encoding="utf-8"))
+CO = json.loads((WS/"portfolio_compound_out.json").read_text(encoding="utf-8"))
+CCH = json.loads((WS/"compound_charts.json").read_text(encoding="utf-8"))
+PC = PO["config"]; CC = CO["config"]
+def pcfg(v): return f"{v:,.0f}" if isinstance(v,(int,float)) else str(v)
 
 def b64(p):
     return "data:image/png;base64," + base64.b64encode(Path(p).read_bytes()).decode()
+
+EQCHART = b64(EQ["chart"])
 def pct(x, n=2): return ("%%.%df" % n) % x + "%" if x is not None else "不可得"
 def num(x, n=4): return ("%."+str(n)+"f") % x if x is not None else "不可得"
 
@@ -78,7 +87,7 @@ p{{margin:9px 0}}section{{background:#fff;border:1px solid #e3e8ef;border-radius
 .kpi .l{{font-size:12px;color:var(--mut)}}.kpi .v{{font-size:24px;color:var(--navy);font-weight:700;margin:4px 0}}.kpi .d{{font-size:11px;color:var(--mut)}}
 table{{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}}
 th,td{{border:1px solid #e1e7ee;padding:9px 10px;text-align:center}}th{{background:#eef3f8;color:var(--navy);font-weight:600}}
-td:first-child,th:first-child{{text-align:left}}tr.hi{{background:#f2faf8}}td.up{{color:#c0392b;font-weight:600}}
+td:first-child,th:first-child{{text-align:left}}tr.hi{{background:#f2faf8}}td.hi{{background:#f2faf8;font-weight:600}}td.up{{color:#c0392b;font-weight:600}}
 .note{{background:#fff8e6;border-left:4px solid var(--gold);padding:12px 16px;border-radius:6px;font-size:13.5px;margin:14px 0}}
 .ok{{background:#eef8f4;border-left:4px solid var(--teal);padding:12px 16px;border-radius:6px;font-size:13.5px;margin:14px 0}}
 .warn{{background:#fdf0ef;border-left:4px solid #c0392b;padding:12px 16px;border-radius:6px;font-size:13.5px;margin:14px 0}}
@@ -106,7 +115,7 @@ code{{background:#eef2f6;padding:1px 5px;border-radius:4px;font-size:12px}}
 <h2>一、执行摘要（决策者先看这一页）</h2>
 <section>
 <p><b>结论先行：</b>两组回测严格按方案执行，C7 单池的期望收益、胜率、盈利因子与方案原文<b>逐项吻合</b>，验证回测口径无误。在样本内与样本外两个独立区间，<b>双池（C6+C7）在每一段都优于 C7 单池</b>：期望收益、胜率、盈利因子三个核心指标方向完全一致，样本外期望由 {pct(G['C7单池']['oos']['avg_ret'],4)} 提升到 {pct(G['C6+C7双池']['oos']['avg_ret'],4)}（+{num(G['C6+C7双池']['oos']['avg_ret']-G['C7单池']['oos']['avg_ret'],3)}pct），胜率提升 {num(G['C6+C7双池']['oos']['win_rate']-G['C7单池']['oos']['win_rate'],2)} 个百分点，且成交笔数扩大约 3 倍。方案<b>值得按双池配置落地</b>，但需正视下述成本与风险边界。</p>
-<div class="ok"><b>方案是否值得落地——明确回答：</b>值得，以"双池 + 连池≥2 优先"作为执行配置。依据是双池增益在train/oos双期同向且样本外不衰减，叠加规则5.1的连池过滤能把期望进一步抬到 {pct(A['C6+C7双池']['streak2']['avg_ret'],2)}（n={A['C6+C7双池']['streak2']['n_filled']}）。但这是<b>逐笔统计优势</b>，不等于已验证的组合层稳定盈利（见第五、六节局限）。</div>
+<div class="ok"><b>方案是否值得落地——明确回答：</b>值得，以"双池 + 连池≥2 优先"作为执行配置。依据是双池增益在train/oos双期同向且样本外不衰减，叠加规则5.1的连池过滤能把期望进一步抬到 {pct(A['C6+C7双池']['streak2']['avg_ret'],2)}（n={A['C6+C7双池']['streak2']['n_filled']}）。这是<b>逐笔统计优势</b>；第九节在显式仓位下给出组合层账户曲线（样本内显著、样本外证据仍不足），结论一致：小仓执行、不夸大。</div>
 </section>
 
 <h2>二、回测方法与口径</h2>
@@ -129,7 +138,7 @@ code{{background:#eef2f6;padding:1px 5px;border-radius:4px;font-size:12px}}
 <h3>2.3 分段与口径</h3>
 <p>全区间 {CFG['D0']}—{CFG['D1']}，拆为样本内 train（2024-03-13—2025-12-31）与样本外 oos（2026-01-05—2026-10-30）两段独立统计。所有指标统一为<b>逐笔口径</b>（方案原生）：信号数、成交数、成交率、期望收益、胜率、盈利因子、MFE、退出结构。两组同一定义，可横向对比。</p>
 <div class="note"><b>歧义点及处理（未静默假设）：</b>
-① 方案未定义资金/仓位分配 → 主指标用逐笔口径，<b>不虚构组合净值/年化/夏普</b>，组合层指标标注"不可得"；
+① 方案未定义资金/仓位分配 → 逐笔主统计仍用方案原生口径；本次按用户新增的显式三要素（初始20000/每笔4000/最多5只）单列组合层回测（第九节），组合层与逐笔层分开报告、不混用；
 ② 双池如何套用原规则 → 个股买卖规则池无关、原样执行，连池(规则5.1/5.2)按各自来源池计算；
 ③ "命中率(买入价上10日MFE≥20)"与"止盈15%/持有7日"口径不同 → 分列报告、不混用；
 ④ 同一股票连续多日触发 → 持仓中不重复买入（遵循5.2"无触发不调仓"），本回测按信号逐笔独立统计；
@@ -191,7 +200,7 @@ code{{background:#eef2f6;padding:1px 5px;border-radius:4px;font-size:12px}}
 
 <h2>六、局限性与不可得项（诚实披露）</h2>
 <section>
-<div class="warn"><b>组合层指标不可得：</b>方案未定义资金分配、仓位上限、同时持仓数与组合净值算法，因此<b>组合累计收益、年化收益、最大回撤、夏普比率均无法从现有数据得出</b>，本报告不以任何替代值填充。全部结论均为<b>逐笔统计口径</b>——它衡量"每笔交易的平均表现"，不等于"按资金执行的账户曲线"。</div>
+<div class="note"><b>本节为原方案（未定义仓位）下的局限说明：</b>方案本身未给资金三要素，故第三至八节的原始结论均为<b>逐笔统计口径</b>——衡量"每笔交易的平均表现"。本次已按用户补充的显式三要素单列组合层回测（见第九节），账户净值/年化/回撤/夏普在那里给出；两节口径不同，结论不互相替代。组合层<b>精确交易成本</b>仍不可得（见9.5），不以替代值填充。</div>
 <ul>
 <li><b>成本敏感：</b>扣除0.15%成本上限后，样本外单池期望从 {pct(G['C7单池']['oos']['avg_ret'],4)} 降至 {pct(G['C7单池']['oos']['avg_ret_net'],4)}，双池从 {pct(G['C6+C7双池']['oos']['avg_ret'],4)} 降至 {pct(G['C6+C7双池']['oos']['avg_ret_net'],4)}。高频调仓会侵蚀优势，须遵守规则5.3"禁频繁调仓"。</li>
 <li><b>止损占比高：</b>两组止损退出均超过 {pct(G['C6+C7双池']['全区间']['exit_SL'],0)}，方案高度依赖止损纪律；执行不到位将显著恶化结果。</li>
@@ -228,7 +237,86 @@ code{{background:#eef2f6;padding:1px 5px;border-radius:4px;font-size:12px}}
 <div class="note">以上为对回测数字的定性解释，用于理解机制；所有定量结论仍以第三、四节表格为准。</div>
 </section>
 
-<div class="foot">本报告全部数字来自 backtest_out.json，经独立重算(132/132)与哈希复现验证 · 逐笔统计口径 · 不构成投资建议</div>
+<h2>九、组合层回测与收益率板面（初始资金 20000）</h2>
+<section>
+<p>本节把逐笔信号撮合成<b>真实账户口径</b>：给定初始资金与明确仓位规则后，账户净值、年化、最大回撤、夏普首次可计算。此前"每笔只投 1/M"的示意口径已按本次要求替换。所有数字来自 <code>portfolio_out.json</code> 与逐日净值 CSV，逐笔层口径完全未动。</p>
+
+<h3>9.1 资金与仓位三要素（逐条列明，无隐含假设）</h3>
+<table><thead><tr><th>要素</th><th>显式定义</th><th>说明</th></tr></thead><tbody>
+<tr><td>初始资金</td><td>{pcfg(PC['initial_capital'])} 元</td><td>两组回测相同起点</td></tr>
+<tr><td>资金分配规则</td><td>等权固定金额，每笔 {pcfg(PC['alloc_per_trade'])} 元</td><td>=初始资金×20%，不复利、不按信号强度加权；同日多信号按规则1.1综合分降序竞争槽位</td></tr>
+<tr><td>单票仓位上限</td><td>{pcfg(PC['alloc_per_trade'])} 元 = 初始资金的 {PC['max_position_pct']:.0f}%</td><td>固定金额口径；净值上涨后实际占比会略降，如实披露</td></tr>
+<tr><td>最大同时持仓</td><td>{PC['max_concurrent_positions']} 只</td><td>满仓时新信号放弃（计入槽位拒绝）；当日退出的槽位次日可用（保守）</td></tr>
+<tr><td>辅助约定</td><td>夏普 rf=0；净值含浮动盈亏(mark-to-market)；年度化按252交易日</td><td>复利=False（线性累加口径）</td></tr>
+</tbody></table>
+
+<h3>9.2 收益率板面（20000 起点 · 双曲线日期对齐 · 分界标注）</h3>
+<p>C7单池与双池两条账户净值曲线按交易日对齐，起点均为 20000，金色虚线为样本内/外分界（2025-12-31 → 2026-01-05）。</p>
+<figure><img src="{b64(PCH['pe1'])}"><figcaption>图8 账户净值曲线（初始20000 · 每笔4000 · 最多5只 · 不复利 · 含浮动盈亏）</figcaption></figure>
+<figure><img src="{b64(PCH['pe2'])}"><figcaption>图9 账户回撤（相对历史峰值），阴影为回撤区间</figcaption></figure>
+
+<h3>9.3 组合层核心指标（同一口径横向可比）</h3>
+<table><thead><tr><th>组合指标</th><th>C7单池</th><th>双池</th><th>口径</th></tr></thead><tbody>
+<tr><td>初始资金</td><td>20,000 元</td><td>20,000 元</td><td>固定</td></tr>
+<tr class="hi"><td>期末资产</td><td>{PO['pools']['C7单池']['portfolio']['final']:,.2f} 元</td><td>{PO['pools']['C6+C7双池']['portfolio']['final']:,.2f} 元</td><td>期初+已实现+浮动</td></tr>
+<tr class="hi"><td>累计收益</td><td>{pct(PO['pools']['C7单池']['portfolio']['cum_return_pct'])}</td><td>{pct(PO['pools']['C6+C7双池']['portfolio']['cum_return_pct'])}</td><td>(期末/期初-1)</td></tr>
+<tr><td>等效年化</td><td>{pct(PO['pools']['C7单池']['portfolio']['cagr_pct'])}</td><td>{pct(PO['pools']['C6+C7双池']['portfolio']['cagr_pct'])}</td><td>线性累加的等效换算值，非复利真实年化</td></tr>
+<tr class="hi"><td>最大回撤</td><td>{pct(PO['pools']['C7单池']['portfolio']['max_drawdown_pct'])}</td><td>{pct(PO['pools']['C6+C7双池']['portfolio']['max_drawdown_pct'])}</td><td>净值相对历史峰值</td></tr>
+<tr><td>夏普比率</td><td>{num(PO['pools']['C7单池']['portfolio']['sharpe'],3)}</td><td>{num(PO['pools']['C6+C7双池']['portfolio']['sharpe'],3)}</td><td>日收益均值/标准差×√252，rf=0</td></tr>
+<tr><td>实际开仓笔数</td><td>{PO['pools']['C7单池']['port_base']['n_opened']}</td><td>{PO['pools']['C6+C7双池']['port_base']['n_opened']}</td><td>槽位约束下实际成交</td></tr>
+<tr><td>槽位拒绝笔数</td><td>{PO['pools']['C7单池']['port_base']['n_rejected_slot']}</td><td>{PO['pools']['C6+C7双池']['port_base']['n_rejected_slot']}</td><td>满5只时放弃的信号</td></tr>
+<tr><td>已实现盈亏</td><td>{PO['pools']['C7单池']['port_base']['pnl_total']:,.2f} 元</td><td>{PO['pools']['C6+C7双池']['port_base']['pnl_total']:,.2f} 元</td><td>Σ(投入额×逐笔收益%)</td></tr>
+</tbody></table>
+<figure><img src="{b64(PCH['pe3'])}"><figcaption>图10 组合层累计收益与等效年化对比</figcaption></figure>
+
+<h3>9.4 逐笔层未变 + 开仓子集披露</h3>
+<div class="ok"><b>逐笔层口径完全未变：</b>成交数、期望、胜率、PF 与既有 backtest_out.json 逐项一致（组合层校验已验证）。买入-5%/止盈+15%/止损-8%/持有7日/排序/连池规则逐字执行，未增删、未调参。</div>
+<div class="note"><b>开仓子集期望高于全成交期望（如实披露）：</b>C7单池开仓子集 {pct(PO['pools']['C7单池']['port_base']['avg_ret_opened'],4)} vs 全成交 {pct(G['C7单池']['全区间']['avg_ret'],4)}；双池 {pct(PO['pools']['C6+C7双池']['port_base']['avg_ret_opened'],4)} vs {pct(G['C6+C7双池']['全区间']['avg_ret'],4)}。原因是槽位上限+规则1.1综合分降序，优先开仓了更强的信号——这是仓位规则的真实效果，不是逐笔数字被改动。组合终值明显高于"逐笔期望×笔数"的线性外推，即来源于此。</div>
+
+<h3>9.5 不可得项（不以替代值填充）</h3>
+<div class="warn"><b>组合层精确交易成本不可得：</b>方案仅给出 0.1~0.15% 的费率区间上限，未提供逐笔实际成交额×费率的计费明细，因此账户净利润无法由逐笔收益%唯一推导，本表终值为<b>未扣组合层成本</b>口径。若用上限 0.15% 粗略估算每笔，会引入替代值，故不列入主表。逐笔层的扣成本期望见第三节（方案口径扣 0.15% 参考）。</div>
+<div class="ok"><b>可追溯与可复现：</b>逐笔层不变、退出日100%可重算、净值起点/终点闭合、最大回撤与累计收益独立重算一致、重跑哈希一致——组合层校验 <b>23/23 全部通过</b>。逐日净存于 <code>portfolio_equity_c7.csv</code> / <code>portfolio_equity_dual.csv</code>，脚本 <code>portfolio_backtest.py</code> / <code>make_portfolio_charts.py</code> / <code>verify_portfolio.py</code> 可完整复现。</div>
+</section>
+
+<h2>十、盈利再投入（复利）账户曲线</h2>
+<section>
+<p>上一轮刻意把"盈利是否再投入"留到本轮。本节显式定义再投入规则并据此重算真正的复利账户曲线；第九节的不复利结果完整保留作为对照。逐笔层口径完全未动。</p>
+
+<h3>10.1 盈利再投入规则（逐条列明，连同资金四要素）</h3>
+<table><thead><tr><th>要素</th><th>显式定义</th><th>计算方式</th></tr></thead><tbody>
+<tr><td>初始资金</td><td>{pcfg(CC['initial_capital'])} 元</td><td>两组同一</td></tr>
+<tr class="hi"><td>再投入规则</td><td>固定比例复利（fixed-fraction）</td><td>每笔投入 = 信号日 T 收盘账户净值 × {CC['reinvest_frac']:.0f}%；随净值放大/缩小</td></tr>
+<tr><td>触发时点</td><td>每个买入信号日</td><td>信号日 T 收盘定比，T+1 开仓；不做定期再平衡</td></tr>
+<tr><td>单票仓位上限</td><td>动态 = 账户净值 × {CC['max_position_pct']:.0f}%</td><td>每笔投入即动态上限，随账户同步变化</td></tr>
+<tr><td>最大同时持仓</td><td>{CC['max_concurrent_positions']} 只</td><td>满仓新信号放弃；当日退出槽位次日可用</td></tr>
+<tr><td>资金分配</td><td>等权动态（净值定比）</td><td>不复利对照为固定4,000元/笔（见第九节）</td></tr>
+</tbody></table>
+<div class="note">规则口径：账户净值 = 初始资金 + Σ已实现(投入额×逐笔收益%) + Σ持仓浮盈(投入额×(现价/买入价−1))；夏普 rf=0、252日年化；成本仍按"不可得"处理。</div>
+
+<h3>10.2 复利账户曲线（20000 起点 · 双池对齐 · 分界标注）</h3>
+<figure><img src="{b64(CCH['ce1'])}"><figcaption>图11 复利账户净值（对数轴，初始20000，每笔=信号日净值×20%，金色虚线=样本内外分界）</figcaption></figure>
+<figure><img src="{b64(CCH['ce3'])}"><figcaption>图12 复利机制：单票上限随账户净值按比例放大（双池）</figcaption></figure>
+
+<h3>10.3 复利 vs 不复利 核心指标对照（差异来源：盈利是否再投入）</h3>
+<table><thead><tr><th>指标</th><th>C7单池 不复利</th><th>C7单池 复利</th><th>双池 不复利</th><th>双池 复利</th></tr></thead><tbody>
+<tr><td>期末资产</td><td>{PO['pools']['C7单池']['portfolio']['final']:,.0f}</td><td class="hi">{CO['pools']['C7单池']['portfolio']['final']:,.0f}</td><td>{PO['pools']['C6+C7双池']['portfolio']['final']:,.0f}</td><td class="hi">{CO['pools']['C6+C7双池']['portfolio']['final']:,.0f}</td></tr>
+<tr><td>累计收益</td><td>{pct(PO['pools']['C7单池']['portfolio']['cum_return_pct'],1)}</td><td>{pct(CO['pools']['C7单池']['portfolio']['cum_return_pct'],1)}</td><td>{pct(PO['pools']['C6+C7双池']['portfolio']['cum_return_pct'],1)}</td><td>{pct(CO['pools']['C6+C7双池']['portfolio']['cum_return_pct'],1)}</td></tr>
+<tr><td>等效年化</td><td>{pct(PO['pools']['C7单池']['portfolio']['cagr_pct'],1)}</td><td>{pct(CO['pools']['C7单池']['portfolio']['cagr_pct'],1)}</td><td>{pct(PO['pools']['C6+C7双池']['portfolio']['cagr_pct'],1)}</td><td>{pct(CO['pools']['C6+C7双池']['portfolio']['cagr_pct'],1)}</td></tr>
+<tr><td>最大回撤</td><td>{pct(PO['pools']['C7单池']['portfolio']['max_drawdown_pct'],1)}</td><td>{pct(CO['pools']['C7单池']['portfolio']['max_drawdown_pct'],1)}</td><td>{pct(PO['pools']['C6+C7双池']['portfolio']['max_drawdown_pct'],1)}</td><td>{pct(CO['pools']['C6+C7双池']['portfolio']['max_drawdown_pct'],1)}</td></tr>
+<tr><td>夏普</td><td>{num(PO['pools']['C7单池']['portfolio']['sharpe'],3)}</td><td>{num(CO['pools']['C7单池']['portfolio']['sharpe'],3)}</td><td>{num(PO['pools']['C6+C7双池']['portfolio']['sharpe'],3)}</td><td>{num(CO['pools']['C6+C7双池']['portfolio']['sharpe'],3)}</td></tr>
+<tr><td>每笔投入额</td><td>固定4,000元</td><td>动态 {CO['pools']['C7单池']['port_base']['alloc_min']:,.0f}~{CO['pools']['C7单池']['port_base']['alloc_max']:,.0f}</td><td>固定4,000元</td><td>动态 {CO['pools']['C6+C7双池']['port_base']['alloc_min']:,.0f}~{CO['pools']['C6+C7双池']['port_base']['alloc_max']:,.0f}</td></tr>
+</tbody></table>
+<figure><img src="{b64(CCH['ce2'])}"><figcaption>图13 复利（实线）vs 不复利（虚线）账户曲线对照</figcaption></figure>
+<div class="note"><b>差异来源（诚实披露）：</b>复利终值远高于不复利，唯一原因是"盈利再投入"——每笔投入随净值按比例放大（双池单笔投入从约{CO['pools']['C6+C7双池']['port_base']['alloc_min']:,.0f}元放大到{CO['pools']['C6+C7双池']['port_base']['alloc_max']:,.0f}元），把逐笔正期望按复利放大。这是<b>仓位规则的数学结果</b>，不是逐笔胜率或期望被抬高；逐笔四指标与既有结果逐项一致。双池复利等效年化 {pct(CO['pools']['C6+C7双池']['portfolio']['cagr_pct'],1)} 是 fixed-fraction 满仓复利的放大值，<b>不代表策略本身的稳定收益能力</b>，决策者须按可承受回撤评估，不得据此夸大。</div>
+
+<h3>10.4 逐笔层未变 + 不可得项 + 校验</h3>
+<div class="ok"><b>逐笔层完全未变：</b>成交数/期望/胜率/PF 与 backtest_out.json 逐项一致（C7 1450笔·0.8184%·40.48%·1.186；双池 5041笔·1.0393%·41.46%·1.240），买入-5%/止盈+15%/止损-8%/持有7日/排序/连池规则逐字执行，未增删未调参。</div>
+<div class="warn"><b>不可得（不以替代值填充）：</b>组合层精确交易成本仍不可得——方案仅给 0.1~0.15% 费率区间上限，无逐笔成交额×费率计费明细，故第十、九节终值均为<b>未扣组合层成本</b>口径，结论口径与上一轮一致。</div>
+<div class="ok"><b>可追溯与可复现：</b>逐笔层不变、退出日100%可重算、复利终值闭合、累计收益/最大回撤独立重算一致、复利>不复利(再投入生效)、重跑哈希一致——复利校验 <b>29/29 全部通过</b>。逐日净值存于 <code>portfolio_compound_equity_c7.csv</code> / <code>portfolio_compound_equity_dual.csv</code>，脚本 <code>portfolio_compound.py</code> / <code>make_compound_charts.py</code> / <code>verify_compound.py</code> 完整可复现。</div>
+<div class="note"><b>结论口径不变、不夸大：</b>改为复利后，样本内显著、样本外证据不足的统计判定不变（双池 oos p≈0.13、单池 p≈0.50）。复利放大的是资金曲线的斜率，不改变信号的统计显著性；执行建议仍是"双池+连池≥2优先、小仓验证"。</div>
+</section>
+
+<div class="foot">逐笔数字来自 backtest_out.json（重算132/132）；组合层不复利 portfolio_out.json（23/23）；复利 portfolio_compound_out.json（29/29），均哈希复现 · 不构成投资建议</div>
 </div></body></html>"""
 p = WS/"C7策略_单池vs双池回测汇报.html"
 p.write_text(html, encoding="utf-8")

@@ -1,0 +1,4 @@
+ce1: (1430, 650) nonwhite=0.058 colors=1702 edge=0.000 -> OK
+ce2: (1560, 572) nonwhite=0.066 colors=2222 edge=0.000 -> OK
+ce3: (1430, 494) nonwhite=0.049 colors=2855 edge=0.000 -> OK
+AUDIT_COMPOUND_CHARTS=ALL_OK

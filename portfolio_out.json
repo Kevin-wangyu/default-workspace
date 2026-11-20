@@ -1,0 +1,99 @@
+{
+  "config": {
+    "initial_capital": 20000.0,
+    "alloc_mode": "equal_fixed",
+    "alloc_per_trade": 4000.0,
+    "max_position_pct": 20.0,
+    "max_concurrent_positions": 5,
+    "exit_release": "next_day",
+    "ranking": "rule1.1_score_desc",
+    "compounding": false,
+    "mark_to_market": true,
+    "risk_free_rate": 0.0,
+    "TP": 15.0,
+    "SL": -8.0,
+    "HOLD": 7
+  },
+  "pools": {
+    "C7单池": {
+      "trade_base": {
+        "n_signals": 4688,
+        "n_filled": 1450,
+        "fill_rate": 30.93,
+        "avg_ret": 0.8184,
+        "win_rate": 40.48,
+        "profit_factor": 1.186
+      },
+      "port_base": {
+        "n_opened": 698,
+        "n_rejected_slot": 752,
+        "avg_ret_opened": 1.1833,
+        "win_rate_opened": 41.83,
+        "capital_deployed": 2792000.0,
+        "pnl_total": 33038.19
+      },
+      "portfolio": {
+        "initial": 20000.0,
+        "final": 53038.19,
+        "cum_return_pct": 165.191,
+        "cagr_pct": 42.141,
+        "max_drawdown_pct": 30.7177,
+        "sharpe": 1.458,
+        "years": 2.77,
+        "n_days": 669,
+        "date_start": "2024-02-01",
+        "date_end": "2026-11-10",
+        "split_date": "2025-12-31 -> 2026-01-05",
+        "cut_di": 463,
+        "equity_train_end": 39369.56,
+        "equity_full_end": 53038.19
+      },
+      "unavailable": {
+        "items": [
+          "组合层真实交易成本(需逐笔成交价×数量×费率明细，方案仅给0.1~0.15%上限)"
+        ],
+        "reason": "成本上限是费率区间非精确费率；组合层净利润须按每笔实际成交额计，无法由逐笔收益%唯一推导"
+      }
+    },
+    "C6+C7双池": {
+      "trade_base": {
+        "n_signals": 15284,
+        "n_filled": 5041,
+        "fill_rate": 32.98,
+        "avg_ret": 1.0393,
+        "win_rate": 41.46,
+        "profit_factor": 1.24
+      },
+      "port_base": {
+        "n_opened": 1029,
+        "n_rejected_slot": 4012,
+        "avg_ret_opened": 1.3796,
+        "win_rate_opened": 41.89,
+        "capital_deployed": 4116000.0,
+        "pnl_total": 56784.07
+      },
+      "portfolio": {
+        "initial": 20000.0,
+        "final": 76784.07,
+        "cum_return_pct": 283.9204,
+        "cagr_pct": 62.426,
+        "max_drawdown_pct": 32.2533,
+        "sharpe": 1.8113,
+        "years": 2.77,
+        "n_days": 669,
+        "date_start": "2024-02-01",
+        "date_end": "2026-11-10",
+        "split_date": "2025-12-31 -> 2026-01-05",
+        "cut_di": 463,
+        "equity_train_end": 56479.66,
+        "equity_full_end": 76784.07
+      },
+      "unavailable": {
+        "items": [
+          "组合层真实交易成本(需逐笔成交价×数量×费率明细，方案仅给0.1~0.15%上限)"
+        ],
+        "reason": "成本上限是费率区间非精确费率；组合层净利润须按每笔实际成交额计，无法由逐笔收益%唯一推导"
+      }
+    }
+  }
+}
